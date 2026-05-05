@@ -1,0 +1,723 @@
+[
+  {
+    "date": "2011-10-05",
+    "type": "enforcement_origin",
+    "location_id": "golden_triangle_sez",
+    "title_ja": "湄公河事件が中泰緬老4カ国共同巡邏の起点になる",
+    "summary_ja": "中国船員13人が殺害された2011年10月の事件後、中国、ラオス、ミャンマー、タイによるメコン川共同巡邏が始まり、後年の国境治安協力の前史になった。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "China launches joint patrols along Mekong River",
+        "publisher": "China Daily / Xinhua",
+        "date": "2011-12-10",
+        "url": "https://europe.chinadaily.com.cn/china/2011-12/10/content_14245588.htm"
+      }
+    ]
+  },
+  {
+    "date": "2014-01-01",
+    "type": "prehistory",
+    "location_id": "sihanoukville",
+    "title_ja": "澳門VIPジャンケット規制強化後の南下圧力",
+    "summary_ja": "澳門のVIPジャンケット規制強化を、シアヌークビル、ポイペト、ボーケオなどへカジノ資本・運営ノウハウが南下する前史として置く。",
+    "confidence": "reported",
+    "sources": [
+      "ユーザー提供講義メモ: 2014年 澳門 VIP ジャンケット規制強化 / 南下"
+    ]
+  },
+  {
+    "date": "2021-12-03",
+    "type": "infrastructure",
+    "location_id": "golden_triangle_sez",
+    "title_ja": "中老鉄道が開通し、昆明–ビエンチャンの物理動脈が成立",
+    "summary_ja": "昆明からビエンチャンまで約1,035kmを結ぶ中老鉄道が開通し、北部ラオスと中国雲南を結ぶ合法観光・物流の巨大流動が生まれた。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Xinhua Headlines: China-Laos Railway opens",
+        "publisher": "China.org.cn / Xinhua",
+        "date": "2021-12-04",
+        "url": "https://www.china.org.cn/china/Off_the_Wire/2021-12/04/content_77909856.htm"
+      }
+    ]
+  },
+  {
+    "date": "2022-08-13",
+    "type": "entity",
+    "location_id": "myawaddy_maesot",
+    "title_ja": "佘智江（She Zhijiang）がバンコクで逮捕される",
+    "summary_ja": "Yatai / 亜太新城 / Shwe Kokko 系統を読む核心人物として、佘智江の2022年バンコク逮捕を起源イベントに置く。2024年引き渡しではなく、確認できる引き渡し報道は2025年11月。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Thailand extradites gambling kingpin She Zhijiang to China",
+        "publisher": "Reuters via GMA News",
+        "date": "2025-11-12",
+        "url": "https://www.gmanetwork.com/news/topstories/world/965864/thailand-extradites-gambling-kingpin-she-zhijiang-to-china/story/"
+      }
+    ]
+  },
+  {
+    "date": "2018-01-30",
+    "type": "sanction",
+    "location_id": "golden_triangle_sez",
+    "title_ja": "米財務省がGTSEZのZhao Weiネットワークを制裁",
+    "summary_ja": "GTSEZを拠点とするネットワークが、人身取引・資金洗浄・贈賄などに関与したとして制裁対象となった。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Treasury Sanctions the Zhao Wei Transnational Criminal Organization",
+        "publisher": "U.S. Department of the Treasury",
+        "date": "2018-01-30",
+        "url": "https://home.treasury.gov/news/press-releases/sm0272"
+      }
+    ]
+  },
+  {
+    "date": "2023-06-07",
+    "type": "report",
+    "location_id": "mekong_region",
+    "title_ja": "INTERPOLが人身取引駆動型オンライン詐欺への世界警告を発出",
+    "summary_ja": "偽求人で人々を詐欺センターへ送り込みオンライン詐欺に従事させる構造が、地域問題から世界的脅威に変化したと警告した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "INTERPOL issues global warning on human trafficking-fueled fraud",
+        "publisher": "INTERPOL",
+        "date": "2023-06-07",
+        "url": "https://www.interpol.int/News-and-Events/News/2023/INTERPOL-issues-global-warning-on-human-trafficking-fueled-fraud"
+      }
+    ]
+  },
+  {
+    "date": "2023-08-29",
+    "type": "report",
+    "location_id": "mekong_region",
+    "title_ja": "OHCHRが東南アジアの大規模強制詐欺労働について報告",
+    "summary_ja": "少なくともミャンマーで12万人、カンボジアで10万人前後がオンライン詐欺に強制的に関与させられている可能性を示した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Hundreds of thousands trafficked to work for online scammers in SE Asia says UN report",
+        "publisher": "OHCHR",
+        "date": "2023-08-29",
+        "url": "https://www.ohchr.org/en/press-releases/2023/08/hundreds-thousands-trafficked-work-online-scammers-se-asia-says-un-report"
+      }
+    ]
+  },
+  {
+    "date": "2023-10-27",
+    "type": "displacement",
+    "location_id": "north_shan_yunnan",
+    "title_ja": "Operation 1027 / コーカン攻勢で詐欺拠点群に再配置圧力",
+    "summary_ja": "三兄弟同盟のOperation 1027と中国国境側の閉鎖圧力により、北シャン州・コーカン側の活動の一部が南方や他国へ移る契機になったと後続分析で整理された。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Transnational Crime in Southeast Asia",
+        "publisher": "USIP",
+        "date": "2024-05-01",
+        "url": "https://www.usip.org/sites/default/files/2024-05/ssg_transnational-crime-southeast-asia.pdf"
+      }
+    ]
+  },
+  {
+    "date": "2023-12-08",
+    "type": "crackdown",
+    "location_id": "mekong_region",
+    "title_ja": "INTERPOL『Storm Makers II』結果公表",
+    "summary_ja": "27か国で281人逮捕、149人保護、360件超の捜査を開始し、東南アジア詐欺センターにつながる移送ルートを集中的に扱った。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "INTERPOL operation reveals further insights into 'globalization' of cyber scam centres",
+        "publisher": "INTERPOL",
+        "date": "2023-12-08",
+        "url": "https://www.interpol.int/News-and-Events/News/2023/INTERPOL-operation-reveals-further-insights-into-globalization-of-cyber-scam-centres"
+      }
+    ]
+  },
+  {
+    "date": "2024-01-15",
+    "type": "report",
+    "location_id": "mekong_region",
+    "title_ja": "UNODCがカジノ・暗号資産・地下銀行の接続を整理",
+    "summary_ja": "カジノや違法オンライン賭博、暗号資産交換がメコン圏の資金洗浄とサイバー詐欺を加速させていると報告した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Casinos and cryptocurrency: major drivers of money laundering, underground banking, and cyberfraud in East and Southeast Asia",
+        "publisher": "UNODC",
+        "date": "2024-01-15",
+        "url": "https://www.unodc.org/roseap/en/2024/casinos-casinos-cryptocurrency-underground-banking/story.html"
+      }
+    ]
+  },
+  {
+    "date": "2024-03-03",
+    "type": "rescue",
+    "location_id": "myawaddy_maesot",
+    "title_ja": "ミャワディから約900人がメーソート経由で中国へ送還",
+    "summary_ja": "国境詐欺拠点から移送された人々が、タイを経由して中国へ送還された。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Thailand facilitates transfer of 900 scam victims from Myanmar to China",
+        "publisher": "Reuters",
+        "date": "2024-03-03",
+        "url": "https://www.reuters.com/world/asia-pacific/thailand-facilitates-transfer-900-scam-victims-myanmar-china-2024-03-03/"
+      }
+    ]
+  },
+  {
+    "date": "2025-01-24",
+    "type": "policy",
+    "location_id": "myawaddy_maesot",
+    "title_ja": "タイと中国が詐欺ネットワーク対策の調整センター設置で合意",
+    "summary_ja": "バンコクとメーソートでの連携強化が報じられ、国境地帯への共同対応が制度化された。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Thailand, China set up coordination centre to combat scam call networks",
+        "publisher": "Reuters",
+        "date": "2025-01-24",
+        "url": "https://www.reuters.com/world/asia-pacific/thailand-china-set-up-coordination-centre-combat-scam-call-networks-2025-01-24/"
+      }
+    ]
+  },
+  {
+    "date": "2025-02-05",
+    "type": "infrastructure",
+    "location_id": "myawaddy_maesot",
+    "title_ja": "タイがミャンマー国境側5地域への電力・通信・燃料供給を遮断",
+    "summary_ja": "タイ当局は詐欺センター対策として、ミャンマー国境側の一部地域に対する電力、インターネット、燃料供給を遮断した。以後、発電機、燃料、衛星通信などの代替インフラが焦点になる。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Thailand cuts power supplies to Myanmar border towns in effort to curb scam rings",
+        "publisher": "Associated Press",
+        "date": "2025-02-05",
+        "url": "https://apnews.com/article/0cfdfb57aa2e05e5835b1af3b4ac8e1a"
+      }
+    ]
+  },
+  {
+    "date": "2025-02-23",
+    "type": "rescue",
+    "location_id": "poipet_border",
+    "title_ja": "ポイペト共同作戦で215人を解放",
+    "summary_ja": "タイとカンボジアの共同作戦により、ポイペトの建物から215人が解放された。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Thai, Cambodian police free 215 foreigners in scam centre raid",
+        "publisher": "Reuters",
+        "date": "2025-02-23",
+        "url": "https://www.reuters.com/world/asia-pacific/thai-cambodian-police-free-215-foreigners-scam-centre-raid-2025-02-23/"
+      }
+    ]
+  },
+  {
+    "date": "2025-04-16",
+    "type": "displacement",
+    "location_id": "myawaddy_maesot",
+    "title_ja": "IOMがタイ–ミャンマー国境滞留被害者の帰還支援資金を緊急要請",
+    "summary_ja": "摘発後に国境で滞留した被害者の帰還・保護・再被害防止が新たな危機となった。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "IOM Urgently Seeks USD 2.5 Million to Repatriate Victims of Trafficking for Forced Criminality Stranded Along Thai-Myanmar Border",
+        "publisher": "IOM Thailand",
+        "date": "2025-04-16",
+        "url": "https://thailand.iom.int/news/iom-urgently-seeks-usd-25-million-repatriate-victims-trafficking-forced-criminality-stranded-along-thai-myanmar-border"
+      }
+    ]
+  },
+  {
+    "date": "2025-04-21",
+    "type": "report",
+    "location_id": "mekong_region",
+    "title_ja": "UNODC『Inflection Point』公表",
+    "summary_ja": "SEZや国境地帯に点在する詐欺複合体が取り締まりで消えるのではなく、別地域へ移動・再出現する相互接続エコシステムだと整理した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Cyberfraud in the Mekong reaches inflection point, UNODC reveals",
+        "publisher": "UNODC",
+        "date": "2025-04-21",
+        "url": "https://www.unodc.org/roseap/en/2025/04/cyberfraud-inflection-point-mekong/story.html"
+      }
+    ]
+  },
+  {
+    "date": "2025-05-05",
+    "type": "sanction",
+    "location_id": "myawaddy_maesot",
+    "title_ja": "米財務省がKNAを制裁",
+    "summary_ja": "KNAが土地賃貸、警備、公益供給、人身取引を通じて国境詐欺複合体を支えていると認定した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Treasury Sanctions Burma Warlord and Militia Tied to Cyber Scam Operations",
+        "publisher": "U.S. Department of the Treasury",
+        "date": "2025-05-05",
+        "url": "https://home.treasury.gov/news/press-releases/sb0129"
+      }
+    ]
+  },
+  {
+    "date": "2025-06-26",
+    "type": "report",
+    "location_id": "mekong_region",
+    "title_ja": "Amnestyがカンボジアで53か所の詐欺複合体を特定",
+    "summary_ja": "2022年以降のカンボジア国内で53か所の詐欺複合体を確認し、半数近くがカジノと結び付くとした。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "I Was Someone Else's Property",
+        "publisher": "Amnesty International",
+        "date": "2025-06-26",
+        "url": "https://www.amnesty.org/en/wp-content/uploads/2025/06/ASA2394472025ENGLISH.pdf"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-14",
+    "type": "sanction",
+    "location_id": "sihanoukville",
+    "title_ja": "英国がカンボジア主要ネットワークに制裁",
+    "summary_ja": "Prince GroupやJin Bei関連を含む複数主体について、詐欺センター運営と深刻な人権侵害への関与を理由に制裁文書を公表した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Global Human Rights - Financial Sanctions Notice",
+        "publisher": "UK Government",
+        "date": "2025-10-14",
+        "url": "https://assets.publishing.service.gov.uk/media/68edf4d5e7b6794c076bbdc1/Notice_Global_Human_Rights_141025.pdf"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-12",
+    "type": "entity",
+    "location_id": "myawaddy_maesot",
+    "title_ja": "佘智江がタイから中国へ引き渡される",
+    "summary_ja": "2022年の逮捕から3年以上の法廷闘争を経て、佘智江が2025年11月12日に中国へ引き渡されたと報じられた。Shwe Kokko / 亜太新城系統の人物レイヤーを時系列で追うための補助点。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Thailand extradites gambling kingpin She Zhijiang to China",
+        "publisher": "Reuters via GMA News",
+        "date": "2025-11-12",
+        "url": "https://www.gmanetwork.com/news/topstories/world/965864/thailand-extradites-gambling-kingpin-she-zhijiang-to-china/story/"
+      }
+    ]
+  },
+  {
+    "date": "2026-01-16",
+    "type": "displacement",
+    "location_id": "bavet_chreythum_corridor",
+    "title_ja": "バベットを含む複数拠点で大量解放・逃走映像が出現",
+    "summary_ja": "Amnestyはバベットを含む少なくとも10拠点での映像を地理特定し、再トラフィッキングの危険を警告した。",
+    "confidence": "reported",
+    "sources": [
+      {
+        "title": "Cambodia: Victims must be protected as thousands 'leave scamming compounds'",
+        "publisher": "Amnesty International",
+        "date": "2026-01-16",
+        "url": "https://www.amnesty.org/en/latest/news/2026/01/cambodia-victims-must-be-protected-as-thousands-leave-scamming-compounds/"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-02",
+    "type": "investigation",
+    "location_id": "northern_cambodia_border_belt",
+    "title_ja": "オスマッチ周辺の旧複合体から詐欺運営証拠が回収されたと報道",
+    "summary_ja": "スクリプト、SIM、偽警察室、制服等が回収されたとされたが、紛争条件下の軍公開に依存するため慎重な扱いが必要。",
+    "confidence": "under_investigation",
+    "sources": [
+      {
+        "title": "Cambodian scam compound yields trove of fraud evidence, Thai military says",
+        "publisher": "Reuters",
+        "date": "2026-02-02",
+        "url": "https://www.reuters.com/world/asia-pacific/cambodian-scam-compound-yields-trove-fraud-evidence-thai-military-says-2026-02-02/"
+      }
+    ]
+  },
+  {
+    "date": "2026-02-20",
+    "type": "report",
+    "location_id": "mekong_region",
+    "title_ja": "OHCHRが更新報告を公表",
+    "summary_ja": "詐欺運営地の約4分の3がメコン地域にあり、国境職員関与、警察の脅迫・恐喝、拷問、食料剥奪、再販売などを記録した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "UN report details grave abuses against those trafficked into scam centres",
+        "publisher": "OHCHR",
+        "date": "2026-02-20",
+        "url": "https://www.ohchr.org/en/press-releases/2026/02/un-report-details-grave-abuses-against-those-trafficked-scam-centres"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-03",
+    "type": "policy",
+    "location_id": "mekong_region",
+    "title_ja": "カンボジア議会が専用のサイバー犯罪法を可決",
+    "summary_ja": "詐欺勧誘、組織犯罪、人身取引、資金洗浄を含むオンライン詐欺産業を対象にした初の包括法。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Cambodian parliament passes landmark cybercrime law after scam centre scrutiny",
+        "publisher": "Reuters",
+        "date": "2026-04-03",
+        "url": "https://www.reuters.com/world/asia-pacific/cambodian-parliament-passes-landmark-cybercrime-law-after-scam-centre-scrutiny-2026-04-03/"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-23",
+    "type": "sanction",
+    "location_id": "poipet_border",
+    "title_ja": "米財務省がKok Anネットワークを制裁",
+    "summary_ja": "カンボジア上院議員Kok Anと関連ネットワークが、米国人被害者を含む詐欺ネットワークと結び付くとして制裁・差押え対象となった。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Treasury Sanctions Cambodian Senator Kok An and Scam Center Network Defrauding Americans",
+        "publisher": "U.S. Department of the Treasury",
+        "date": "2026-04-23",
+        "url": "https://home.treasury.gov/news/press-releases/sb0469"
+      }
+    ]
+  },
+  {
+    "date": "2024-03-13",
+    "type": "crackdown",
+    "location_id": "central_luzon_pogo_corridor",
+    "title_ja": "中央ルソンの大規模POGO摘発",
+    "summary_ja": "バンバンで875人が救出・確保され、中央ルソン回廊が旧POGO問題の全国的象徴として浮上した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "875 workers rescued in Tarlac POGO raid",
+        "publisher": "Philippine News Agency",
+        "date": "2024-03-13",
+        "url": "https://www.pna.gov.ph/articles/1220694"
+      }
+    ]
+  },
+  {
+    "date": "2024-06-13",
+    "type": "policy",
+    "location_id": "central_luzon_pogo_corridor",
+    "title_ja": "フィリピンで違法POGO一斉取締りが本格化",
+    "summary_ja": "PAGCOR会長は無許可POGOが250〜300社あると述べ、大規模摘発の継続方針を示した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Philippines cracks down on illegal offshore gambling firms",
+        "publisher": "Reuters",
+        "date": "2024-06-13",
+        "url": "https://www.reuters.com/world/asia-pacific/philippines-cracks-down-illegal-offshore-gambling-firms-2024-06-13/"
+      }
+    ]
+  },
+  {
+    "date": "2024-07-02",
+    "type": "policy",
+    "location_id": "singapore_metro_financial_node",
+    "title_ja": "シンガポールがAML立証要件の緩和を提案",
+    "summary_ja": "海外詐欺・海外オンライン賭博由来の資金洗浄を追いやすくするため、資金の完全なトレースを不要にする法改正案が提示された。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Singapore aims to make it easier to prosecute money laundering cases",
+        "publisher": "Reuters",
+        "date": "2024-07-02",
+        "url": "https://www.reuters.com/world/asia-pacific/singapore-aims-make-it-easier-prosecute-money-laundering-cases-2024-07-02/"
+      }
+    ]
+  },
+  {
+    "date": "2024-07-22",
+    "type": "policy",
+    "location_id": "south_metro_manila_corridor",
+    "title_ja": "マルコス大統領がPOGO全面禁止を表明",
+    "summary_ja": "POGOが詐欺、資金洗浄、人身取引などに広がったと大統領が説明し、全面禁止を発表した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Philippines' Marcos bans offshore gaming operators",
+        "publisher": "Reuters",
+        "date": "2024-07-22",
+        "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-orders-closure-offshore-gaming-industry-2024-07-22/"
+      }
+    ]
+  },
+  {
+    "date": "2024-07-23",
+    "type": "policy",
+    "location_id": "south_metro_manila_corridor",
+    "title_ja": "PAGCORがPOGOライセンス取消し手続を開始",
+    "summary_ja": "全面禁止方針を受け、PAGCORがPOGOライセンスの取り消しと外国人労働者の整理を進めた。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Philippines to start winding down operations of offshore gaming hubs",
+        "publisher": "Reuters",
+        "date": "2024-07-23",
+        "url": "https://www.reuters.com/markets/asia/philippines-start-winding-down-operations-offshore-gaming-hubs-2024-07-23/"
+      }
+    ]
+  },
+  {
+    "date": "2025-02-26",
+    "type": "rescue",
+    "location_id": "kuala_lumpur_klia_corridor",
+    "title_ja": "カンボジアで60人のマレーシア人被害者が救出",
+    "summary_ja": "マレーシア外務省は、カンボジア当局により60人のマレーシア人が就労詐欺案件で救出されたと公表した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Malaysians Rescued From Job Scam Syndicate In Cambodia",
+        "publisher": "Ministry of Foreign Affairs Malaysia",
+        "date": "2025-02-26",
+        "url": "https://www.kln.gov.my/web/guest/-/malaysians-rescued-from-job-scam-syndicate-in-cambodia"
+      }
+    ]
+  },
+  {
+    "date": "2025-02-27",
+    "type": "crackdown",
+    "location_id": "south_metro_manila_corridor",
+    "title_ja": "パサイで400人超の外国人を摘発",
+    "summary_ja": "南メトロマニラの違法POGO拠点で、暗号資産詐欺、投資詐欺、恋愛詐欺、スパム送信が確認された。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Over 400 POGO workers nabbed in Pasay scam hub",
+        "publisher": "Philippine News Agency",
+        "date": "2025-02-27",
+        "url": "https://www.pna.gov.ph/articles/1244996"
+      }
+    ]
+  },
+  {
+    "date": "2025-03-12",
+    "type": "rescue",
+    "location_id": "kuala_lumpur_klia_corridor",
+    "title_ja": "ミャンマーから25人のマレーシア人被害者が国境到着",
+    "summary_ja": "マレーシア政府は、ミャンマーの就労詐欺案件から解放された25人が本国側国境に到着したと発表した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "25 Malaysian Victims Of Job Scam Syndicates In Myanmar Arrive At Border",
+        "publisher": "Ministry of Foreign Affairs Malaysia",
+        "date": "2025-03-12",
+        "url": "https://www.kln.gov.my/web/guest/-/25-malaysian-victims-of-job-scam-syndicates-in-myanmar-arrive-at-border?inheritRedirect=true"
+      }
+    ]
+  },
+  {
+    "date": "2025-03-18",
+    "type": "rescue",
+    "location_id": "jakarta_metro_enforcement_node",
+    "title_ja": "ミャワディ摘発後、500人超のインドネシア人がジャカルタへ帰還",
+    "summary_ja": "ミャンマー・ミャワディの詐欺拠点から解放された554人規模のインドネシア人が順次ジャカルタへ到着した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Indonesia to question more than 500 citizens freed from Myanmar scam centres",
+        "publisher": "Reuters",
+        "date": "2025-03-18",
+        "url": "https://www.reuters.com/world/asia-pacific/indonesia-question-more-than-500-citizens-freed-myanmar-scam-centres-2025-03-18/"
+      }
+    ]
+  },
+  {
+    "date": "2025-07-04",
+    "type": "policy",
+    "location_id": "singapore_metro_financial_node",
+    "title_ja": "MASが大規模資金洗浄事件で9金融機関へ措置",
+    "summary_ja": "2023年大型事件を受け、海外詐欺・オンライン賭博資金を扱った金融機関への処分が公表された。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Singapore monetary authority penalises 9 banks, institutions for 2023 money laundering case",
+        "publisher": "Reuters",
+        "date": "2025-07-04",
+        "url": "https://www.reuters.com/markets/us/singapore-monetary-authority-penalises-9-banks-institutions-2023-money-2025-07-04/"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-09",
+    "type": "crackdown",
+    "location_id": "singapore_metro_financial_node",
+    "title_ja": "シンガポール・カンボジア共同摘発ライン",
+    "summary_ja": "シンガポール被害者を狙う政府職員なりすまし詐欺について、プノンペンの詐欺拠点に対する共同取締りが行われた。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "27 Singaporeans And Seven Malaysians Identified As Members Of Organised Crime Group Operating Out Of Scam Compound In Cambodia",
+        "publisher": "Singapore Police Force",
+        "date": "2025-10-29",
+        "url": "https://www.police.gov.sg/Media-Hub/News/2025/10/20251029_27_singaporeans_and_seven_malaysians_identified_as_members_-of_organised_crime"
+      }
+    ]
+  },
+  {
+    "date": "2025-09-11",
+    "type": "report",
+    "location_id": "oecusse_raeoa_corridor",
+    "title_ja": "UNODCがオエクシ＝アンベノへの犯罪的FDI浸透を警告",
+    "summary_ja": "東ティモールのRAEOAについて、詐欺センター活動の兆候と、オフショア賭博・トライアド系ネットワークとの連関が報告された。",
+    "confidence": "under_investigation",
+    "sources": [
+      {
+        "title": "Criminal foreign direct investment threatens Timor-Leste as organized crime targets vulnerable jurisdictions",
+        "publisher": "UNODC",
+        "date": "2025-09-11",
+        "url": "https://www.unodc.org/roseap/en/2025/09/timor-leste-organized-crime/story.html"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-22",
+    "type": "rescue",
+    "location_id": "jakarta_metro_enforcement_node",
+    "title_ja": "カンボジア案件で110人のインドネシア人の安全を確認",
+    "summary_ja": "インドネシア政府は、カンボジアのオンライン詐欺案件に関わる110人の安全を確認し、送還準備を進めた。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Indonesia confirms 110 citizens safe in Cambodia online scam case",
+        "publisher": "ANTARA News",
+        "date": "2025-10-22",
+        "url": "https://en.antaranews.com/news/387325/indonesia-confirms-110-citizens-safe-in-cambodia-online-scam-case"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-23",
+    "type": "policy",
+    "location_id": "south_metro_manila_corridor",
+    "title_ja": "Anti-POGO Act of 2025 が成立",
+    "summary_ja": "2024年の禁止方針を恒久化し、POGO関連事業を違法化する法律が成立した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Republic Act No. 12312",
+        "publisher": "LawPhil",
+        "date": "2025-10-23",
+        "url": "https://lawphil.net/statutes/repacts/ra2025/ra_12312_2025.html"
+      }
+    ]
+  },
+  {
+    "date": "2025-10-29",
+    "type": "investigation",
+    "location_id": "singapore_metro_financial_node",
+    "title_ja": "シンガポール警察がカンボジア拠点組織の追加容疑者34人を公表",
+    "summary_ja": "プノンペン拠点とされる組織について、27人のシンガポール人と7人のマレーシア人に逮捕状が出た。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "27 Singaporeans And Seven Malaysians Identified As Members Of Organised Crime Group Operating Out Of Scam Compound In Cambodia",
+        "publisher": "Singapore Police Force",
+        "date": "2025-10-29",
+        "url": "https://www.police.gov.sg/Media-Hub/News/2025/10/20251029_27_singaporeans_and_seven_malaysians_identified_as_members_-of_organised_crime"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-20",
+    "type": "policy",
+    "location_id": "central_luzon_pogo_corridor",
+    "title_ja": "バンバン事件で元町長アリス・グオに終身刑",
+    "summary_ja": "中央ルソンの旧POGO/詐欺センター事件が、人身取引事件として重い刑事帰結に至った。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Ex-Philippine mayor Alice Guo given life sentence for human trafficking",
+        "publisher": "Reuters",
+        "date": "2025-11-20",
+        "url": "https://www.reuters.com/world/asia-pacific/ex-philippine-mayor-alice-guo-given-life-sentence-human-trafficking-2025-11-20/"
+      }
+    ]
+  },
+  {
+    "date": "2025-11-25",
+    "type": "rescue",
+    "location_id": "palawan_sabah_maritime_corridor",
+    "title_ja": "ミャンマーから7人のフィリピン人被害者が帰還",
+    "summary_ja": "タウィタウィからマレーシア、メーソート、ミャンマーへ至る移送経路が公式送還事例で具体的に示された。",
+    "confidence": "reported",
+    "sources": [
+      {
+        "title": "BI reports arrival of seven trafficking victims repatriated from scam hubs",
+        "publisher": "Bureau of Immigration Philippines",
+        "date": "2025-11-25",
+        "url": "https://immigration.gov.ph/bi-reports-arrival-of-seven-trafficking-victims-repatriated-from-scam-hubs/"
+      }
+    ]
+  },
+  {
+    "date": "2025-12-30",
+    "type": "policy",
+    "location_id": "singapore_metro_financial_node",
+    "title_ja": "シンガポールで詐欺関連犯罪への鞭打ち刑が施行",
+    "summary_ja": "詐欺組織構成員・リクルーター・マネーミュールに対する新たな刑事抑止が発効した。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Commencement of the Criminal Law (Miscellaneous Amendments) Act 2025",
+        "publisher": "Ministry of Home Affairs Singapore",
+        "date": "2025-12-19",
+        "url": "https://www.mha.gov.sg/media-room/newsroom/commencement-of-the-criminal-law-miscellaneous-amendments-act-2025/"
+      }
+    ]
+  },
+  {
+    "date": "2026-03-03",
+    "type": "investigation",
+    "location_id": "singapore_metro_financial_node",
+    "title_ja": "Prince Group関連でシンガポール人3人を逮捕",
+    "summary_ja": "カンボジア系大規模詐欺組織の資金洗浄捜査で、シンガポール国内の関連者逮捕と資産押収が進んだ。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Police Arrest Three Singaporeans In Money Laundering Investigation Relating To Transnational Scam Syndicate Prince Holding Group",
+        "publisher": "Singapore Police Force",
+        "date": "2026-03-03",
+        "url": "https://www.police.gov.sg/media-hub/news/2026/03/20260303_police_arrest_three_singaporeans_in_money_laundering_investigation"
+      },
+      {
+        "title": "Singapore police announce arrest of 3 linked to alleged scam syndicate Prince Group",
+        "publisher": "Reuters",
+        "date": "2026-03-05",
+        "url": "https://www.reuters.com/world/china/singapore-police-announce-arrest-3-linked-alleged-scam-syndicate-prince-group-2026-03-05/"
+      }
+    ]
+  },
+  {
+    "date": "2026-04-10",
+    "type": "enforcement",
+    "location_id": "singapore_metro_financial_node",
+    "title_ja": "カンボジアから送還されたシンガポール人を起訴",
+    "summary_ja": "海外詐欺オペレーションとマネーミュール行為に関与した疑いで、カンボジア送還後に国内起訴が行われた。",
+    "confidence": "documented",
+    "sources": [
+      {
+        "title": "Man To Be Charged For Scam-Related Offences",
+        "publisher": "Singapore Police Force",
+        "date": "2026-04-10",
+        "url": "https://www.police.gov.sg/Media-Hub/News/2026/04/20260410_man_to_be_charged_for_scam_related_offences"
+      }
+    ]
+  }
+]

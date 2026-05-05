@@ -1,0 +1,1101 @@
+[
+  {
+    "id": "mekong_region",
+    "name_ja": "メコン圏広域",
+    "countries": [
+      "ミャンマー",
+      "タイ",
+      "中国",
+      "ラオス",
+      "カンボジア",
+      "ベトナム"
+    ],
+    "coordinates": [
+      16.2,
+      102.4
+    ],
+    "display_precision_note": "ホットスポットではなく広域レポート・政策イベント用の補助ノード。地域中心の概算。",
+    "border_context": "メコン圏全体の越境詐欺・人身取引・地下金融の広域レイヤー。",
+    "risk_factors": [
+      "越境移転",
+      "地下銀行・暗号資産",
+      "法執行の非対称性",
+      "被害者保護の格差",
+      "SEZ・国境地帯の連結"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "広域報告と政策イベントを紐づける分析用ノード。OHCHR、UNODC、INTERPOLはいずれもメコン圏を詐欺運営の中心地域として扱う。",
+    "case_study": {
+      "title": "世界から人が集められ、メコン圏で強制犯罪労働になる",
+      "inflow": "偽のIT職、カスタマーサポート、投資関連職の求人で、東アジア、南アジア、アフリカなどから人がメコン圏へ流入する。",
+      "incident": "OHCHRは2023年、ミャンマーで少なくとも12万人、カンボジアで約10万人がオンライン詐欺への強制関与状態にある可能性を示した。INTERPOLのStorm Makers IIでは27カ国で281人が逮捕され、149人が保護された。",
+      "harm": "だまされた労働者は被害者であると同時に、暴力や脅迫の下で世界中の別の被害者を詐欺にかけさせられる。",
+      "sources": [
+        {
+          "title": "Hundreds of thousands trafficked into online criminality across SE Asia",
+          "publisher": "UN Geneva / OHCHR",
+          "date": "2023-08-29",
+          "url": "https://www.ungeneva.org/en/news-media/news/2023/08/84386/hundreds-thousands-trafficked-online-criminality-across-se-asia"
+        },
+        {
+          "title": "INTERPOL operation reveals further insights into 'globalization' of cyber scam centres",
+          "publisher": "INTERPOL",
+          "date": "2023-11-27",
+          "url": "https://www.interpol.int/en/News-and-Events/News/2023/INTERPOL-operation-reveals-further-insights-into-globalization-of-cyber-scam-centres"
+        }
+      ]
+    },
+    "layer_tags": [
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "UN report details grave abuses against those trafficked into scam centres",
+        "publisher": "OHCHR",
+        "date": "2026-02-20",
+        "url": "https://www.ohchr.org/en/press-releases/2026/02/un-report-details-grave-abuses-against-those-trafficked-scam-centres"
+      },
+      {
+        "title": "Cyberfraud in the Mekong reaches inflection point, UNODC reveals",
+        "publisher": "UNODC",
+        "date": "2025-04-21",
+        "url": "https://www.unodc.org/roseap/en/2025/04/cyberfraud-inflection-point-mekong/story.html"
+      },
+      {
+        "title": "INTERPOL issues global warning on human trafficking-fueled fraud",
+        "publisher": "INTERPOL",
+        "date": "2023-06-07",
+        "url": "https://www.interpol.int/News-and-Events/News/2023/INTERPOL-issues-global-warning-on-human-trafficking-fueled-fraud"
+      }
+    ],
+    "lecture_framework_tags": [
+      {
+        "framework_id": "lin_yifu_structural_conditions",
+        "lens": "地縁",
+        "note": "メコン流域の地理的結節性そのものを比較優位条件として読む。"
+      },
+      {
+        "framework_id": "geertz_agricultural_involution",
+        "lens": "内向き精緻化",
+        "note": "広域への外延的拡張ではなく、既存施設・既存ネットワーク内での労働の精緻化が深まる構図。"
+      }
+    ]
+  },
+  {
+    "id": "myawaddy_maesot",
+    "name_ja": "ミャワディ–メーソート国境圏",
+    "countries": [
+      "ミャンマー",
+      "タイ"
+    ],
+    "coordinates": [
+      16.72,
+      98.57
+    ],
+    "display_precision_note": "精密施設ではなくミャワディ–メーソート都市圏の概算中心。河川渡河点や特定敷地を示さない。",
+    "border_context": "タイ–ミャンマー国境の主要越境都市圏。Karen州側複合体とタイ側後背地が結び付く。",
+    "risk_factors": [
+      "武装勢力・民兵の保護",
+      "越境電力・通信依存",
+      "偽求人からの越境移送",
+      "摘発後の国境滞留",
+      "人身取引・密輸"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "メコン圏の最重要ノード。武装保護、越境インフラ、人身取引、詐欺拠点、救出後の人道危機が重なる。",
+    "case_study": {
+      "title": "国外からの求人誘引と、タイ側インフラ依存が同じ国境で交差する",
+      "inflow": "中国語圏の被害者・運営者、タイ側からの電力・通信・燃料、国境をまたぐ移送網がミャワディ側の施設稼働を支える。",
+      "incident": "2025年1月には中国人俳優の王星がタイでの仕事を装った誘引後にミャンマー側へ連れ込まれたと報じられ、同年2月にタイはミャンマー側5地域への電力・通信・燃料供給を遮断した。",
+      "harm": "被害者は旅券没収、訓練、暴力、帰国不能に直面し、拠点からは暗号資産・恋愛・投資詐欺が国外へ向けて実行される。",
+      "sources": [
+        {
+          "title": "Thai police say Chinese actor was trafficked to Myanmar to work in a scam operation",
+          "publisher": "Associated Press",
+          "date": "2025-01-09",
+          "url": "https://apnews.com/article/b1d6ac8d3d65446a7e82410bc9bf8b3e"
+        },
+        {
+          "title": "Thailand cuts power supplies to Myanmar border towns in effort to curb scam rings",
+          "publisher": "Associated Press",
+          "date": "2025-02-05",
+          "url": "https://apnews.com/article/0cfdfb57aa2e05e5835b1af3b4ac8e1a"
+        }
+      ]
+    },
+    "layer_tags": [
+      "border_risk",
+      "reported_compound",
+      "casino_sez",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Treasury Sanctions Burma Warlord and Militia Tied to Cyber Scam Operations",
+        "publisher": "U.S. Department of the Treasury",
+        "date": "2025-05-05",
+        "url": "https://home.treasury.gov/news/press-releases/sb0129"
+      },
+      {
+        "title": "Cyberfraud in the Mekong reaches inflection point, UNODC reveals",
+        "publisher": "UNODC",
+        "date": "2025-04-21",
+        "url": "https://www.unodc.org/roseap/en/2025/04/cyberfraud-inflection-point-mekong/story.html"
+      },
+      {
+        "title": "IOM Urgently Seeks USD 2.5 Million to Repatriate Victims of Trafficking for Forced Criminality Stranded Along Thai-Myanmar Border",
+        "publisher": "IOM Thailand",
+        "date": "2025-04-16",
+        "url": "https://thailand.iom.int/news/iom-urgently-seeks-usd-25-million-repatriate-victims-trafficking-forced-criminality-stranded-along-thai-myanmar-border"
+      }
+    ],
+    "lecture_framework_tags": [
+      {
+        "framework_id": "lin_yifu_structural_conditions",
+        "lens": "地縁・資源・制度",
+        "note": "中緬泰の三国境結節（地縁）／タイ側からの電力・通信・燃料供給（資源）／ミャンマー側ガバナンス例外（制度）が重なる古典的事例。"
+      },
+      {
+        "framework_id": "geertz_agricultural_involution",
+        "lens": "労働過程",
+        "note": "監禁・暴力・ノルマの細分化と精緻化＝詐欺園区における内向き精緻化の代表例。"
+      }
+    ]
+  },
+  {
+    "id": "north_shan_yunnan",
+    "name_ja": "北シャン州–雲南境界広域",
+    "countries": [
+      "ミャンマー",
+      "中国"
+    ],
+    "coordinates": [
+      23.95,
+      98.75
+    ],
+    "display_precision_note": "コーカン・ラウッカイ・周辺中国語圏カジノ地帯を含む広域中心。特定複合体は示さない。",
+    "border_context": "中国雲南省に接するミャンマー北東部の国境経済圏。",
+    "risk_factors": [
+      "自治的国境経済圏",
+      "中国語圏オンライン賭博・詐欺",
+      "武装勢力・クラン保護",
+      "取り締まり後の南方移転",
+      "資金・人員供給拠点"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "歴史的な中国語圏詐欺・賭博経済の中心。2023年後半以降の圧力で他地域への拡散の起点にもなった。",
+    "case_study": {
+      "title": "中国側の取り締まり圧力が、詐欺拠点の南下を生む",
+      "inflow": "雲南側に近い中国語圏カジノ・オンライン賭博ネットワーク、労働者、資金が北シャン州側の国境経済に入り込む。",
+      "incident": "USIPは、中国側の2023年後半の国境取り締まりにより、ミャンマー北部の詐欺拠点の一部がカレン州、カンボジア、ラオスへ移ったと整理している。",
+      "harm": "一地域の摘発だけでは労働者と運営ノウハウが別の国境へ移り、被害者保護が追いつかないまま犯罪機能だけが再配置される。",
+      "sources": [
+        {
+          "title": "Transnational Crime in Southeast Asia",
+          "publisher": "U.S. Institute of Peace",
+          "date": "2024-05-13",
+          "url": "https://www.usip.org/publications/2024/05/transnational-crime-southeast-asia-growing-threat-global-peace-and-security"
+        }
+      ]
+    },
+    "layer_tags": [
+      "border_risk",
+      "reported_compound",
+      "casino_sez",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Transnational Crime in Southeast Asia",
+        "publisher": "USIP",
+        "date": "2024-05-01",
+        "url": "https://www.usip.org/sites/default/files/2024-05/ssg_transnational-crime-southeast-asia.pdf"
+      },
+      {
+        "title": "Casinos and cryptocurrency: major drivers of money laundering, underground banking, and cyberfraud in East and Southeast Asia",
+        "publisher": "UNODC",
+        "date": "2024-01-15",
+        "url": "https://www.unodc.org/roseap/en/2024/casinos-casinos-cryptocurrency-underground-banking/story.html"
+      },
+      {
+        "title": "China executes 4 more members of Myanmar-based group in crackdown on scam operations",
+        "publisher": "AP",
+        "date": "2026-02-02",
+        "url": "https://apnews.com/article/921c142fc375dd11b9d135f4e2183716"
+      }
+    ]
+  },
+  {
+    "id": "golden_triangle_sez",
+    "name_ja": "ゴールデン・トライアングルSEZ周辺",
+    "countries": [
+      "ラオス",
+      "タイ",
+      "ミャンマー"
+    ],
+    "coordinates": [
+      20.35,
+      100.08
+    ],
+    "display_precision_note": "SEZ周辺の三国境圏中心。個別カジノ施設は示さない。",
+    "border_context": "ラオス北西部のSEZを中心とする三国境地帯。",
+    "risk_factors": [
+      "SEZの統治例外",
+      "カジノ中心経済",
+      "地下銀行・資金洗浄",
+      "中国語圏商流",
+      "越境逃避・再配置余地"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "カジノ/SEZ型犯罪統治の早期典型。後年の詐欺拠点・地下金融分析でも繰り返し重要ノードとして参照される。",
+    "case_study": {
+      "title": "中国系SEZ資本とカジノが、詐欺・密輸・人身取引の足場になる",
+      "inflow": "香港・中国本土と接続するカジノ資本、観光・賭博需要、国境を越える労働者がゴールデン・トライアングルSEZに集まる。",
+      "incident": "米財務省は2018年にZhao Weiネットワークを制裁し、2024年8月にはラオス・中国当局がSEZ内の違法コールセンター摘発で多数を拘束したとRFAが報じた。",
+      "harm": "働きに来た人が詐欺業務に転用されるだけでなく、薬物、野生生物、人身取引、資金洗浄が同じカジノ経済に重なる。",
+      "sources": [
+        {
+          "title": "Treasury Sanctions the Zhao Wei Transnational Criminal Organization",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2018-01-30",
+          "url": "https://home.treasury.gov/news/press-releases/sm0272"
+        },
+        {
+          "title": "Lao and Chinese security forces raid call centers in the Golden Triangle",
+          "publisher": "Radio Free Asia",
+          "date": "2024-08-21",
+          "url": "https://www.rfa.org/english/news/laos/golden-triangle-call-centers-raid-08212024154847.html"
+        }
+      ]
+    },
+    "layer_tags": [
+      "border_risk",
+      "casino_sez",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Treasury Sanctions the Zhao Wei Transnational Criminal Organization",
+        "publisher": "U.S. Department of the Treasury",
+        "date": "2018-01-30",
+        "url": "https://home.treasury.gov/news/press-releases/sm0272"
+      },
+      {
+        "title": "Casinos and cryptocurrency: major drivers of money laundering, underground banking, and cyberfraud in East and Southeast Asia",
+        "publisher": "UNODC",
+        "date": "2024-01-15",
+        "url": "https://www.unodc.org/roseap/en/2024/casinos-casinos-cryptocurrency-underground-banking/story.html"
+      },
+      {
+        "title": "Transnational Crime in Southeast Asia",
+        "publisher": "USIP",
+        "date": "2024-05-01",
+        "url": "https://www.usip.org/sites/default/files/2024-05/ssg_transnational-crime-southeast-asia.pdf"
+      }
+    ],
+    "lecture_framework_tags": [
+      {
+        "framework_id": "lin_yifu_structural_conditions",
+        "lens": "制度",
+        "note": "ラオス側のSEZ制度設計と中緬泰三国境という地縁条件が組み合わさるケース。林毅夫の制度配置軸で読む。"
+      }
+    ]
+  },
+  {
+    "id": "poipet_border",
+    "name_ja": "ポイペト都市圏",
+    "countries": [
+      "カンボジア",
+      "タイ"
+    ],
+    "coordinates": [
+      13.65,
+      102.57
+    ],
+    "display_precision_note": "国境市街地の概算中心。特定敷地・カジノ名は集約して扱う。",
+    "border_context": "タイとの主要陸路国境で、カジノ都市・越境人流・摘発が集中する都市圏。",
+    "risk_factors": [
+      "カジノ複合体",
+      "国境越境の容易さ",
+      "偽求人による流入",
+      "口座・資金洗浄補助疑惑",
+      "共同摘発後の再配置"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "タイ–カンボジア国境の主要詐欺リスク都市圏。共同摘発、サバイバー証言、制裁が重なっている。",
+    "case_study": {
+      "title": "南アジアや東アジアの人がポイペトの建物から一斉保護される",
+      "inflow": "タイ、パキスタン、インド、台湾、インドネシアなどからの労働者が、国境カジノ都市の詐欺拠点へ集められる。",
+      "incident": "2025年2月、タイ・カンボジア警察はポイペトの建物を捜索し、外国人215人を保護した。内訳にはタイ人109人、パキスタン人50人、インド人48人などが含まれる。",
+      "harm": "国境の合法的な人流とカジノ経済の影に、監禁、強制労働、越境送還、詐欺被害市場への接続が隠れる。",
+      "sources": [
+        {
+          "title": "Thai and Cambodian police free 215 foreigners in scam center raid",
+          "publisher": "Reuters via The Japan Times",
+          "date": "2025-02-23",
+          "url": "https://www.japantimes.co.jp/news/2025/02/23/asia-pacific/crime-legal/thailand-cambodia-tackle-scam-centers/"
+        },
+        {
+          "title": "Treasury Sanctions Cambodian Senator Kok An and Scam Center Network Defrauding Americans",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2026-04-23",
+          "url": "https://home.treasury.gov/news/press-releases/sb0469"
+        }
+      ]
+    },
+    "layer_tags": [
+      "border_risk",
+      "reported_compound",
+      "casino_sez",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Thai, Cambodian police free 215 foreigners in scam centre raid",
+        "publisher": "Reuters",
+        "date": "2025-02-23",
+        "url": "https://www.reuters.com/world/asia-pacific/thai-cambodian-police-free-215-foreigners-scam-centre-raid-2025-02-23/"
+      },
+      {
+        "title": "Cambodia: Casinos get state approval despite links to human rights abuse at scamming compounds",
+        "publisher": "Amnesty International",
+        "date": "2026-04-02",
+        "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+      },
+      {
+        "title": "Treasury Sanctions Cambodian Senator Kok An and Scam Center Network Defrauding Americans",
+        "publisher": "U.S. Department of the Treasury",
+        "date": "2026-04-23",
+        "url": "https://home.treasury.gov/news/press-releases/sb0469"
+      }
+    ]
+  },
+  {
+    "id": "bavet_chreythum_corridor",
+    "name_ja": "バベット–チュレイトム国境回廊",
+    "countries": [
+      "カンボジア",
+      "ベトナム"
+    ],
+    "coordinates": [
+      11.18,
+      105.9
+    ],
+    "display_precision_note": "個別施設ではなく、南東部国境回廊の概算中心。",
+    "border_context": "対ベトナム南東部国境のカジノ・物流・移送回廊。",
+    "risk_factors": [
+      "カジノ複合体への組み込み",
+      "越境移送",
+      "未成年被害",
+      "再販売・複合体間移送",
+      "逃走・大量離脱後の再被害"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "バベットとチュレイトムを含む対ベトナム国境回廊。認可カジノ複合体と詐欺複合体の重なりが詳細に示された。",
+    "case_study": {
+      "title": "認可カジノの建物内で、外国人被害者が拘束されたと証言する",
+      "inflow": "ベトナム国境のカジノ複合体へ、アフリカ、南アジア、東南アジアなどから偽求人被害者が運び込まれる。",
+      "incident": "Amnestyは2026年4月、Crown BavetやCrown Chrey Thomなどの認可カジノ複合体と、強制労働・拷問・未成年被害を含む詐欺拠点との重なりを確認したと公表した。",
+      "harm": "被害者は複合体間で移され、逃げた後も再販売や再拘束の危険にさらされ、詐欺の標的は国境の外側へ広がる。",
+      "sources": [
+        {
+          "title": "Cambodia: Casinos get state approval despite links to human rights abuse at scamming compounds",
+          "publisher": "Amnesty International",
+          "date": "2026-04-02",
+          "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+        }
+      ]
+    },
+    "layer_tags": [
+      "border_risk",
+      "reported_compound",
+      "casino_sez",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Cambodia: Casinos get state approval despite links to human rights abuse at scamming compounds",
+        "publisher": "Amnesty International",
+        "date": "2026-04-02",
+        "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+      },
+      {
+        "title": "Cambodia: Victims must be protected as thousands 'leave scamming compounds'",
+        "publisher": "Amnesty International",
+        "date": "2026-01-16",
+        "url": "https://www.amnesty.org/en/latest/news/2026/01/cambodia-victims-must-be-protected-as-thousands-leave-scamming-compounds/"
+      },
+      {
+        "title": "Cyberfraud in the Mekong reaches inflection point, UNODC reveals",
+        "publisher": "UNODC",
+        "date": "2025-04-21",
+        "url": "https://www.unodc.org/roseap/en/2025/04/cyberfraud-inflection-point-mekong/story.html"
+      }
+    ],
+    "lecture_framework_tags": [
+      {
+        "framework_id": "lin_yifu_structural_conditions",
+        "lens": "地縁",
+        "note": "カンボジア-ベトナム国境の結節性（地縁条件）と、両国側のガバナンス非対称（制度差）が重なる。"
+      }
+    ]
+  },
+  {
+    "id": "sihanoukville",
+    "name_ja": "シアヌークビル都市圏",
+    "countries": [
+      "カンボジア"
+    ],
+    "coordinates": [
+      10.63,
+      103.52
+    ],
+    "display_precision_note": "港湾都市圏中心の概算。個別ホテル・カジノ・港湾施設を指さない。",
+    "border_context": "陸上国境ではないが、港湾・カジノ・不動産・金融流の結節点。",
+    "risk_factors": [
+      "港湾・国際物流",
+      "不動産投機",
+      "カジノ・ホテル転用",
+      "ライセンス継続",
+      "摘発と再配置"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "沿岸港湾都市として、カンボジア型のカジノ・不動産・詐欺複合体が重なる代表地域。",
+    "case_study": {
+      "title": "空いたカジノ・ホテルが、監禁型の詐欺作業場へ転用される",
+      "inflow": "中国語圏の賭博・不動産資本、国外からの労働者、暗号資産と地下銀行の資金回路が沿岸都市に流れ込む。",
+      "incident": "USIPは、2020年後半以降にシアヌークビルなどの空いたカジノや周辺インフラが詐欺複合体へ急速に転用されたと分析し、Amnestyは2025年にカンボジア各地の53拠点を特定した。",
+      "harm": "都市開発の器が、監禁、強制労働、拷問、暗号資産投資詐欺、資金洗浄の実行基盤になる。",
+      "sources": [
+        {
+          "title": "Transnational Crime in Southeast Asia",
+          "publisher": "U.S. Institute of Peace",
+          "date": "2024-05-13",
+          "url": "https://www.usip.org/publications/2024/05/transnational-crime-southeast-asia-growing-threat-global-peace-and-security"
+        },
+        {
+          "title": "Cambodia: 'I was someone else's property'",
+          "publisher": "Amnesty International",
+          "date": "2025-06-26",
+          "url": "https://www.amnesty.org/en/documents/asa23/9447/2025/en/"
+        }
+      ]
+    },
+    "layer_tags": [
+      "reported_compound",
+      "casino_sez",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Transnational Crime in Southeast Asia",
+        "publisher": "USIP",
+        "date": "2024-05-01",
+        "url": "https://www.usip.org/sites/default/files/2024-05/ssg_transnational-crime-southeast-asia.pdf"
+      },
+      {
+        "title": "Cambodia: Casinos get state approval despite links to human rights abuse at scamming compounds",
+        "publisher": "Amnesty International",
+        "date": "2026-04-02",
+        "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+      },
+      {
+        "title": "Global Human Rights - Financial Sanctions Notice",
+        "publisher": "UK Government",
+        "date": "2025-10-14",
+        "url": "https://assets.publishing.service.gov.uk/media/68edf4d5e7b6794c076bbdc1/Notice_Global_Human_Rights_141025.pdf"
+      }
+    ],
+    "lecture_framework_tags": [
+      {
+        "framework_id": "lin_yifu_structural_conditions",
+        "lens": "地縁・資源",
+        "note": "タイ湾沿岸の海港資源と中国資本流入の制度的受け皿としての特区。"
+      },
+      {
+        "framework_id": "geertz_agricultural_involution",
+        "lens": "労働過程",
+        "note": "カジノ／コンドミニアム転用施設での詐欺労働も、外延的拡張ではなく既存の物理空間に労働が押し込まれて精緻化する内向き過程として読める。"
+      }
+    ]
+  },
+  {
+    "id": "northern_cambodia_border_belt",
+    "name_ja": "北部カンボジア国境帯",
+    "countries": [
+      "カンボジア",
+      "タイ"
+    ],
+    "coordinates": [
+      14.23,
+      103.58
+    ],
+    "display_precision_note": "紛争条件下の情報であるため、粗い国境帯中心のみ。",
+    "border_context": "オスマッチ周辺の遠隔国境帯。既知ハブからの移転先として注視。",
+    "risk_factors": [
+      "遠隔国境帯",
+      "紛争と取材制約",
+      "独立検証の難しさ",
+      "既知ハブからの移転",
+      "対タイ越境アクセス"
+    ],
+    "confidence": "under_investigation",
+    "last_updated": "2026-04-30",
+    "summary": "2026年の報道で大規模詐欺運営の痕跡が示されたが、軍公開と紛争状況に依存するため慎重表示が必要。",
+    "case_study": {
+      "title": "既知ハブから離れた国境帯に、詐欺拠点の痕跡が現れる",
+      "inflow": "取り締まりを受けた既存ハブから、人員、端末、台本、偽装設備がより遠隔の国境帯へ移った可能性がある。",
+      "incident": "2026年2月、ReutersとAPは、カンボジア北部国境付近の放棄施設から詐欺運営の証拠や模擬警察施設などが見つかったとするタイ軍側説明を報じた。",
+      "harm": "独立検証が難しい紛争・国境地帯では、被害者の所在確認、証拠保全、送還支援が遅れやすい。",
+      "sources": [
+        {
+          "title": "Cambodian scam compound yields trove of fraud evidence, Thai military says",
+          "publisher": "Reuters",
+          "date": "2026-02-02",
+          "url": "https://www.reuters.com/world/asia-pacific/cambodian-scam-compound-yields-trove-fraud-evidence-thai-military-says-2026-02-02/"
+        },
+        {
+          "title": "Images show abandoned belongings and mock police stations at a former scam center in Asia",
+          "publisher": "Associated Press",
+          "date": "2026-02-06",
+          "url": "https://apnews.com/article/d498544f426818e4f9633da9240f9def"
+        }
+      ]
+    },
+    "layer_tags": [
+      "border_risk",
+      "reported_compound",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Cambodian scam compound yields trove of fraud evidence, Thai military says",
+        "publisher": "Reuters",
+        "date": "2026-02-02",
+        "url": "https://www.reuters.com/world/asia-pacific/cambodian-scam-compound-yields-trove-fraud-evidence-thai-military-says-2026-02-02/"
+      },
+      {
+        "title": "Scammers' abandoned compound exposes brutality and banality of fraud",
+        "publisher": "Reuters",
+        "date": "2026-02-06",
+        "url": "https://www.reuters.com/world/china/scammers-abandoned-cambodia-compound-exposes-brutality-banality-fraud-2026-02-06/"
+      },
+      {
+        "title": "Images show abandoned belongings and mock police stations at a former scam center in Asia",
+        "publisher": "AP",
+        "date": "2026-02-06",
+        "url": "https://apnews.com/article/d498544f426818e4f9633da9240f9def"
+      }
+    ]
+  },
+  {
+    "id": "south_metro_manila_corridor",
+    "name_ja": "南メトロマニラ回廊",
+    "countries": [
+      "フィリピン"
+    ],
+    "coordinates": [
+      14.53,
+      121.0
+    ],
+    "display_precision_note": "精密施設ではなく、パサイ・パラニャーケ・マカティ・NAIA周辺を束ねた地域中心の概算。",
+    "border_context": "首都圏の違法POGO摘発、出入国インターセプト、送還・退去強制の結節点。",
+    "risk_factors": [
+      "違法POGOの地下化",
+      "空港経由の被害者移送",
+      "暗号資産・恋愛詐欺・投資詐欺の混在"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "POGO全面禁止後も、南メトロマニラは地下POGO摘発と出入国監視の中心として繰り返し登場する。",
+    "case_study": {
+      "title": "中国語圏向けオンライン賭博の器が、地下POGOと詐欺拠点に変わる",
+      "inflow": "海外向けオンライン賭博の資本、外国人労働者、決済・通信設備が首都圏のPOGO施設に集まる。",
+      "incident": "2024年7月、フィリピン大統領はPOGO全面禁止を発表し、詐欺、資金洗浄、人身取引などとの関連を問題視した。2025年にはパサイ周辺でも多数のPOGO関連摘発が続いた。",
+      "harm": "合法風の雇用や賭博施設が地下化すると、外国人労働者の監禁、国内外の詐欺、空港経由の移送が見えにくくなる。",
+      "sources": [
+        {
+          "title": "Philippines' Marcos bans offshore gaming operators",
+          "publisher": "Reuters",
+          "date": "2024-07-22",
+          "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-orders-closure-offshore-gaming-industry-2024-07-22/"
+        },
+        {
+          "title": "Over 400 POGO workers nabbed in Pasay scam hub",
+          "publisher": "Philippine News Agency",
+          "date": "2025-02-27",
+          "url": "https://www.pna.gov.ph/articles/1244996"
+        }
+      ]
+    },
+    "layer_tags": [
+      "casino_online_gambling",
+      "policy_enforcement",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Over 400 POGO workers nabbed in Pasay scam hub",
+        "publisher": "Philippine News Agency",
+        "date": "2025-02-27",
+        "url": "https://www.pna.gov.ph/articles/1244996"
+      },
+      {
+        "title": "PAOCC eyes raps vs. Pasay execs over rampant POGO presence",
+        "publisher": "Philippine News Agency",
+        "date": "2025-02-19",
+        "url": "https://www.pna.gov.ph/articles/1244411"
+      },
+      {
+        "title": "Philippines' Marcos bans offshore gaming operators",
+        "publisher": "Reuters",
+        "date": "2024-07-22",
+        "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-orders-closure-offshore-gaming-industry-2024-07-22/"
+      }
+    ]
+  },
+  {
+    "id": "central_luzon_pogo_corridor",
+    "name_ja": "中央ルソンPOGO回廊",
+    "countries": [
+      "フィリピン"
+    ],
+    "coordinates": [
+      15.3,
+      120.55
+    ],
+    "display_precision_note": "精密施設ではなく、バンバン・ポーラック・クラーク周辺を束ねた地域中心の概算。",
+    "border_context": "旧POGO/詐欺農場の摘発回廊。政策転換と象徴事件の集中地帯。",
+    "risk_factors": [
+      "旧POGO施設の流用",
+      "多国籍被害者・労働者",
+      "拠点摘発後の再配置リスク"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "中央ルソンは、2024年の大規模摘発とその後の法改正・政治汚職事件を通じて、フィリピンの旧POGO問題の象徴地域となった。",
+    "case_study": {
+      "title": "TarlacのPOGO拠点から、外国人を含む875人が保護される",
+      "inflow": "中国、ベトナム、マレーシアなどの外国人労働者と大量の携帯端末が、中央ルソンのPOGO施設へ流れ込む。",
+      "incident": "2024年3月、PNAはTarlac州BambanのPOGO施設摘発で875人のフィリピン人・外国人労働者が保護されたと報じた。現場では詐欺取引に使われたとみられる携帯電話列も確認された。",
+      "harm": "恋愛詐欺や暗号資産詐欺の作業場になった施設では、労働者が被害者か加害側かの識別も難しく、保護と捜査が同時に必要になる。",
+      "sources": [
+        {
+          "title": "875 workers rescued in Tarlac POGO raid",
+          "publisher": "Philippine News Agency",
+          "date": "2024-03-13",
+          "url": "https://www.pna.gov.ph/articles/1220694"
+        }
+      ]
+    },
+    "layer_tags": [
+      "reported_compound",
+      "casino_online_gambling",
+      "policy_enforcement",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "875 workers rescued in Tarlac POGO raid",
+        "publisher": "Philippine News Agency",
+        "date": "2024-03-13",
+        "url": "https://www.pna.gov.ph/articles/1220694"
+      },
+      {
+        "title": "Forfeited POGO hubs could be used by gov't - PAOCC",
+        "publisher": "Philippine News Agency",
+        "date": "2024-07-13",
+        "url": "https://www.pna.gov.ph/articles/1228906"
+      },
+      {
+        "title": "Republic Act No. 12312",
+        "publisher": "LawPhil",
+        "date": "2025-10-23",
+        "url": "https://lawphil.net/statutes/repacts/ra2025/ra_12312_2025.html"
+      }
+    ],
+    "lecture_framework_tags": [
+      {
+        "framework_id": "lin_yifu_structural_conditions",
+        "lens": "制度",
+        "note": "POGOライセンス制度を、林毅夫の言う「制度配置による比較優位の創出」の応用例として読む。制度が立地を生む。"
+      }
+    ]
+  },
+  {
+    "id": "palawan_sabah_maritime_corridor",
+    "name_ja": "パラワン・タウィタウィ-サバ海上回廊",
+    "countries": [
+      "フィリピン",
+      "マレーシア"
+    ],
+    "coordinates": [
+      7.2,
+      118.2
+    ],
+    "display_precision_note": "精密な船着場や上陸点ではなく、フィリピン南西部とサバ北部を結ぶ海上接続圏の概算。",
+    "border_context": "海上密出国、サバ経由のタイ・ミャンマー・カンボジア方面移送、送還後の証言集積。",
+    "risk_factors": [
+      "不規則渡航",
+      "SNS求人による誘引",
+      "複数国を経由する人身取引"
+    ],
+    "confidence": "reported",
+    "last_updated": "2026-04-30",
+    "summary": "フィリピン公式送還事例では、パラワンやタウィタウィからサバへ抜け、さらにタイ・ミャンマー・カンボジア側へ移送されるルートが報告されている。",
+    "case_study": {
+      "title": "Facebook求人から、サバ経由でミャンマーの詐欺拠点へ送られる",
+      "inflow": "フィリピン南西部からサバ、タイ、ミャンマーへと、人が海上・陸路で段階的に移動させられる。",
+      "incident": "フィリピン入国管理局は2025年11月、ミャンマーの詐欺拠点から送還された7人のうち、6人が非正規の出国ルートを使い、1人はタイ行き観光客を装って出国したと発表した。",
+      "harm": "国境が海に分散するため、被害者は早い段階で公式な出入国記録から外れ、救出後の経路確認も難しくなる。",
+      "sources": [
+        {
+          "title": "BI reports arrival of seven trafficking victims repatriated from scam hubs",
+          "publisher": "Bureau of Immigration Philippines",
+          "date": "2025-11-25",
+          "url": "https://immigration.gov.ph/bi-reports-arrival-of-seven-trafficking-victims-repatriated-from-scam-hubs/"
+        }
+      ]
+    },
+    "layer_tags": [
+      "maritime_connection",
+      "trafficking_route",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "BI: 4 Filipinos repatriated from Cambodia after falling victim to job scam syndicate",
+        "publisher": "Bureau of Immigration Philippines",
+        "date": "2025-07-12",
+        "url": "https://immigration.gov.ph/bi-4-filipinos-repatriated-from-cambodia-after-falling-victim-to-job-scam-syndicate/"
+      },
+      {
+        "title": "BI reports arrival of seven trafficking victims repatriated from scam hubs",
+        "publisher": "Bureau of Immigration Philippines",
+        "date": "2025-11-25",
+        "url": "https://immigration.gov.ph/bi-reports-arrival-of-seven-trafficking-victims-repatriated-from-scam-hubs/"
+      }
+    ]
+  },
+  {
+    "id": "kuala_lumpur_klia_corridor",
+    "name_ja": "クアラルンプール・KLIA圏",
+    "countries": [
+      "マレーシア"
+    ],
+    "coordinates": [
+      2.95,
+      101.7
+    ],
+    "display_precision_note": "精密施設ではなく、クアラルンプール首都圏とKLIA/KLIA2を含む広域の概算。",
+    "border_context": "募集・出国・通報・政府対応・送還の中心ノード。",
+    "risk_factors": [
+      "就労詐欺による送出",
+      "国外オンライン詐欺拠点との接続",
+      "空港経由の被害者移動"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "マレーシア首都圏とKLIAは、国外詐欺就労の通報集積、啓発、救出後の帰還受け入れが重なる政策ノードである。",
+    "case_study": {
+      "title": "KLIAは、送り出しと帰還受け入れの両方の場所になる",
+      "inflow": "高収入の海外求人広告がマレーシア人をカンボジア、ミャンマー、ラオス方面へ送り出し、帰還時には空港と警察が保護・聴取の入口になる。",
+      "incident": "Bernamaは2025年2月、マレーシア警察が就労詐欺シンジケート関連で482件、被害者628人の通報を受けたと報じた。外務省は同月、ポイペトで救出されたマレーシア人60人の送還対応も発表した。",
+      "harm": "被害者は国外で強制犯罪労働に巻き込まれ、帰国後も被害者認定、聴取、再被害防止の支援が必要になる。",
+      "sources": [
+        {
+          "title": "Police Received 482 Reports On Job Scam Syndicates Involving 628 Malaysian Victims, Parliament Told",
+          "publisher": "Bernama",
+          "date": "2025-02-19",
+          "url": "https://www.bernama.com/en/news.php?id=2394254"
+        },
+        {
+          "title": "60 Malaysians Rescued From Job Scam Syndicate In Cambodia",
+          "publisher": "Bernama",
+          "date": "2025-02-26",
+          "url": "https://www.bernama.com/en/news.php?id=2396889"
+        }
+      ]
+    },
+    "layer_tags": [
+      "trafficking_route",
+      "policy_enforcement",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Police Received 482 Reports On Job Scam Syndicates Involving 628 Malaysian Victims, Parliament Told",
+        "publisher": "Bernama",
+        "date": "2025-02-19",
+        "url": "https://bernama.com/en/news.php?id=2394254"
+      },
+      {
+        "title": "Malaysians Rescued From Job Scam Syndicate In Cambodia",
+        "publisher": "Ministry of Foreign Affairs Malaysia",
+        "date": "2025-02-26",
+        "url": "https://www.kln.gov.my/web/guest/-/malaysians-rescued-from-job-scam-syndicate-in-cambodia"
+      },
+      {
+        "title": "25 Malaysian Victims Of Job Scam Syndicates In Myanmar Arrive At Border",
+        "publisher": "Ministry of Foreign Affairs Malaysia",
+        "date": "2025-03-12",
+        "url": "https://www.kln.gov.my/web/guest/-/25-malaysian-victims-of-job-scam-syndicates-in-myanmar-arrive-at-border?inheritRedirect=true"
+      }
+    ]
+  },
+  {
+    "id": "sabah_kota_kinabalu_corridor",
+    "name_ja": "サバ・コタキナバル圏",
+    "countries": [
+      "マレーシア"
+    ],
+    "coordinates": [
+      5.98,
+      116.07
+    ],
+    "display_precision_note": "精密施設ではなく、コタキナバルを中心としたサバ北西沿岸の概算。",
+    "border_context": "北ボルネオの海上接続、被害者送出、フィリピン南部との不規則移動。",
+    "risk_factors": [
+      "海上越境",
+      "被害者の通過点化",
+      "サバ出身被害者の発生"
+    ],
+    "confidence": "reported",
+    "last_updated": "2026-04-30",
+    "summary": "サバは、フィリピン南部からの非正規移動と、サバ出身被害者の発生が重なる通過点・送出点として浮上する。",
+    "case_study": {
+      "title": "サバは、南フィリピンの海上移動とマレーシア人被害の接点になる",
+      "inflow": "フィリピン南部からの非正規移動、サバ出身者の海外求人被害、ボルネオ北部の海上ネットワークが重なる。",
+      "incident": "Bernamaは2025年2月、マレーシアの就労詐欺被害通報628人のうち15人がサバ出身で、14人は救出済み、1人は海外で stranded と報じた。",
+      "harm": "地理的に国境が見えにくい海上圏では、移動が早期に不透明化し、家族や当局による所在把握が遅れる。",
+      "sources": [
+        {
+          "title": "Police Received 482 Reports On Job Scam Syndicates Involving 628 Malaysian Victims, Parliament Told",
+          "publisher": "Bernama",
+          "date": "2025-02-19",
+          "url": "https://www.bernama.com/en/news.php?id=2394254"
+        }
+      ]
+    },
+    "layer_tags": [
+      "maritime_connection",
+      "trafficking_route"
+    ],
+    "sources": [
+      {
+        "title": "Police Received 482 Reports On Job Scam Syndicates Involving 628 Malaysian Victims, Parliament Told",
+        "publisher": "Bernama",
+        "date": "2025-02-19",
+        "url": "https://bernama.com/en/news.php?id=2394254"
+      },
+      {
+        "title": "BI: 4 Filipinos repatriated from Cambodia after falling victim to job scam syndicate",
+        "publisher": "Bureau of Immigration Philippines",
+        "date": "2025-07-12",
+        "url": "https://immigration.gov.ph/bi-4-filipinos-repatriated-from-cambodia-after-falling-victim-to-job-scam-syndicate/"
+      }
+    ]
+  },
+  {
+    "id": "singapore_metro_financial_node",
+    "name_ja": "シンガポール都市圏",
+    "countries": [
+      "シンガポール"
+    ],
+    "coordinates": [
+      1.29,
+      103.85
+    ],
+    "display_precision_note": "精密施設ではなく、都市国家全体を一体の金融・法人ノードとして扱う概算。",
+    "border_context": "海外詐欺・オンライン賭博収益の洗浄、資産差押え、共同摘発、国内法強化。",
+    "risk_factors": [
+      "海外犯罪収益の滞留",
+      "法人・資産管理の悪用",
+      "カンボジア拠点との双方向接続"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "シンガポールは、強制詐欺拠点ではなく、資金洗浄・法人利用・共同摘発・AML強化の中核ノードとして表現する。",
+    "case_study": {
+      "title": "カンボジア拠点からシンガポール被害者を狙う組織犯罪が摘発される",
+      "inflow": "シンガポール人・マレーシア人の人員、法人・金融ノード、被害者資金がカンボジア拠点の政府機関なりすまし詐欺と接続する。",
+      "incident": "シンガポール警察は2025年10月、プノンペンの詐欺コンパウンドで活動したとみられる27人のシンガポール人と7人のマレーシア人を追加特定し、少なくとも438件、S$4100万の被害に関係すると発表した。",
+      "harm": "金融都市は拠点そのものではなくても、被害金の移動、資産凍結、国外犯の追跡という形でネットワークに組み込まれる。",
+      "sources": [
+        {
+          "title": "27 Singaporeans And Seven Malaysians Identified As Members Of Organised Crime Group Operating Out Of Scam Compound In Cambodia",
+          "publisher": "Singapore Police Force",
+          "date": "2025-10-29",
+          "url": "https://www.police.gov.sg/Media-Hub/News/2025/10/20251029_27_singaporeans_and_seven_malaysians_identified_as_members_-of_organised_crime"
+        }
+      ]
+    },
+    "layer_tags": [
+      "financial_node",
+      "policy_enforcement",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Singapore aims to make it easier to prosecute money laundering cases",
+        "publisher": "Reuters",
+        "date": "2024-07-02",
+        "url": "https://www.reuters.com/world/asia-pacific/singapore-aims-make-it-easier-prosecute-money-laundering-cases-2024-07-02/"
+      },
+      {
+        "title": "27 Singaporeans And Seven Malaysians Identified As Members Of Organised Crime Group Operating Out Of Scam Compound In Cambodia",
+        "publisher": "Singapore Police Force",
+        "date": "2025-10-29",
+        "url": "https://www.police.gov.sg/Media-Hub/News/2025/10/20251029_27_singaporeans_and_seven_malaysians_identified_as_members_-of_organised_crime"
+      },
+      {
+        "title": "Police Arrest Three Singaporeans In Money Laundering Investigation Relating To Transnational Scam Syndicate Prince Holding Group",
+        "publisher": "Singapore Police Force",
+        "date": "2026-03-03",
+        "url": "https://www.police.gov.sg/media-hub/news/2026/03/20260303_police_arrest_three_singaporeans_in_money_laundering_investigation"
+      }
+    ]
+  },
+  {
+    "id": "jakarta_metro_enforcement_node",
+    "name_ja": "ジャカルタ首都圏",
+    "countries": [
+      "インドネシア"
+    ],
+    "coordinates": [
+      -6.2,
+      106.85
+    ],
+    "display_precision_note": "精密施設ではなく、ジャカルタ首都圏を送還・政策対応ノードとして表現する概算。",
+    "border_context": "ミャンマー側からの送還受け入れ、国内オンライン賭博対策、対カンボジア案件対応。",
+    "risk_factors": [
+      "海外詐欺拠点からの帰還集中",
+      "国内オンライン賭博の資金循環",
+      "多地方からの被害者流入"
+    ],
+    "confidence": "documented",
+    "last_updated": "2026-04-30",
+    "summary": "ジャカルタは、メコン側から帰還した被害・関与者の受け入れと、国内オンライン賭博抑止が交差する政策ノードである。",
+    "case_study": {
+      "title": "ミャンマーとカンボジアから、数百人規模のインドネシア人が帰還する",
+      "inflow": "インドネシア各地から海外求人へ向かった人々が、ミャンマー・カンボジアの拠点に取り込まれ、タイやプノンペン経由で帰国する。",
+      "incident": "2025年3月、Reutersはミャンマー詐欺拠点から解放された500人超のインドネシア人が帰還し、当局が聴取すると報じた。ANTARAは同年10月、カンボジアでオンライン詐欺に関わった110人の安全確認を伝えた。",
+      "harm": "帰還者の中には被害者と関与者が混在し、強制性の見極め、家族支援、国内オンライン賭博被害への対応が同時に必要になる。",
+      "sources": [
+        {
+          "title": "Indonesia to question more than 500 citizens freed from Myanmar scam centres",
+          "publisher": "Reuters",
+          "date": "2025-03-18",
+          "url": "https://www.reuters.com/world/asia-pacific/indonesia-question-more-than-500-citizens-freed-myanmar-scam-centres-2025-03-18/"
+        },
+        {
+          "title": "Indonesia confirms 110 citizens safe in Cambodia online scam case",
+          "publisher": "ANTARA News",
+          "date": "2025-10-22",
+          "url": "https://en.antaranews.com/news/387325/indonesia-confirms-110-citizens-safe-in-cambodia-online-scam-case"
+        }
+      ]
+    },
+    "layer_tags": [
+      "policy_enforcement",
+      "financial_node",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Indonesia to question more than 500 citizens freed from Myanmar scam centres",
+        "publisher": "Reuters",
+        "date": "2025-03-18",
+        "url": "https://www.reuters.com/world/asia-pacific/indonesia-question-more-than-500-citizens-freed-myanmar-scam-centres-2025-03-18/"
+      },
+      {
+        "title": "Indonesia vows to crack down on 'blood sucking' online gambling",
+        "publisher": "Reuters",
+        "date": "2024-06-14",
+        "url": "https://www.reuters.com/technology/indonesia-vows-crack-down-blood-sucking-online-gambling-2024-06-14/"
+      },
+      {
+        "title": "Indonesia confirms 110 citizens safe in Cambodia online scam case",
+        "publisher": "ANTARA News",
+        "date": "2025-10-22",
+        "url": "https://en.antaranews.com/news/387325/indonesia-confirms-110-citizens-safe-in-cambodia-online-scam-case"
+      }
+    ]
+  },
+  {
+    "id": "oecusse_raeoa_corridor",
+    "name_ja": "オエクシ＝アンベノ / ODC",
+    "countries": [
+      "東ティモール"
+    ],
+    "coordinates": [
+      -9.2,
+      124.38
+    ],
+    "display_precision_note": "精密施設ではなく、RAEOAとOecusse Digital Centre周辺を含む地域中心の概算。",
+    "border_context": "SEZ/FDI経由の浸透、衛星通信・SIMカード押収、海洋部新規展開リスク。",
+    "risk_factors": [
+      "脆弱な新設SEZ",
+      "犯罪的FDI",
+      "オフショア賭博・サイバー犯罪ネットワークとの疑い"
+    ],
+    "confidence": "under_investigation",
+    "last_updated": "2026-04-30",
+    "summary": "オエクシ＝アンベノは、UNODCが新規浸透リスクとして警告した海洋部の例外的案件であり、強い断定を避けつつ監視対象として地図化する。",
+    "case_study": {
+      "title": "犯罪的FDIと通信機材が、新しいSEZに先回りして入る",
+      "inflow": "外国直接投資、シェル会社、複数国籍のスタッフ、SIMカードや衛星通信機材が、オエクシの新設デジタル区画と接続する。",
+      "incident": "UNODCは2025年9月、オエクシ＝アンベノが犯罪ネットワークに標的化されたと警告した。APは同月、同地域の摘発で30人超の外国人が拘束され、UNODCが企業ネットワークにも警戒を示したと報じた。",
+      "harm": "大規模拠点化の前段階でも、投資案件、オンライン賭博、通信機材がそろうと、脆弱な管轄が新しい詐欺拠点候補になりうる。",
+      "sources": [
+        {
+          "title": "Strategic infiltration of vulnerable jurisdictions through criminal foreign direct investments: the case of Timor-Leste",
+          "publisher": "UNODC",
+          "date": "2025-09",
+          "url": "https://www.unodc.org/roseap/uploads/documents/Publications/2025/UNODC_Alert_Strategic_infiltration_of_vulnerable_jurisdictions_through_criminal_foreign_direct_investments.pdf"
+        },
+        {
+          "title": "Scam centers are spreading in East Timor, UN report says",
+          "publisher": "Associated Press",
+          "date": "2025-09-11",
+          "url": "https://apnews.com/article/86da97b21652a5dd795ab7eabc403fea"
+        }
+      ]
+    },
+    "layer_tags": [
+      "maritime_connection",
+      "financial_node",
+      "reported_compound",
+      "timeline_events"
+    ],
+    "sources": [
+      {
+        "title": "Criminal foreign direct investment threatens Timor-Leste as organized crime targets vulnerable jurisdictions",
+        "publisher": "UNODC",
+        "date": "2025-09-11",
+        "url": "https://www.unodc.org/roseap/en/2025/09/timor-leste-organized-crime/story.html"
+      },
+      {
+        "title": "Scam centers are spreading in East Timor, UN report says",
+        "publisher": "Associated Press",
+        "date": "2025-09-11",
+        "url": "https://apnews.com/article/unodc-scam-centers-east-timor-86da97b21652a5dd795ab7eabc403fea"
+      }
+    ]
+  }
+]

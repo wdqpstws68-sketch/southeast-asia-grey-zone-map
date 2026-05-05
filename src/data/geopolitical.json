@@ -1,0 +1,496 @@
+{
+  "countries": [
+    {
+      "id": "myanmar",
+      "name_ja": "ミャンマー",
+      "name_en": "Myanmar",
+      "coordinates": [19.2, 96.2],
+      "zoom": 5,
+      "color": "#9b4f4a",
+      "polygons": [
+        [[28.5, 92.1], [27.7, 96.6], [24.2, 99.4], [21.4, 100.3], [18.9, 98.0], [16.4, 98.7], [11.1, 98.9], [9.4, 96.0], [13.3, 92.8], [20.8, 93.2], [25.2, 94.1]]
+      ],
+      "summary_ja": "北東部とカレン州国境地帯で、詐欺コンパウンド、カジノ/SEZ、武装勢力支配、越境インフラが重なる中核国。ミャワディ、Shwe Kokko、KK Park、北シャン州/コーカン周辺が主要ノードとして扱われる。",
+      "border_context": "タイ国境、中国雲南省境界、ゴールデン・トライアングルと接続する。",
+      "risk_factors": ["武装勢力支配地域", "治外法権的SEZ", "弱い法執行", "越境電力・通信依存", "中国語圏犯罪ネットワーク"],
+      "related_borders": ["thai-myanmar", "myanmar-yunnan", "golden-triangle"],
+      "related_regions": ["ミャワディ", "Shwe Kokko", "KK Park", "北シャン州", "コーカン"],
+      "layers": ["fraud_centers", "casinos", "financial_nodes", "policy_nodes"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "州・都市圏単位で表示し、施設位置や非公式越境点の精密表示は避ける。",
+      "sources": [
+        {
+          "title": "Southeast Asia strengthens regional cooperation to combat trafficking for forced criminality",
+          "publisher": "UNODC",
+          "date": "2025-07-01",
+          "url": "https://www.unodc.org/roseap/en/2025/07/southeast-asia-combat-trafficking/story.html"
+        },
+        {
+          "title": "Treasury Sanctions Burma Warlord and Militia Tied to Cyber Scam Operations",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2025-05-05",
+          "url": "https://home.treasury.gov/news/press-releases/sb0129"
+        }
+      ]
+    },
+    {
+      "id": "thailand",
+      "name_ja": "タイ",
+      "name_en": "Thailand",
+      "coordinates": [15.6, 101.0],
+      "zoom": 5,
+      "color": "#b36a2e",
+      "polygons": [
+        [[20.6, 97.4], [19.2, 101.0], [17.4, 105.5], [14.5, 105.6], [12.0, 102.5], [10.1, 99.2], [6.0, 100.0], [5.6, 101.5], [7.6, 102.8], [12.0, 101.0], [15.2, 100.0], [18.2, 98.5]]
+      ],
+      "summary_ja": "タイは救出・送還・通報受け入れの結節点であり、ミャンマー側コンパウンドとタイ側後背地が強く結び付く。メーソート周辺、ゴールデン・トライアングル、カンボジア国境が重点となる。",
+      "border_context": "ミャンマー国境、ラオス/ミャンマー三国境、カンボジア国境と接続。",
+      "risk_factors": ["越境詐欺拠点への近接", "国境都市の人流", "救出後の一時滞留", "金融・通信インフラの利用"],
+      "related_borders": ["thai-myanmar", "golden-triangle", "thai-cambodia"],
+      "related_regions": ["メーソート", "チェンライ", "タク県", "アランヤプラテート"],
+      "layers": ["policy_nodes", "trafficking_routes", "financial_nodes"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "タイ側は通過・救出・捜査協力ノードとして表示する。",
+      "sources": [
+        {
+          "title": "Southeast Asia strengthens regional cooperation to combat trafficking for forced criminality",
+          "publisher": "UNODC",
+          "date": "2025-07-01",
+          "url": "https://www.unodc.org/roseap/en/2025/07/southeast-asia-combat-trafficking/story.html"
+        },
+        {
+          "title": "A matter of survival: The human cost of cyber scam operations in South-East Asia",
+          "publisher": "OHCHR",
+          "date": "2026-02-20",
+          "url": "https://www.ohchr.org/en/press-releases/2026/02/matter-survival-human-cost-cyber-scam-operations-south-east-asia"
+        }
+      ]
+    },
+    {
+      "id": "cambodia",
+      "name_ja": "カンボジア",
+      "name_en": "Cambodia",
+      "coordinates": [12.7, 104.9],
+      "zoom": 6,
+      "color": "#7e5bb6",
+      "polygons": [
+        [[14.7, 102.3], [14.2, 107.6], [11.5, 107.4], [10.4, 104.4], [11.5, 102.6]]
+      ],
+      "summary_ja": "タイ・ベトナム国境のカジノ都市、シアヌークビル、プノンペン周辺で、詐欺拠点、強制労働、人身取引、資金洗浄が重なる。Prince Group、Kok An関連、カジノホテル群などが出典付きで扱われる。",
+      "border_context": "タイ国境のポイペト/オスマッチ、ベトナム国境のバベット、沿岸部シアヌークビルが重点。",
+      "risk_factors": ["カジノ複合体", "国境人流", "中国系資本・犯罪ネットワーク", "暗号資産詐欺", "汚職リスク"],
+      "related_borders": ["thai-cambodia", "cambodia-vietnam"],
+      "related_regions": ["ポイペト", "オスマッチ", "バベット", "シアヌークビル", "プノンペン"],
+      "layers": ["fraud_centers", "casinos", "financial_nodes", "policy_nodes"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "都市圏・国境回廊単位で表示し、カジノ/ホテルの精密施設位置は表示しない。",
+      "sources": [
+        {
+          "title": "Cambodia: Casinos get state approval despite links to human rights abuse at scamming compounds",
+          "publisher": "Amnesty International",
+          "date": "2026-04-02",
+          "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+        },
+        {
+          "title": "Treasury Sanctions Cambodian Senator Kok An and Scam Center Network Defrauding Americans",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2026-04-23",
+          "url": "https://home.treasury.gov/news/press-releases/sb0469"
+        }
+      ]
+    },
+    {
+      "id": "laos",
+      "name_ja": "ラオス",
+      "name_en": "Laos",
+      "coordinates": [18.4, 103.8],
+      "zoom": 5,
+      "color": "#63733d",
+      "polygons": [
+        [[22.5, 100.1], [21.8, 102.5], [20.0, 104.8], [18.0, 105.5], [16.0, 106.0], [14.5, 105.5], [15.5, 103.5], [17.5, 101.2], [20.4, 100.4]]
+      ],
+      "summary_ja": "北西部ボーケオ州のゴールデン・トライアングルSEZが、カジノ、特区統治、地下金融、詐欺センターの集中地として扱われる。",
+      "border_context": "ラオス・タイ・ミャンマー三国境と接続。",
+      "risk_factors": ["SEZの統治例外", "カジノ中心経済", "地下銀行", "人身取引", "外国資本依存"],
+      "related_borders": ["golden-triangle"],
+      "related_regions": ["ゴールデン・トライアングルSEZ", "ボーケオ州"],
+      "layers": ["casinos", "fraud_centers", "financial_nodes"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "SEZ全体を広域表示し、施設単位の表示は避ける。",
+      "sources": [
+        {
+          "title": "Treasury Sanctions the Zhao Wei Transnational Criminal Organization",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2018-01-30",
+          "url": "https://home.treasury.gov/news/press-releases/sm0272"
+        },
+        {
+          "title": "Laos orders 'scam centres' in Golden Triangle SEZ to be completely shut down",
+          "publisher": "Radio Free Asia",
+          "date": "2024-08-12",
+          "url": "https://www.rfa.org/english/news/laos/orders-scamcentres-shutdown-08122024151243.html"
+        }
+      ]
+    },
+    {
+      "id": "vietnam",
+      "name_ja": "ベトナム",
+      "name_en": "Vietnam",
+      "coordinates": [16.2, 107.8],
+      "zoom": 5,
+      "color": "#2f7476",
+      "polygons": [
+        [[23.4, 105.3], [22.5, 108.8], [20.0, 106.8], [17.0, 107.7], [14.0, 109.2], [11.0, 108.8], [8.6, 104.8], [10.5, 104.8], [12.0, 106.5], [16.0, 106.0], [18.5, 105.5], [21.0, 104.0]]
+      ],
+      "summary_ja": "カンボジア国境、労働者移動、資金・人流の接続国として扱う。直接拠点情報は限定的なため、国境回廊と被害者保護/送還文脈を中心に表示する。",
+      "border_context": "カンボジア・ベトナム国境、対中国国境と接続。",
+      "risk_factors": ["越境労働移動", "国境市場", "現金・資金移動", "国外詐欺被害者保護"],
+      "related_borders": ["cambodia-vietnam"],
+      "related_regions": ["ホーチミン市", "モックバイ", "バベット周辺"],
+      "layers": ["policy_nodes", "financial_nodes", "trafficking_routes"],
+      "confidence": "reported",
+      "last_updated": "2026-04",
+      "map_display_note": "国内大都市と国境地域を粗く表示する。",
+      "sources": [
+        {
+          "title": "Crushing scam farms, Southeast Asia's 'criminal service providers'",
+          "publisher": "UNODC",
+          "date": "2024-07-15",
+          "url": "https://www.unodc.org/unodc/frontpage/2024/July/crushing-scam-farms--southeast-asias-criminal-service-providers.html"
+        }
+      ]
+    },
+    {
+      "id": "philippines",
+      "name_ja": "フィリピン",
+      "name_en": "Philippines",
+      "coordinates": [12.7, 122.3],
+      "zoom": 5,
+      "color": "#8f4a68",
+      "polygons": [
+        [[18.7, 120.0], [17.0, 122.8], [14.0, 124.2], [10.5, 126.2], [5.0, 125.2], [4.7, 119.0], [8.0, 117.0], [11.5, 119.0], [14.5, 120.0]]
+      ],
+      "summary_ja": "POGO/オンライン賭博、詐欺、人身取引、政策転換の文脈で重要。マニラ首都圏と中央ルソン、南西部海上回廊が主な表示対象。",
+      "border_context": "マレーシア・サバ方面の海上回廊、国内POGO摘発ノードと接続。",
+      "risk_factors": ["POGOの地下化", "中国語圏オンライン賭博", "空港・海上移動", "国外送出被害"],
+      "related_borders": ["philippines-malaysia"],
+      "related_regions": ["メトロマニラ", "中央ルソン", "パラワン", "タウィタウィ"],
+      "layers": ["pogo", "fraud_centers", "policy_nodes", "trafficking_routes"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "都市圏・島嶼回廊単位で表示する。",
+      "sources": [
+        {
+          "title": "Philippines' Marcos bans offshore gaming operators",
+          "publisher": "Reuters",
+          "date": "2024-07-22",
+          "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-orders-closure-offshore-gaming-industry-2024-07-22/"
+        }
+      ]
+    },
+    {
+      "id": "malaysia",
+      "name_ja": "マレーシア",
+      "name_en": "Malaysia",
+      "coordinates": [4.2, 109.5],
+      "zoom": 5,
+      "color": "#2b6f9a",
+      "polygons": [
+        [[6.8, 100.0], [6.8, 102.0], [1.2, 104.3], [1.0, 101.2], [4.0, 100.0]],
+        [[7.2, 109.5], [7.2, 119.5], [3.2, 119.0], [0.8, 115.0], [1.2, 109.6]]
+      ],
+      "summary_ja": "金融・送出・送還・法執行のハブ。クアラルンプール/KLIA、サバ、ジョホールなどが人流・資金流・捜査協力の接点となる。",
+      "border_context": "フィリピン南部、シンガポール、インドネシア、タイと接続。",
+      "risk_factors": ["送金・金融ネットワーク", "空港・海上移動", "国外詐欺就労", "AML対応"],
+      "related_borders": ["philippines-malaysia", "malaysia-singapore-indonesia"],
+      "related_regions": ["クアラルンプール", "KLIA", "サバ", "ジョホール"],
+      "layers": ["financial_nodes", "policy_nodes", "trafficking_routes"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "主要都市、空港、海上接続を概略表示する。",
+      "sources": [
+        {
+          "title": "Follow the money: how Southeast Asian countries are fighting cyber-fraud",
+          "publisher": "UNODC",
+          "date": "2025-11-15",
+          "url": "https://www.unodc.org/roseap/en/stories/2025/follow-the-money---southeast-asian-countries-fighting-cyber-fraud.html"
+        }
+      ]
+    },
+    {
+      "id": "singapore",
+      "name_ja": "シンガポール",
+      "name_en": "Singapore",
+      "coordinates": [1.29, 103.85],
+      "zoom": 8,
+      "color": "#8a7440",
+      "polygons": [
+        [[1.47, 103.62], [1.47, 104.08], [1.18, 104.08], [1.18, 103.62]]
+      ],
+      "summary_ja": "強制詐欺拠点ではなく、金融・法人・資産管理・共同捜査のノードとして扱う。犯罪収益洗浄、資産差押え、AML強化の文脈が中心。",
+      "border_context": "マレーシア、インドネシアとの金融・港湾・空港接続。",
+      "risk_factors": ["国際金融センター", "法人・資産管理の悪用可能性", "越境現金・資産移動"],
+      "related_borders": ["malaysia-singapore-indonesia"],
+      "related_regions": ["シンガポール都市圏", "チャンギ国際空港", "Tuas"],
+      "layers": ["financial_nodes", "policy_nodes"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "都市国家全体を金融ノードとして表示する。",
+      "sources": [
+        {
+          "title": "Singapore aims to make it easier to prosecute money laundering cases",
+          "publisher": "Reuters",
+          "date": "2024-07-02",
+          "url": "https://www.reuters.com/world/asia-pacific/singapore-aims-make-it-easier-prosecute-money-laundering-2024-07-02/"
+        }
+      ]
+    },
+    {
+      "id": "indonesia",
+      "name_ja": "インドネシア",
+      "name_en": "Indonesia",
+      "coordinates": [-2.5, 118.0],
+      "zoom": 4,
+      "color": "#486c58",
+      "polygons": [
+        [[5.8, 95.0], [1.0, 104.5], [-6.0, 105.5], [-8.8, 114.7], [-3.5, 117.0], [4.0, 118.0], [2.0, 110.0], [0.0, 103.0]],
+        [[1.8, 109.5], [4.2, 118.2], [-3.0, 118.5], [-4.0, 110.2]]
+      ],
+      "summary_ja": "多数の島嶼と広い海上国境を持ち、国外詐欺拠点からの帰還、オンライン賭博、資金流、移民/密輸回廊が重なる。",
+      "border_context": "マレーシア、シンガポール、フィリピン南部海域と接続。",
+      "risk_factors": ["島嶼間監視の難しさ", "国外就労被害", "オンライン賭博", "海上移動"],
+      "related_borders": ["malaysia-singapore-indonesia", "philippines-malaysia"],
+      "related_regions": ["ジャカルタ", "カリマンタン", "スマトラ", "リアウ諸島"],
+      "layers": ["policy_nodes", "financial_nodes", "trafficking_routes"],
+      "confidence": "reported",
+      "last_updated": "2026-04",
+      "map_display_note": "島嶼圏を概略ポリゴンとして表示する。",
+      "sources": [
+        {
+          "title": "Indonesia to question more than 500 citizens freed from Myanmar scam centres",
+          "publisher": "Reuters",
+          "date": "2025-03-18",
+          "url": "https://www.reuters.com/world/asia-pacific/indonesia-question-more-than-500-citizens-freed-myanmar-scam-centres-2025-03-18/"
+        }
+      ]
+    },
+    {
+      "id": "east-timor",
+      "name_ja": "東ティモール",
+      "name_en": "Timor-Leste",
+      "coordinates": [-8.85, 125.8],
+      "zoom": 7,
+      "color": "#7a5a8e",
+      "polygons": [
+        [[-8.1, 124.0], [-8.8, 127.0], [-9.6, 126.8], [-9.4, 123.9]]
+      ],
+      "summary_ja": "新興リスクとして、オエクシ特殊区や外国投資、通信/SEZを利用した詐欺拠点化の懸念が報告される。",
+      "border_context": "インドネシア西ティモールに囲まれたオエクシ飛び地を含む。",
+      "risk_factors": ["新設SEZ", "監視能力の制約", "犯罪的FDI", "海洋部への拡散リスク"],
+      "related_borders": ["east-timor-indonesia"],
+      "related_regions": ["ディリ", "オエクシ特殊区"],
+      "layers": ["fraud_centers", "financial_nodes"],
+      "confidence": "reported",
+      "last_updated": "2026-04",
+      "map_display_note": "ディリとオエクシを広域表示し、施設位置は表示しない。",
+      "sources": [
+        {
+          "title": "Criminal foreign direct investment threatens Timor-Leste as organized crime targets vulnerable jurisdictions",
+          "publisher": "UNODC",
+          "date": "2025-09-11",
+          "url": "https://www.unodc.org/roseap/en/2025/09/timor-leste-organized-crime/story.html"
+        }
+      ]
+    }
+  ],
+  "borders": [
+    {
+      "id": "thai-myanmar",
+      "name_ja": "タイ–ミャンマー国境",
+      "name_en": "Thailand–Myanmar border",
+      "countries": ["thailand", "myanmar"],
+      "path": [[20.1, 97.6], [18.6, 97.9], [16.72, 98.57], [14.2, 98.8], [11.8, 99.1]],
+      "color": "#a43c48",
+      "summary_ja": "メーソート–ミャワディ周辺を中心に、詐欺コンパウンド、武装勢力、越境インフラ、被害者救出・送還が集中する最重要回廊。",
+      "risk_factors": ["武装勢力保護", "非公式越境", "被害者滞留", "越境電力・通信"],
+      "related_regions": ["メーソート", "ミャワディ", "Shwe Kokko", "KK Park"],
+      "connection_types": ["trafficking_route", "fraud_compound", "repatriation", "enforcement"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "帯状の国境圏として表示し、施設位置や逃走経路は表示しない。",
+      "sources": [
+        {
+          "title": "Southeast Asia strengthens regional cooperation to combat trafficking for forced criminality",
+          "publisher": "UNODC",
+          "date": "2025-07-01",
+          "url": "https://www.unodc.org/roseap/en/2025/07/southeast-asia-combat-trafficking/story.html"
+        }
+      ]
+    },
+    {
+      "id": "myanmar-yunnan",
+      "name_ja": "ミャンマー–中国雲南省境界",
+      "name_en": "Myanmar–Yunnan border",
+      "countries": ["myanmar", "china"],
+      "path": [[25.6, 97.5], [24.1, 98.5], [23.3, 99.2], [22.1, 100.0]],
+      "color": "#5c678f",
+      "summary_ja": "北シャン州・コーカン周辺の中国語圏詐欺/賭博経済と、中国当局の摘発・送還・訴追が交差する境界。",
+      "risk_factors": ["武装勢力", "中国語圏賭博・詐欺", "摘発後の南方移転", "資金・人員供給"],
+      "related_regions": ["コーカン", "ラショー", "雲南省"],
+      "connection_types": ["fraud_targeting", "enforcement", "network_relocation"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "山岳国境を粗い線として表示する。",
+      "sources": [
+        {
+          "title": "Transnational Crime in Southeast Asia",
+          "publisher": "USIP",
+          "date": "2024-05-01",
+          "url": "https://www.usip.org/sites/default/files/2024-05/ssg_transnational-crime-southeast-asia.pdf"
+        }
+      ]
+    },
+    {
+      "id": "golden-triangle",
+      "name_ja": "ゴールデン・トライアングル三国境",
+      "name_en": "Golden Triangle border nexus",
+      "countries": ["laos", "thailand", "myanmar"],
+      "path": [[20.45, 99.55], [20.35, 100.08], [20.22, 100.52]],
+      "color": "#8a7440",
+      "summary_ja": "ラオス・タイ・ミャンマーの三国接点。カジノ/SEZ、麻薬・密輸、人身取引、地下金融の歴史的回廊にオンライン詐欺が重なる。",
+      "risk_factors": ["三国境の統治ギャップ", "SEZ", "カジノ", "地下銀行", "密輸ルート"],
+      "related_regions": ["ボーケオ州", "チェンライ", "メコン川"],
+      "connection_types": ["casino_sez_network", "trafficking_route", "money_laundering"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "SEZ周辺を広域ノードとして表示する。",
+      "sources": [
+        {
+          "title": "Casinos and cryptocurrency: major drivers of money laundering, underground banking, and cyberfraud in East and Southeast Asia",
+          "publisher": "UNODC",
+          "date": "2024-01-15",
+          "url": "https://www.unodc.org/roseap/en/2024/casinos-casinos-cryptocurrency-underground-banking/story.html"
+        }
+      ]
+    },
+    {
+      "id": "thai-cambodia",
+      "name_ja": "タイ–カンボジア国境",
+      "name_en": "Thailand–Cambodia border",
+      "countries": ["thailand", "cambodia"],
+      "path": [[14.4, 102.1], [13.65, 102.57], [12.7, 102.8], [11.7, 102.9]],
+      "color": "#7e5bb6",
+      "summary_ja": "ポイペト、オスマッチ、北部カンボジア国境帯を含む。カジノ都市、越境人流、摘発、詐欺拠点移転が重なる。",
+      "risk_factors": ["カジノ街", "国境市場", "現金移動", "偽求人", "摘発後の再配置"],
+      "related_regions": ["ポイペト", "オスマッチ", "アランヤプラテート"],
+      "connection_types": ["casino_sez_network", "trafficking_route", "fraud_compound", "enforcement"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "国境市場・都市圏として表示する。",
+      "sources": [
+        {
+          "title": "Thai, Cambodian police free 215 foreigners in scam centre raid",
+          "publisher": "Reuters",
+          "date": "2025-02-23",
+          "url": "https://www.reuters.com/world/asia-pacific/thai-cambodian-police-free-215-foreigners-scam-centre-raid-2025-02-23/"
+        }
+      ]
+    },
+    {
+      "id": "cambodia-vietnam",
+      "name_ja": "カンボジア–ベトナム国境",
+      "name_en": "Cambodia–Vietnam border",
+      "countries": ["cambodia", "vietnam"],
+      "path": [[13.8, 106.0], [12.0, 106.1], [11.18, 105.9], [10.7, 105.4]],
+      "color": "#2f7476",
+      "summary_ja": "バベット–チュレイトム周辺を中心に、カジノ、物流、越境移送、ベトナム側労働移動が重なる回廊。",
+      "risk_factors": ["カジノ複合体", "物流回廊", "越境移送", "労働者保護"],
+      "related_regions": ["バベット", "チュレイトム", "モックバイ"],
+      "connection_types": ["casino_sez_network", "trafficking_route", "policy_nodes"],
+      "confidence": "reported",
+      "last_updated": "2026-04",
+      "map_display_note": "国境回廊として粗く表示する。",
+      "sources": [
+        {
+          "title": "Cambodia: Casinos get state approval despite links to human rights abuse at scamming compounds",
+          "publisher": "Amnesty International",
+          "date": "2026-04-02",
+          "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+        }
+      ]
+    },
+    {
+      "id": "philippines-malaysia",
+      "name_ja": "フィリピン–マレーシア海上回廊",
+      "name_en": "Philippines–Malaysia maritime corridor",
+      "countries": ["philippines", "malaysia"],
+      "path": [[7.2, 118.2], [6.7, 119.0], [5.98, 116.07]],
+      "color": "#2b6f9a",
+      "summary_ja": "パラワン、タウィタウィ、サバを結ぶ海上接続。移民、被害者送出、送還証言、密航・密輸リスクの文脈で扱う。",
+      "risk_factors": ["島嶼間移動", "非正規渡航", "SNS求人", "海上監視の難しさ"],
+      "related_regions": ["パラワン", "タウィタウィ", "サバ"],
+      "connection_types": ["maritime_connection", "trafficking_route", "repatriation"],
+      "confidence": "reported",
+      "last_updated": "2026-04",
+      "map_display_note": "海上回廊として表示し、船着場などは示さない。",
+      "sources": [
+        {
+          "title": "BI reports arrival of seven trafficking victims repatriated from scam hubs",
+          "publisher": "Bureau of Immigration Philippines",
+          "date": "2025-11-25",
+          "url": "https://immigration.gov.ph/bi-reports-arrival-of-seven-trafficking-victims-repatriated-from-scam-hubs/"
+        }
+      ]
+    },
+    {
+      "id": "malaysia-singapore-indonesia",
+      "name_ja": "マレーシア–シンガポール–インドネシア関連圏",
+      "name_en": "Malaysia–Singapore–Indonesia nexus",
+      "countries": ["malaysia", "singapore", "indonesia"],
+      "path": [[3.1, 101.7], [1.35, 103.82], [-0.5, 104.4], [-6.2, 106.85]],
+      "color": "#8a7440",
+      "summary_ja": "金融・貿易・港湾・空港を通じた資金移動、送還、法執行協力の広域ノード。",
+      "risk_factors": ["越境金融犯罪", "港湾・空港接続", "法人利用", "多国籍捜査協力"],
+      "related_regions": ["クアラルンプール", "ジョホール", "シンガポール", "ジャカルタ"],
+      "connection_types": ["money_laundering", "financial_node", "enforcement"],
+      "confidence": "documented",
+      "last_updated": "2026-04",
+      "map_display_note": "主要都市・港湾間の概念線として表示する。",
+      "sources": [
+        {
+          "title": "Follow the money: how Southeast Asian countries are fighting cyber-fraud",
+          "publisher": "UNODC",
+          "date": "2025-11-15",
+          "url": "https://www.unodc.org/roseap/en/stories/2025/follow-the-money---southeast-asian-countries-fighting-cyber-fraud.html"
+        }
+      ]
+    },
+    {
+      "id": "east-timor-indonesia",
+      "name_ja": "東ティモール–インドネシア境界",
+      "name_en": "Timor-Leste–Indonesia border",
+      "countries": ["east-timor", "indonesia"],
+      "path": [[-9.2, 124.38], [-9.1, 125.6], [-8.8, 126.3]],
+      "color": "#7a5a8e",
+      "summary_ja": "オエクシ特殊区とインドネシア西ティモールにまたがる新興リスク圏。犯罪的FDI、SEZ、通信/詐欺拠点化の警戒対象。",
+      "risk_factors": ["新設SEZ", "監視能力の制約", "外国投資", "海洋部拡散リスク"],
+      "related_regions": ["オエクシ", "ディリ", "西ティモール"],
+      "connection_types": ["casino_sez_network", "financial_node", "under_investigation"],
+      "confidence": "reported",
+      "last_updated": "2026-04",
+      "map_display_note": "新興リスクとして広域表示する。",
+      "sources": [
+        {
+          "title": "Criminal foreign direct investment threatens Timor-Leste as organized crime targets vulnerable jurisdictions",
+          "publisher": "UNODC",
+          "date": "2025-09-11",
+          "url": "https://www.unodc.org/roseap/en/2025/09/timor-leste-organized-crime/story.html"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,610 @@
+{
+  "global_flows": [
+    {
+      "id": "flow_mm_shwekokko_usa",
+      "name_ja": "Shwe Kokko / ミャワディから米国へのオンライン詐欺",
+      "name_en": "Shwe Kokko / Myawaddy to USA: online scams",
+      "origin_region": "ミャワディ・Shwe Kokko周辺、カレン州、ミャンマー",
+      "origin_coordinates_approx": [16.72, 98.57],
+      "transit_regions": [],
+      "destination_country": "アメリカ合衆国",
+      "destination_region": "米国市場",
+      "destination_coordinates_approx": [39.0, -98.0],
+      "connection_type": "fraud_targeting",
+      "summary_ja": "KNA支配地域の詐欺拠点から、米国人を含む世界の被害者に投資・恋愛・暗号資産詐欺が仕掛けられたとされる接続。被害額や資金経路の全容は未確定だが、米国制裁資料・報道で主要な国際被害市場として扱われる。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "Shwe Kokko周辺のKNA関連ネットワークとサイバー詐欺の関連、米国人被害者への影響、制裁対象化。",
+      "what_is_not_confirmed": "個別施設ごとの被害額、全被害者数、最終的な資金経路の全容。",
+      "date_range": "2021-2025",
+      "related_entities": ["Karen National Army", "Saw Chit Thu"],
+      "affected_victim_nationalities": ["アメリカ", "中国", "ベトナム", "フィリピン", "インドネシア", "その他"],
+      "fraud_victim_markets": ["アメリカ合衆国", "世界各国"],
+      "financial_mechanisms": ["暗号資産", "偽投資プラットフォーム", "地下銀行"],
+      "map_display_note": "起点はミャワディ都市圏に丸め、施設位置は表示しない。",
+      "sources": [
+        {
+          "title": "Treasury Sanctions Burma Warlord and Militia Tied to Cyber Scam Operations",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2025-05-05",
+          "url": "https://home.treasury.gov/news/press-releases/sb0129"
+        },
+        {
+          "title": "US puts sanctions on Myanmar warlord and militia linked to cyber scams",
+          "publisher": "Reuters",
+          "date": "2025-05-06",
+          "url": "https://www.reuters.com/world/us-issues-new-myanmar-related-sanctions-treasury-dept-website-shows-2025-05-05/"
+        }
+      ]
+    },
+    {
+      "id": "flow_kh_prince_usa",
+      "name_ja": "Prince Group / プノンペンから米国への暗号資産投資詐欺",
+      "name_en": "Prince Group / Phnom Penh to USA: crypto investment scams",
+      "origin_region": "プノンペン、カンボジア",
+      "origin_coordinates_approx": [11.56, 104.92],
+      "transit_regions": [],
+      "destination_country": "アメリカ合衆国",
+      "destination_region": "米国市場",
+      "destination_coordinates_approx": [39.0, -98.0],
+      "connection_type": "fraud_targeting",
+      "summary_ja": "カンボジア拠点のPrince Holding Group / Chen Zhi関連ネットワークが、米国を含む世界の被害者を標的に暗号資産投資詐欺を展開したとされる接続。米英制裁と資産凍結の対象にもなった。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "Prince Group関連ネットワーク、暗号資産詐欺、米国被害市場、米英制裁。",
+      "what_is_not_confirmed": "全被害国・全被害者数、第三国を経由した最終資金経路。",
+      "date_range": "2021-2025",
+      "related_entities": ["Chen Zhi", "Prince Holding Group"],
+      "affected_victim_nationalities": ["アメリカ", "その他"],
+      "fraud_victim_markets": ["アメリカ合衆国", "世界各国"],
+      "financial_mechanisms": ["暗号資産", "オフショア法人", "国際銀行口座"],
+      "map_display_note": "起点はプノンペン都市圏で表示する。",
+      "sources": [
+        {
+          "title": "U.S. and U.K. Take Largest Action Ever Targeting Cybercriminal Networks in Southeast Asia",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2025-10-14",
+          "url": "https://home.treasury.gov/news/press-releases/sb0278"
+        }
+      ]
+    },
+    {
+      "id": "flow_kh_sihanouk_global",
+      "name_ja": "シアヌークビル/バベットから世界市場への暗号資産詐欺",
+      "name_en": "Sihanoukville / Bavet to global markets: crypto scams",
+      "origin_region": "シアヌークビル、バベット、カンボジア",
+      "origin_coordinates_approx": [10.63, 103.52],
+      "transit_regions": ["プノンペン", "暗号資産取引経路"],
+      "destination_country": "",
+      "destination_region": "世界各国の詐欺被害市場",
+      "destination_coordinates_approx": [20.0, -150.0],
+      "destination_points": [
+        { "id": "usa", "name_ja": "アメリカ合衆国", "name_en": "United States", "coordinates": [39.0, -98.0], "badge": "US" },
+        { "id": "china", "name_ja": "中国本土", "name_en": "Mainland China", "coordinates": [35.0, 104.0], "badge": "CN" },
+        { "id": "japan", "name_ja": "日本", "name_en": "Japan", "coordinates": [36.0, 138.0], "badge": "JP" },
+        { "id": "eu", "name_ja": "欧州", "name_en": "Europe", "coordinates": [50.0, 10.0], "badge": "EU" },
+        { "id": "australia", "name_ja": "オーストラリア", "name_en": "Australia", "coordinates": [-25.0, 133.0], "badge": "AU" }
+      ],
+      "connection_type": "casino_sez_network",
+      "summary_ja": "カジノホテルやリゾート施設が詐欺業務に転用され、監禁・強制労働下の労働者が暗号資産詐欺に従事させられたと報告される接続。被害市場は国単位で特定しきれないため、世界市場への概念線として表示する。",
+      "evidence_level": "reported",
+      "what_is_confirmed": "カンボジアのカジノ/ホテル群と詐欺・強制労働の関連報告。",
+      "what_is_not_confirmed": "施設ごとの被害総額、被害国の完全な内訳。",
+      "date_range": "2022-2025",
+      "related_entities": ["K B Hotel Co. Ltd.", "Golden Sun Sky", "関連カジノ/ホテル運営主体"],
+      "affected_victim_nationalities": ["タイ", "中国", "ネパール", "パキスタン", "南アフリカ", "その他"],
+      "fraud_victim_markets": ["アメリカ合衆国", "東アジア", "欧州", "その他"],
+      "financial_mechanisms": ["暗号資産", "地下銀行", "カジノ", "海外口座"],
+      "map_display_note": "起点はシアヌークビル/バベット都市圏に丸める。",
+      "sources": [
+        {
+          "title": "Cambodia: Casinos get state approval despite links to human rights abuse at scamming compounds",
+          "publisher": "Amnesty International",
+          "date": "2026-04-02",
+          "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+        }
+      ]
+    },
+    {
+      "id": "flow_ph_pogo_china",
+      "name_ja": "フィリピンPOGOから中国本土へのオンライン賭博/詐欺",
+      "name_en": "Philippines POGO to Mainland China: online gambling and scams",
+      "origin_region": "メトロマニラ/中央ルソン、フィリピン",
+      "origin_coordinates_approx": [14.53, 121.0],
+      "transit_regions": [],
+      "destination_country": "中国",
+      "destination_region": "中国本土市場",
+      "destination_coordinates_approx": [35.0, 104.0],
+      "connection_type": "fraud_targeting",
+      "summary_ja": "フィリピンのPOGOは主に中国語圏顧客向けオンライン賭博として発展し、人身取引、監禁、詐欺、資金洗浄との関連が問題化した。2024年の禁止後は地下化リスクが指摘される。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "POGOの中国語圏向け事業、外国人労働者、摘発と政策転換。",
+      "what_is_not_confirmed": "違法資金の全経路と各運営主体の内訳。",
+      "date_range": "2010s-2024",
+      "related_entities": ["POGO operators", "Philippine government agencies"],
+      "affected_victim_nationalities": ["中国", "フィリピン", "その他"],
+      "fraud_victim_markets": ["中国本土"],
+      "financial_mechanisms": ["オンライン賭博プラットフォーム", "国外送金", "法人口座"],
+      "map_display_note": "POGO施設位置ではなく、マニラ首都圏と中央ルソンを概略起点にする。",
+      "sources": [
+        {
+          "title": "Philippines' Marcos bans offshore gaming operators",
+          "publisher": "Reuters",
+          "date": "2024-07-22",
+          "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-orders-closure-offshore-gaming-industry-2024-07-22/"
+        }
+      ]
+    },
+    {
+      "id": "flow_mm_to_kh_relocation",
+      "name_ja": "ミャンマー北部/東部からカンボジアへの拠点移転",
+      "name_en": "Myanmar to Cambodia: scam network relocation",
+      "origin_region": "北シャン州・カレン州、ミャンマー",
+      "origin_coordinates_approx": [20.8, 98.5],
+      "transit_regions": ["タイ国境", "メコン圏回廊"],
+      "destination_country": "カンボジア",
+      "destination_region": "カンボジア国内のカジノ/国境都市",
+      "destination_coordinates_approx": [12.7, 104.9],
+      "connection_type": "network_relocation",
+      "summary_ja": "中国側・ミャンマー側での摘発圧力や紛争条件の変化により、詐欺組織がカンボジアなどへ移転・分散したと報告される流れ。特定組織の完全な移転経路は限定的な情報に基づくため、概念線として扱う。",
+      "evidence_level": "reported",
+      "what_is_confirmed": "摘発圧力後の拠点分散・移転傾向と、カンボジア側での拠点増加報告。",
+      "what_is_not_confirmed": "個別組織ごとの移転経路と新拠点の全容。",
+      "date_range": "2023-2025",
+      "related_entities": ["中国語圏詐欺ネットワーク", "カジノ/SEZ関連主体"],
+      "affected_victim_nationalities": [],
+      "fraud_victim_markets": [],
+      "financial_mechanisms": ["カジノ", "地下銀行", "暗号資産"],
+      "map_display_note": "州・国レベルで表示し、移転先施設は示さない。",
+      "sources": [
+        {
+          "title": "Scamming operations relocate to Cambodia as China moves to protect its borders",
+          "publisher": "Freedom Collaborative",
+          "date": "2024-03",
+          "url": "https://newsletter.freedomcollaborative.org/scamming-operations-relocate-to-cambodia-as-china-moves-to-protect-its-borders/"
+        }
+      ]
+    },
+    {
+      "id": "flow_th_to_kh_trafficking",
+      "name_ja": "タイ北部からカンボジア詐欺拠点への人身取引",
+      "name_en": "Northern Thailand to Cambodia: trafficking for forced criminality",
+      "origin_region": "チェンライ県、タイ",
+      "origin_coordinates_approx": [19.91, 99.84],
+      "transit_regions": ["タイ国内移動", "カンボジア国境"],
+      "destination_country": "カンボジア",
+      "destination_region": "カンボジア国境部/カジノ都市",
+      "destination_coordinates_approx": [13.65, 102.57],
+      "connection_type": "trafficking_route",
+      "summary_ja": "求人詐欺などで誘引された若者が、国境を越えてカンボジアの詐欺コンパウンドへ送られたとされる事例に基づく人の流れ。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "タイからカンボジアへの強制的犯罪労働目的の移送事例。",
+      "what_is_not_confirmed": "ルート全体の規模、関与ブローカーの全容。",
+      "date_range": "2024-2025",
+      "related_entities": ["求人ブローカー", "カンボジア側詐欺拠点"],
+      "affected_victim_nationalities": ["タイ"],
+      "fraud_victim_markets": [],
+      "financial_mechanisms": [],
+      "map_display_note": "県・国境都市単位で表示し、個別移送経路は表示しない。",
+      "sources": [
+        {
+          "title": "Cambodia: Government allows slavery and torture to flourish inside scamming compounds",
+          "publisher": "Amnesty International",
+          "date": "2025-06-26",
+          "url": "https://www.amnesty.org/en/latest/news/2025/06/cambodia-government-allows-slavery-torture-flourish-inside-scamming-compounds/"
+        }
+      ]
+    },
+    {
+      "id": "flow_myanmar_repatriation",
+      "name_ja": "ミャンマー詐欺拠点から各国への救出・送還",
+      "name_en": "Myanmar scam centers to home countries: rescue and repatriation",
+      "origin_region": "ミャワディ周辺、ミャンマー",
+      "origin_coordinates_approx": [16.72, 98.57],
+      "transit_regions": ["タイ・タク県国境"],
+      "destination_country": "",
+      "destination_region": "20か国以上の母国",
+      "destination_coordinates_approx": [18.0, 135.0],
+      "destination_points": [
+        { "id": "china", "name_ja": "中国本土", "name_en": "Mainland China", "coordinates": [35.0, 104.0], "badge": "CN" },
+        { "id": "vietnam", "name_ja": "ベトナム", "name_en": "Vietnam", "coordinates": [16.0, 106.0], "badge": "VN" },
+        { "id": "philippines", "name_ja": "フィリピン", "name_en": "Philippines", "coordinates": [12.9, 122.0], "badge": "PH" },
+        { "id": "indonesia", "name_ja": "インドネシア", "name_en": "Indonesia", "coordinates": [-2.0, 118.0], "badge": "ID" },
+        { "id": "south_asia", "name_ja": "南アジア", "name_en": "South Asia", "coordinates": [24.0, 78.0], "badge": "SA" }
+      ],
+      "connection_type": "repatriation",
+      "summary_ja": "ミャンマー側詐欺センターから救出された多国籍の被害者が、タイ国境を経由して母国へ送還された流れ。国別の完全内訳は事案ごとに異なるため、多国籍送還の概念線として表示する。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "ミャンマー・タイ国境での数百人規模の救出・一時滞留・送還対応。",
+      "what_is_not_confirmed": "全被害者の国籍、帰国先、各人の移送経路。",
+      "date_range": "2025",
+      "related_entities": ["Thai military", "Karen National Army", "IOM and consular actors"],
+      "affected_victim_nationalities": ["ベトナム", "中国", "フィリピン", "インドネシア", "その他"],
+      "fraud_victim_markets": [],
+      "financial_mechanisms": [],
+      "map_display_note": "送還先は国別ではなく多国籍束として表示する。",
+      "sources": [
+        {
+          "title": "260 foreigners rescued from virtual slavery in Myanmar's online scam centers are being repatriated",
+          "publisher": "Associated Press",
+          "date": "2025-02-15",
+          "url": "https://apnews.com/article/myanmar-scam-centers-thailand-army-myawaddy-trafficking-853f556f08a2bacb3991589fc8ab3588"
+        },
+        {
+          "title": "Over 200 foreigners rescued from scam centres still stranded along Thai-Myanmar border",
+          "publisher": "Reuters",
+          "date": "2025-06-24",
+          "url": "https://www.reuters.com/world/asia-pacific/over-200-foreigners-rescued-scam-centres-still-stranded-along-thai-myanmar-2025-06-24/"
+        }
+      ]
+    },
+    {
+      "id": "flow_kh_huione_usa",
+      "name_ja": "HuiOne Groupを通じたカンボジア発の資金洗浄",
+      "name_en": "HuiOne Group: Cambodia to USA-linked laundering rails",
+      "origin_region": "プノンペン、カンボジア",
+      "origin_coordinates_approx": [11.56, 104.92],
+      "transit_regions": ["暗号資産ネットワーク", "国際金融システム"],
+      "destination_country": "アメリカ合衆国",
+      "destination_region": "米国金融システム/ドル建て経路",
+      "destination_coordinates_approx": [39.0, -98.0],
+      "connection_type": "money_laundering",
+      "summary_ja": "HuiOne Groupは、詐欺収益やサイバー犯罪収益の洗浄経路として米当局に問題視された金融ノード。地図上では資金流の概念線として扱う。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "HuiOne Groupへの米当局措置、暗号資産・犯罪収益洗浄リスク。",
+      "what_is_not_confirmed": "資金の最終受益者と全経路。",
+      "date_range": "2021-2025",
+      "related_entities": ["HuiOne Group"],
+      "affected_victim_nationalities": [],
+      "fraud_victim_markets": ["アメリカ合衆国", "その他"],
+      "financial_mechanisms": ["暗号資産", "金融サービス企業", "ドル建て経路"],
+      "map_display_note": "企業所在地ではなくプノンペン金融ノードとして表示する。",
+      "sources": [
+        {
+          "title": "U.S. and U.K. Take Largest Action Ever Targeting Cybercriminal Networks in Southeast Asia",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2025-10-14",
+          "url": "https://home.treasury.gov/news/press-releases/sb0278"
+        }
+      ]
+    },
+    {
+      "id": "flow_kh_prince_sanctions",
+      "name_ja": "Prince Holding Groupに対する米英制裁",
+      "name_en": "US/UK sanctions against Prince Holding Group",
+      "origin_region": "プノンペン、カンボジア",
+      "origin_coordinates_approx": [11.56, 104.92],
+      "transit_regions": [],
+      "destination_country": "アメリカ合衆国 / イギリス",
+      "destination_region": "米英制裁・法執行",
+      "destination_coordinates_approx": [54.0, -2.0],
+      "destination_points": [
+        { "id": "usa", "name_ja": "アメリカ合衆国", "name_en": "United States", "coordinates": [39.0, -98.0], "badge": "US" },
+        { "id": "uk", "name_ja": "イギリス", "name_en": "United Kingdom", "coordinates": [54.0, -2.0], "badge": "UK" }
+      ],
+      "connection_type": "enforcement_sanctions",
+      "summary_ja": "米国と英国が、カンボジア拠点のPrince Holding Group / Chen Zhi関連ネットワークを制裁した法執行の流れ。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "米英制裁、対象企業・個人、取引禁止/資産凍結。",
+      "what_is_not_confirmed": "制裁後の第三国資産移動や実効的な資金遮断の全容。",
+      "date_range": "2025",
+      "related_entities": ["Prince Holding Group", "Chen Zhi"],
+      "affected_victim_nationalities": [],
+      "fraud_victim_markets": [],
+      "financial_mechanisms": ["制裁", "資産凍結", "取引禁止"],
+      "map_display_note": "法執行線として表示する。",
+      "sources": [
+        {
+          "title": "U.S. and U.K. Take Largest Action Ever Targeting Cybercriminal Networks in Southeast Asia",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2025-10-14",
+          "url": "https://home.treasury.gov/news/press-releases/sb0278"
+        }
+      ]
+    },
+    {
+      "id": "flow_mm_kna_sanctions",
+      "name_ja": "KNA / Saw Chit Thuに対する米英EU制裁",
+      "name_en": "US/UK/EU sanctions against KNA and Saw Chit Thu",
+      "origin_region": "Shwe Kokko周辺、カレン州、ミャンマー",
+      "origin_coordinates_approx": [16.72, 98.57],
+      "transit_regions": [],
+      "destination_country": "アメリカ合衆国 / イギリス / 欧州連合",
+      "destination_region": "米英EU制裁・法執行",
+      "destination_coordinates_approx": [50.0, 10.0],
+      "destination_points": [
+        { "id": "usa", "name_ja": "アメリカ合衆国", "name_en": "United States", "coordinates": [39.0, -98.0], "badge": "US" },
+        { "id": "uk", "name_ja": "イギリス", "name_en": "United Kingdom", "coordinates": [54.0, -2.0], "badge": "UK" },
+        { "id": "eu", "name_ja": "欧州連合", "name_en": "European Union", "coordinates": [50.0, 10.0], "badge": "EU" }
+      ],
+      "connection_type": "enforcement_sanctions",
+      "summary_ja": "KNA指導者Saw Chit Thuと関連組織に対し、米英EUがサイバー詐欺との関連を理由に制裁を発動した法執行の流れ。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "Saw Chit Thu/KNA関連の制裁対象化、資産凍結・取引制限。",
+      "what_is_not_confirmed": "制裁の現地実効性と資金ネットワークの完全な遮断状況。",
+      "date_range": "2025",
+      "related_entities": ["Saw Chit Thu", "Karen National Army"],
+      "affected_victim_nationalities": [],
+      "fraud_victim_markets": [],
+      "financial_mechanisms": ["制裁", "資産凍結", "取引禁止"],
+      "map_display_note": "法執行線として表示し、現地施設位置は示さない。",
+      "sources": [
+        {
+          "title": "Treasury Sanctions Burma Warlord and Militia Tied to Cyber Scam Operations",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2025-05-05",
+          "url": "https://home.treasury.gov/news/press-releases/sb0129"
+        }
+      ]
+    },
+    {
+      "id": "flow_china_supply_to_mekong",
+      "name_ja": "中国国内供給圧からメコン圏詐欺労働へ",
+      "name_en": "Interior China supply pressure to Mekong forced criminality",
+      "origin_region": "福建・広東・湖南・四川・河南・東北三省などの中国国内供給省",
+      "origin_coordinates_approx": [27.8, 112.9],
+      "transit_regions": ["昆明", "防城港", "友誼関", "瑞麗-木姐", "磨憨-磨丁"],
+      "destination_country": "",
+      "destination_region": "メコン圏の詐欺コンパウンド/国境都市",
+      "destination_coordinates_approx": [16.2, 102.4],
+      "connection_type": "upstream_supply",
+      "summary_ja": "中国本土を被害市場や送還先だけでなく、内卷、偽求人、逃避口承、越境志願が重なる労働力供給側として読む接続。個別省別統計ではなく、上流圧の分析線として扱う。",
+      "evidence_level": "inferred",
+      "what_is_confirmed": "中国語圏被害者・労働者、摘発後の送還、中国側の反詐欺政策連動は複数資料で確認される。",
+      "what_is_not_confirmed": "省別の人数、個別ブローカー網、防城港など特定出口から各コンパウンドへの直接移送経路。",
+      "date_range": "2020-2026",
+      "related_entities": ["防城港", "昆明", "瑞麗-木姐", "磨憨-磨丁"],
+      "affected_victim_nationalities": ["中国"],
+      "fraud_victim_markets": ["中国本土", "世界各国"],
+      "financial_mechanisms": ["偽求人", "債務拘束", "地下銀行"],
+      "map_display_note": "起点は中国内陸の供給圧を束ねた概念点。具体的な渡航点や施設位置は示さない。",
+      "sources": [
+        {
+          "title": "OHCHR: UN report details grave abuses against those trafficked into scam centres",
+          "publisher": "OHCHR",
+          "date": "2026-02-20",
+          "url": "https://www.ohchr.org/en/press-releases/2026/02/un-report-details-grave-abuses-against-those-trafficked-scam-centres"
+        },
+        "ユーザー提供講義メモ: 中国国内供給省 / 防城港 / 内卷"
+      ]
+    },
+    {
+      "id": "flow_macau_junket_to_mekong",
+      "name_ja": "澳門ジャンケット規制後のカジノ/SEZ南下",
+      "name_en": "Macau junket crackdown to Mekong casino/SEZ southward shift",
+      "origin_region": "澳門VIPジャンケット業界",
+      "origin_coordinates_approx": [22.2, 113.55],
+      "transit_regions": ["シアヌークビル", "ポイペト", "ボーケオ"],
+      "destination_country": "",
+      "destination_region": "カンボジア・ラオス・タイ国境のカジノ/SEZ圏",
+      "destination_coordinates_approx": [13.65, 102.57],
+      "connection_type": "casino_sez_network",
+      "summary_ja": "2014年前後の澳門VIPジャンケット規制強化を、東南アジア側カジノ/SEZ・オンライン賭博・詐欺拠点化の前史として束ねる概念接続。",
+      "evidence_level": "reported",
+      "what_is_confirmed": "澳門側の規制強化と、カンボジア・ラオス側でのカジノ/SEZ拡大は個別には確認される。",
+      "what_is_not_confirmed": "特定ジャンケット業者ごとの南下経路と、各詐欺拠点への直接関与。",
+      "date_range": "2014-2021",
+      "related_entities": ["澳門ジャンケット", "Sihanoukville", "Poipet", "GTSEZ"],
+      "affected_victim_nationalities": [],
+      "fraud_victim_markets": ["中国語圏", "世界各国"],
+      "financial_mechanisms": ["カジノ", "オンライン賭博", "地下銀行"],
+      "map_display_note": "前史を読むための制度・資本移動線。個別業者の移転を断定しない。",
+      "sources": [
+        "ユーザー提供講義メモ: 2014年 澳門 VIP ジャンケット規制強化 / 南下"
+      ]
+    },
+    {
+      "id": "flow_huione_usdt_offshore",
+      "name_ja": "Huione / USDT / オフショア管轄への資金経路",
+      "name_en": "Huione / USDT / offshore jurisdiction laundering rails",
+      "origin_region": "プノンペン・カンボジア金融/暗号資産ノード",
+      "origin_coordinates_approx": [11.56, 104.92],
+      "transit_regions": ["香港", "ドバイ", "Cyprus", "Seychelles"],
+      "destination_country": "",
+      "destination_region": "オフショア法人・市民権/金融管轄",
+      "destination_coordinates_approx": [25.2, 55.27],
+      "destination_points": [
+        { "id": "hong_kong", "name_ja": "香港", "name_en": "Hong Kong", "coordinates": [22.32, 114.17], "badge": "HK" },
+        { "id": "dubai", "name_ja": "ドバイ/UAE", "name_en": "Dubai / UAE", "coordinates": [25.2, 55.27], "badge": "AE" },
+        { "id": "cyprus", "name_ja": "キプロス", "name_en": "Cyprus", "coordinates": [35.1, 33.4], "badge": "CY" },
+        { "id": "seychelles", "name_ja": "セーシェル", "name_en": "Seychelles", "coordinates": [-4.68, 55.49], "badge": "SC" },
+        { "id": "singapore", "name_ja": "シンガポール", "name_en": "Singapore", "coordinates": [1.29, 103.85], "badge": "SG" }
+      ],
+      "connection_type": "financial_trace",
+      "summary_ja": "Huione、USDT/TRC20、Telegram OTC、シェル法人管轄を、東南アジア詐欺収益が国際金融システムへ接続される金融レイヤーとして表示する。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "Huione Groupが米当局により主要な資金洗浄懸念として扱われ、東南アジア詐欺ネットワークとDPRKサイバー収益洗浄への関与が指摘された。",
+      "what_is_not_confirmed": "全てのUSDT/TRC20取引、OTCデスク、オフショア法人の個別最終受益者。",
+      "date_range": "2021-2025",
+      "related_entities": ["Huione Group", "Huione Guarantee", "USDT", "TRC20"],
+      "affected_victim_nationalities": [],
+      "fraud_victim_markets": ["アメリカ合衆国", "世界各国"],
+      "financial_mechanisms": ["USDT", "TRC20", "Telegram OTC", "シェル法人", "オフショア管轄"],
+      "map_display_note": "典型的な金融レールを束ねた概念線。個別ウォレットや法人住所は示さない。",
+      "sources": [
+        {
+          "title": "U.S. and U.K. Take Largest Action Ever Targeting Cybercriminal Networks in Southeast Asia",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2025-10-14",
+          "url": "https://home.treasury.gov/news/press-releases/sb0278"
+        }
+      ]
+    },
+    {
+      "id": "flow_thai_cutoff_infrastructure_adaptation",
+      "name_ja": "タイ側電力・通信遮断後のインフラ代替",
+      "name_en": "Thai utility cutoffs and infrastructure adaptation",
+      "origin_region": "タイ側電力・通信・燃料供給点",
+      "origin_coordinates_approx": [13.75, 100.5],
+      "transit_regions": ["メーソート", "ミャワディ", "Shwe Kokko", "KK Park"],
+      "destination_country": "ミャンマー",
+      "destination_region": "タイ・ミャンマー国境詐欺拠点圏",
+      "destination_coordinates_approx": [16.72, 98.57],
+      "connection_type": "infrastructure_dependency",
+      "summary_ja": "2025年のタイ側電力・通信・燃料遮断により、詐欺拠点の稼働条件そのものが政策対象になった。以後は発電機、燃料、衛星通信などの代替手段が焦点となる。",
+      "evidence_level": "documented",
+      "what_is_confirmed": "タイがミャンマー国境側の複数地域への電力・インターネット・燃料供給を遮断したこと。",
+      "what_is_not_confirmed": "遮断後の全ての代替通信・発電手段、Starlink等の個別使用規模。",
+      "date_range": "2025",
+      "related_entities": ["Mae Sot", "Myawaddy", "Shwe Kokko", "KK Park"],
+      "affected_victim_nationalities": [],
+      "fraud_victim_markets": [],
+      "financial_mechanisms": ["越境電力", "通信", "燃料", "衛星通信"],
+      "map_display_note": "インフラ依存の概念線。個別設備や遮断地点は示さない。",
+      "sources": [
+        {
+          "title": "Thailand cuts power supplies to Myanmar border towns in effort to curb scam rings",
+          "publisher": "Associated Press",
+          "date": "2025-02-05",
+          "url": "https://apnews.com/article/0cfdfb57aa2e05e5835b1af3b4ac8e1a"
+        }
+      ]
+    },
+    {
+      "id": "flow_south_asia_to_kh",
+      "name_ja": "南アジアからカンボジア詐欺拠点への労働者移送",
+      "name_en": "South Asia to Cambodia: trafficking into scam compounds",
+      "origin_region": "ネパール、パキスタン、インド、バングラデシュ、スリランカ等",
+      "origin_coordinates_approx": [24.0, 78.0],
+      "transit_regions": ["求人広告", "航空・陸路移動", "カンボジア国境都市"],
+      "destination_country": "カンボジア",
+      "destination_region": "カンボジアの詐欺コンパウンド",
+      "destination_coordinates_approx": [13.65, 102.57],
+      "connection_type": "victim_recruitment",
+      "summary_ja": "南アジア諸国からの出稼ぎ希望者が、偽求人や仲介者を通じてカンボジアの詐欺コンパウンドへ送られたとされる流れ。複数国籍の被害者報告を束ねた概念線。",
+      "evidence_level": "reported",
+      "what_is_confirmed": "ネパール、パキスタン、インド、バングラデシュ、スリランカ等の国籍者が詐欺拠点被害者として報告されていること。",
+      "what_is_not_confirmed": "各国からの人数、ブローカー網、移送経路の完全な内訳。",
+      "date_range": "2021-2025",
+      "related_entities": ["求人ブローカー", "カンボジア側詐欺拠点"],
+      "affected_victim_nationalities": ["ネパール", "パキスタン", "インド", "バングラデシュ", "スリランカ"],
+      "fraud_victim_markets": [],
+      "financial_mechanisms": ["求人手数料", "債務拘束"],
+      "map_display_note": "送出地域は南アジア広域として表示する。",
+      "sources": [
+        {
+          "title": "UN report details grave abuses against those trafficked into scam centres",
+          "publisher": "OHCHR",
+          "date": "2026-02-20",
+          "url": "https://www.ohchr.org/en/press-releases/2026/02/un-report-details-grave-abuses-against-those-trafficked-scam-centres"
+        },
+        {
+          "title": "Cambodia: 57 foreigners flee alleged scam compound",
+          "publisher": "Business & Human Rights Resource Centre",
+          "date": "2025-01-15",
+          "url": "https://www.business-humanrights.org/"
+        }
+      ]
+    }
+  ],
+  "endpoint_countries": [
+    {
+      "id": "region_china_upstream",
+      "name_ja": "中国側出口・供給圧",
+      "name_en": "China upstream supply and exit nodes",
+      "coordinates": [27.8, 112.9],
+      "role_types": ["victim_recruitment", "upstream_supply", "enforcement"],
+      "summary_ja": "中国本土の供給省、防城港、昆明、瑞麗、磨憨などを束ねる上流ノード。省別・口岸別の精密流量は追加調査対象。",
+      "related_flows": ["flow_china_supply_to_mekong"],
+      "evidence_level": "inferred",
+      "sources": []
+    },
+    {
+      "id": "region_macau_hongkong",
+      "name_ja": "澳門・香港",
+      "name_en": "Macau / Hong Kong",
+      "coordinates": [22.25, 113.9],
+      "role_types": ["casino_sez_network", "financial_hub"],
+      "summary_ja": "澳門はジャンケット前史、香港は銀行・法人・オフショア接続のインターフェイスとして表示する。",
+      "related_flows": ["flow_macau_junket_to_mekong", "flow_huione_usdt_offshore"],
+      "evidence_level": "reported",
+      "sources": []
+    },
+    {
+      "id": "country_japan",
+      "name_ja": "日本",
+      "name_en": "Japan",
+      "coordinates": [36.0, 138.0],
+      "role_types": ["fraud_victim_market"],
+      "summary_ja": "日本は潜在的な被害市場として表示する。現時点の提供資料では、東南アジア拠点との直接接続は限定的なため、詳細線は追加調査対象。",
+      "related_flows": [],
+      "evidence_level": "reported",
+      "sources": []
+    },
+    {
+      "id": "country_china",
+      "name_ja": "中国本土",
+      "name_en": "Mainland China",
+      "coordinates": [35.0, 104.0],
+      "role_types": ["victim_nationality", "fraud_victim_market", "enforcement"],
+      "summary_ja": "中国語圏向け詐欺、POGO、ミャンマー北部摘発、被害者送還の主要接続国。",
+      "related_flows": ["flow_ph_pogo_china", "flow_myanmar_repatriation"],
+      "evidence_level": "documented",
+      "sources": []
+    },
+    {
+      "id": "country_usa",
+      "name_ja": "アメリカ合衆国",
+      "name_en": "United States",
+      "coordinates": [39.0, -98.0],
+      "role_types": ["fraud_victim_market", "enforcement", "financial_system"],
+      "summary_ja": "米国は被害市場、ドル建て金融経路、制裁・法執行の3つの役割で表示する。",
+      "related_flows": ["flow_mm_shwekokko_usa", "flow_kh_prince_usa", "flow_kh_huione_usa"],
+      "evidence_level": "documented",
+      "sources": []
+    },
+    {
+      "id": "country_uk",
+      "name_ja": "イギリス",
+      "name_en": "United Kingdom",
+      "coordinates": [54.0, -2.0],
+      "role_types": ["enforcement"],
+      "summary_ja": "英国は米国と連携した制裁・資産凍結の法執行ノードとして扱う。",
+      "related_flows": ["flow_kh_prince_sanctions", "flow_mm_kna_sanctions"],
+      "evidence_level": "documented",
+      "sources": []
+    },
+    {
+      "id": "country_eu",
+      "name_ja": "欧州連合",
+      "name_en": "European Union",
+      "coordinates": [50.0, 10.0],
+      "role_types": ["enforcement"],
+      "summary_ja": "EUはミャンマー関連制裁などの法執行ノードとして表示する。",
+      "related_flows": ["flow_mm_kna_sanctions"],
+      "evidence_level": "documented",
+      "sources": []
+    },
+    {
+      "id": "country_singapore",
+      "name_ja": "シンガポール",
+      "name_en": "Singapore",
+      "coordinates": [1.29, 103.85],
+      "role_types": ["financial_hub"],
+      "summary_ja": "国際金融センターとして犯罪収益洗浄・資産差押え・AML強化のノード。",
+      "related_flows": [],
+      "evidence_level": "documented",
+      "sources": []
+    },
+    {
+      "id": "region_south_asia",
+      "name_ja": "南アジア",
+      "name_en": "South Asia",
+      "coordinates": [24.0, 78.0],
+      "role_types": ["victim_nationality", "victim_recruitment"],
+      "summary_ja": "ネパール、パキスタン、インド、バングラデシュ、スリランカなどからの被害者送出・求人誘引を束ねて表示する。",
+      "related_flows": ["flow_south_asia_to_kh"],
+      "evidence_level": "reported",
+      "sources": []
+    },
+    {
+      "id": "region_global",
+      "name_ja": "世界各国",
+      "name_en": "Global markets",
+      "coordinates": [20.0, -150.0],
+      "role_types": ["fraud_victim_market"],
+      "summary_ja": "個別国に分解しきれない被害市場を束ねるための概念ノード。",
+      "related_flows": ["flow_kh_sihanouk_global"],
+      "evidence_level": "reported",
+      "sources": []
+    }
+  ]
+}
