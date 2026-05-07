@@ -1,0 +1,18 @@
+{
+  "note": "OPENAI_API_KEY was not set, so these PNGs are local fallback assets with the same filenames/contracts expected for imagegen replacement.",
+  "use_case": "stylized-concept",
+  "style": "restrained investigative atlas UI asset, dark cartographic interface, muted cyan/amber/red accents, clean symbolic linework, premium editorial map design",
+  "constraints": "no text, no letters, no numerals, no logos, no watermark, no neon, no cartoon style, no photorealistic people, no dramatic sci-fi, transparent background for symbols",
+  "quality": "high",
+  "assets": [
+    "symbol-human-flow.png",
+    "symbol-infrastructure.png",
+    "symbol-casino-sez.png",
+    "symbol-enforcement.png",
+    "symbol-finance.png",
+    "symbol-maritime.png",
+    "symbol-border-risk.png",
+    "symbol-reported-compound.png",
+    "map-ambient-overlay.png"
+  ]
+}

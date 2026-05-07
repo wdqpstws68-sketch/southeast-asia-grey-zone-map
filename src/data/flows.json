@@ -17,10 +17,10 @@
     ],
     "destination_id": "myawaddy_maesot",
     "title_ja": "求人詐欺からタイ・ミャンマー国境地域への移動報告",
-    "summary_ja": "タイ側都市圏から国境地域へ移動させられる構造を示す概念線。正確な移送経路や施設位置ではない。",
+    "summary_ja": "タイ側都市圏からミャワディ周辺へ人が移される報告を、都市圏同士の接続として示す。正確な移送経路や施設位置ではない。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "概念的な接続。実際の移動経路を示すものではない。",
+    "display_note": "実際の道路・渡河点ではなく、報告された移動方向を示す線。",
     "sources": [
       {
         "title": "USIP: Southeast Asia Web Scams Reach U.S.",
@@ -44,10 +44,10 @@
     "via": [],
     "destination_id": "poipet_border",
     "title_ja": "メコン圏のカジノ/SEZネットワーク接続",
-    "summary_ja": "カジノ、SEZ、オンライン賭博、資金洗浄リスクが国境都市圏を横断して語られる構造を示す。",
+    "summary_ja": "カジノ、SEZ、オンライン賭博、資金洗浄リスクが、複数の国境都市圏にまたがって結び付く様子を示す。",
     "confidence": "reported",
     "directionality": "network",
-    "display_note": "資本・犯罪サービス・運営ノウハウの接続を示す概念線。",
+    "display_note": "資本、犯罪サービス、運営ノウハウが国境をまたいで移ることを示す線。",
     "sources": [
       {
         "title": "UNODC: Transnational Organized Crime and the Convergence of Cyber-Enabled Fraud",
@@ -77,10 +77,10 @@
     ],
     "destination_id": "bavet_chreythum_corridor",
     "title_ja": "ベトナム側都市圏からカンボジア東部国境地域への移動報告",
-    "summary_ja": "求人詐欺、越境移動、強制的な詐欺労働の報告を、都市圏から国境地域への概念接続として表示する。",
+    "summary_ja": "求人詐欺、越境移動、強制的な詐欺労働の報告を、都市圏から国境地域への接続として示す。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "概念的な接続。個別被害者の実移動や施設位置ではない。",
+    "display_note": "個別被害者の実移動や施設位置ではなく、報告の方向性を示す線。",
     "sources": [
       {
         "title": "Amnesty International: Cambodia casinos and scamming compounds",
@@ -104,10 +104,10 @@
     "via": [],
     "destination_id": "sihanoukville",
     "title_ja": "カンボジア国内の沿岸・国境都市圏接続",
-    "summary_ja": "沿岸開発、カジノ、不動産、国境都市圏がオンライン詐欺報告と重なる構造を国内接続として表示する。",
+    "summary_ja": "沿岸開発、カジノ、不動産、国境都市圏がオンライン詐欺報告と重なる様子を、カンボジア国内の接続として示す。",
     "confidence": "documented",
     "directionality": "network",
-    "display_note": "国内の関連都市圏を読むための構造線。施設単位の接続ではない。",
+    "display_note": "関連する都市圏同士のつながりを示す線。施設単位の接続ではない。",
     "sources": [
       {
         "title": "Amnesty International: Cambodia casinos and scamming compounds",
@@ -127,10 +127,10 @@
     "via": [],
     "destination_id": "golden_triangle_sez",
     "title_ja": "北部ミャンマーからメコン三国境圏へのネットワーク移動",
-    "summary_ja": "摘発や圧力の後に拠点・運営ネットワークが移動するという報告を、広域の移動構造として表示する。",
+    "summary_ja": "摘発や圧力の後に、拠点や運営ネットワークが別の国境地域へ移ったという報告を示す。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "拠点移動の概念線。具体的な組織・施設の移動を断定しない。",
+    "display_note": "拠点移動の傾向を示す線。具体的な組織・施設の移動を断定しない。",
     "sources": [
       {
         "title": "USIP: Transnational Crime in Southeast Asia",
@@ -163,7 +163,7 @@
     "summary_ja": "公式送還事例では、タウィタウィからマレーシアへ船で移動し、メーソートを経由してミャンマー側へ搬送される流れが報告された。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "被害者証言を含む公式送還事例に基づく概念線。確定航路や個別渡航点ではない。",
+    "display_note": "被害者証言を含む公式送還事例に基づく線。確定航路や個別渡航点ではない。",
     "sources": [
       {
         "title": "BI reports arrival of seven trafficking victims repatriated from scam hubs",
@@ -199,7 +199,7 @@
     "summary_ja": "別の公式送還事例では、パラワンからコタキナバル、タイ、ミャンマーを経てカンボジアへ迂回移送された被害者が確認された。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "複数国をまたぐ報告ルートの概念線。個別被害者の詳細経路や施設位置は示さない。",
+    "display_note": "複数国をまたぐ報告ルートを束ねた線。個別被害者の詳細経路や施設位置は示さない。",
     "sources": [
       {
         "title": "BI: 4 Filipinos repatriated from Cambodia after falling victim to job scam syndicate",
@@ -216,7 +216,7 @@
       "id": "kuala_lumpur_klia_corridor",
       "name_ja": "クアラルンプール・KLIA圏",
       "coordinates": [2.95, 101.7],
-      "role_ja": "募集・出国・通報・送還の中心ノード"
+      "role_ja": "募集・出国・通報・送還の中心地域"
     },
     "via": [],
     "destination_id": "mekong_region",
@@ -224,7 +224,7 @@
     "summary_ja": "マレーシア外務省が2025年にカンボジアでの被害者救出を確認しており、メコン圏向けの送出・被害流入が継続している。",
     "confidence": "documented",
     "directionality": "one_way",
-    "display_note": "国別救出・送還情報を概念接続として表示。特定施設への移送を示さない。",
+    "display_note": "国別の救出・送還情報を接続として示す。特定施設への移送は示さない。",
     "sources": [
       {
         "title": "Malaysians Rescued From Job Scam Syndicate In Cambodia",
@@ -241,7 +241,7 @@
       "id": "kuala_lumpur_klia_corridor",
       "name_ja": "クアラルンプール・KLIA圏",
       "coordinates": [2.95, 101.7],
-      "role_ja": "募集・出国・通報・送還の中心ノード"
+      "role_ja": "募集・出国・通報・送還の中心地域"
     },
     "via": [],
     "destination_id": "myawaddy_maesot",
@@ -249,7 +249,7 @@
     "summary_ja": "2025年にマレーシア政府が複数回の本国送還を公表しており、ミャンマー側拠点との人員接続が確認できる。",
     "confidence": "documented",
     "directionality": "one_way",
-    "display_note": "救出・帰還情報に基づく概念線。個別移送経路ではない。",
+    "display_note": "救出・帰還情報に基づく線。個別移送経路ではない。",
     "sources": [
       {
         "title": "25 Malaysian Victims Of Job Scam Syndicates In Myanmar Arrive At Border",
@@ -280,7 +280,7 @@
     "summary_ja": "多国間摘発後、ミャンマー側から解放された500人超のインドネシア人がジャカルタへ帰還し、選別・取調べが行われた。",
     "confidence": "documented",
     "directionality": "one_way",
-    "display_note": "送還・執行対応の概念線。個人や具体的便名は示さない。",
+    "display_note": "送還・執行対応を示す線。個人や具体的便名は示さない。",
     "sources": [
       {
         "title": "Indonesia to question more than 500 citizens freed from Myanmar scam centres",
@@ -305,7 +305,7 @@
     "summary_ja": "シンガポール警察は、プノンペンの詐欺拠点からシンガポール被害者を狙った組織に対して共同摘発と国際手配を進めた。",
     "confidence": "documented",
     "directionality": "network",
-    "display_note": "共同捜査・被害国接続を示す概念線。施設位置は示さない。",
+    "display_note": "共同捜査と被害国側の接続を示す線。施設位置は示さない。",
     "sources": [
       {
         "title": "27 Singaporeans And Seven Malaysians Identified As Members Of Organised Crime Group Operating Out Of Scam Compound In Cambodia",
@@ -322,7 +322,7 @@
       "id": "sihanoukville",
       "name_ja": "カンボジア沿岸・国境型詐欺経済",
       "coordinates": [10.63, 103.52],
-      "role_ja": "カンボジア側のカジノ・詐欺経済を代表する広域ノード"
+      "role_ja": "カンボジア側のカジノ・詐欺経済を代表する広域地域"
     },
     "via": [],
     "destination_id": "singapore_metro_financial_node",
@@ -330,7 +330,7 @@
     "summary_ja": "海外詐欺・オンライン賭博の収益がシンガポールの口座・資産へ流入し、後に金融当局・警察の処分や押収対象となった。",
     "confidence": "documented",
     "directionality": "network",
-    "display_note": "資金・法人利用を示す概念線。個別口座・法人・住所は示さない。",
+    "display_note": "資金移動や法人利用を示す線。個別口座・法人・住所は示さない。",
     "sources": [
       {
         "title": "Singapore aims to make it easier to prosecute money laundering cases",

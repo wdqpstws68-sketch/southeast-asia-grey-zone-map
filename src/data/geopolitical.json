@@ -10,7 +10,7 @@
       "polygons": [
         [[28.5, 92.1], [27.7, 96.6], [24.2, 99.4], [21.4, 100.3], [18.9, 98.0], [16.4, 98.7], [11.1, 98.9], [9.4, 96.0], [13.3, 92.8], [20.8, 93.2], [25.2, 94.1]]
       ],
-      "summary_ja": "北東部とカレン州国境地帯で、詐欺コンパウンド、カジノ/SEZ、武装勢力支配、越境インフラが重なる中核国。ミャワディ、Shwe Kokko、KK Park、北シャン州/コーカン周辺が主要ノードとして扱われる。",
+      "summary_ja": "北東部とカレン州国境地帯で、詐欺コンパウンド、カジノ/SEZ、武装勢力支配、越境インフラが重なる中核国。ミャワディ、Shwe Kokko、KK Park、北シャン州/コーカン周辺を主要地域として扱う。",
       "border_context": "タイ国境、中国雲南省境界、ゴールデン・トライアングルと接続する。",
       "risk_factors": ["武装勢力支配地域", "治外法権的SEZ", "弱い法執行", "越境電力・通信依存", "中国語圏犯罪ネットワーク"],
       "related_borders": ["thai-myanmar", "myanmar-yunnan", "golden-triangle"],
@@ -52,7 +52,7 @@
       "layers": ["policy_nodes", "trafficking_routes", "financial_nodes"],
       "confidence": "documented",
       "last_updated": "2026-04",
-      "map_display_note": "タイ側は通過・救出・捜査協力ノードとして表示する。",
+      "map_display_note": "タイ側は通過、救出、捜査協力が集中する地域として表示する。",
       "sources": [
         {
           "title": "Southeast Asia strengthens regional cooperation to combat trafficking for forced criminality",
@@ -175,7 +175,7 @@
         [[18.7, 120.0], [17.0, 122.8], [14.0, 124.2], [10.5, 126.2], [5.0, 125.2], [4.7, 119.0], [8.0, 117.0], [11.5, 119.0], [14.5, 120.0]]
       ],
       "summary_ja": "POGO/オンライン賭博、詐欺、人身取引、政策転換の文脈で重要。マニラ首都圏と中央ルソン、南西部海上回廊が主な表示対象。",
-      "border_context": "マレーシア・サバ方面の海上回廊、国内POGO摘発ノードと接続。",
+      "border_context": "マレーシア・サバ方面の海上回廊、国内POGO摘発地域と接続。",
       "risk_factors": ["POGOの地下化", "中国語圏オンライン賭博", "空港・海上移動", "国外送出被害"],
       "related_borders": ["philippines-malaysia"],
       "related_regions": ["メトロマニラ", "中央ルソン", "パラワン", "タウィタウィ"],
@@ -231,7 +231,7 @@
       "polygons": [
         [[1.47, 103.62], [1.47, 104.08], [1.18, 104.08], [1.18, 103.62]]
       ],
-      "summary_ja": "強制詐欺拠点ではなく、金融・法人・資産管理・共同捜査のノードとして扱う。犯罪収益洗浄、資産差押え、AML強化の文脈が中心。",
+      "summary_ja": "強制詐欺拠点ではなく、金融、法人、資産管理、共同捜査の接続先として扱う。犯罪収益洗浄、資産差押え、AML強化の文脈が中心。",
       "border_context": "マレーシア、インドネシアとの金融・港湾・空港接続。",
       "risk_factors": ["国際金融センター", "法人・資産管理の悪用可能性", "越境現金・資産移動"],
       "related_borders": ["malaysia-singapore-indonesia"],
@@ -239,7 +239,7 @@
       "layers": ["financial_nodes", "policy_nodes"],
       "confidence": "documented",
       "last_updated": "2026-04",
-      "map_display_note": "都市国家全体を金融ノードとして表示する。",
+      "map_display_note": "都市国家全体を金融接続の地域として表示する。",
       "sources": [
         {
           "title": "Singapore aims to make it easier to prosecute money laundering cases",
@@ -367,7 +367,7 @@
       "connection_types": ["casino_sez_network", "trafficking_route", "money_laundering"],
       "confidence": "documented",
       "last_updated": "2026-04",
-      "map_display_note": "SEZ周辺を広域ノードとして表示する。",
+      "map_display_note": "SEZ周辺を広域地域として表示する。",
       "sources": [
         {
           "title": "Casinos and cryptocurrency: major drivers of money laundering, underground banking, and cyberfraud in East and Southeast Asia",
@@ -453,13 +453,13 @@
       "countries": ["malaysia", "singapore", "indonesia"],
       "path": [[3.1, 101.7], [1.35, 103.82], [-0.5, 104.4], [-6.2, 106.85]],
       "color": "#8a7440",
-      "summary_ja": "金融・貿易・港湾・空港を通じた資金移動、送還、法執行協力の広域ノード。",
+      "summary_ja": "金融、貿易、港湾、空港を通じた資金移動、送還、法執行協力が重なる広域地域。",
       "risk_factors": ["越境金融犯罪", "港湾・空港接続", "法人利用", "多国籍捜査協力"],
       "related_regions": ["クアラルンプール", "ジョホール", "シンガポール", "ジャカルタ"],
       "connection_types": ["money_laundering", "financial_node", "enforcement"],
       "confidence": "documented",
       "last_updated": "2026-04",
-      "map_display_note": "主要都市・港湾間の概念線として表示する。",
+      "map_display_note": "主要都市・港湾間のおおまかな接続線として表示する。",
       "sources": [
         {
           "title": "Follow the money: how Southeast Asian countries are fighting cyber-fraud",

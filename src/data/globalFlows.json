@@ -84,7 +84,7 @@
         { "id": "australia", "name_ja": "オーストラリア", "name_en": "Australia", "coordinates": [-25.0, 133.0], "badge": "AU" }
       ],
       "connection_type": "casino_sez_network",
-      "summary_ja": "カジノホテルやリゾート施設が詐欺業務に転用され、監禁・強制労働下の労働者が暗号資産詐欺に従事させられたと報告される接続。被害市場は国単位で特定しきれないため、世界市場への概念線として表示する。",
+      "summary_ja": "カジノホテルやリゾート施設が詐欺業務に転用され、監禁・強制労働下の労働者が暗号資産詐欺に従事させられたと報告される接続。被害市場は国単位で特定しきれないため、世界市場へ広がる線として示す。",
       "evidence_level": "reported",
       "what_is_confirmed": "カンボジアのカジノ/ホテル群と詐欺・強制労働の関連報告。",
       "what_is_not_confirmed": "施設ごとの被害総額、被害国の完全な内訳。",
@@ -144,7 +144,7 @@
       "destination_region": "カンボジア国内のカジノ/国境都市",
       "destination_coordinates_approx": [12.7, 104.9],
       "connection_type": "network_relocation",
-      "summary_ja": "中国側・ミャンマー側での摘発圧力や紛争条件の変化により、詐欺組織がカンボジアなどへ移転・分散したと報告される流れ。特定組織の完全な移転経路は限定的な情報に基づくため、概念線として扱う。",
+      "summary_ja": "中国側・ミャンマー側での摘発圧力や紛争条件の変化により、詐欺組織がカンボジアなどへ移転・分散したと報告される流れ。特定組織の完全な移転経路は分からないため、地域間の移転傾向として扱う。",
       "evidence_level": "reported",
       "what_is_confirmed": "摘発圧力後の拠点分散・移転傾向と、カンボジア側での拠点増加報告。",
       "what_is_not_confirmed": "個別組織ごとの移転経路と新拠点の全容。",
@@ -211,7 +211,7 @@
         { "id": "south_asia", "name_ja": "南アジア", "name_en": "South Asia", "coordinates": [24.0, 78.0], "badge": "SA" }
       ],
       "connection_type": "repatriation",
-      "summary_ja": "ミャンマー側詐欺センターから救出された多国籍の被害者が、タイ国境を経由して母国へ送還された流れ。国別の完全内訳は事案ごとに異なるため、多国籍送還の概念線として表示する。",
+      "summary_ja": "ミャンマー側詐欺センターから救出された多国籍の被害者が、タイ国境を経由して母国へ送還された流れ。国別の完全内訳は事案ごとに異なるため、多国籍送還をまとめた線として示す。",
       "evidence_level": "documented",
       "what_is_confirmed": "ミャンマー・タイ国境での数百人規模の救出・一時滞留・送還対応。",
       "what_is_not_confirmed": "全被害者の国籍、帰国先、各人の移送経路。",
@@ -247,7 +247,7 @@
       "destination_region": "米国金融システム/ドル建て経路",
       "destination_coordinates_approx": [39.0, -98.0],
       "connection_type": "money_laundering",
-      "summary_ja": "HuiOne Groupは、詐欺収益やサイバー犯罪収益の洗浄経路として米当局に問題視された金融ノード。地図上では資金流の概念線として扱う。",
+      "summary_ja": "HuiOne Groupは、詐欺収益やサイバー犯罪収益の洗浄経路として米当局に問題視された金融サービス網。地図上では資金の通り道として扱う。",
       "evidence_level": "documented",
       "what_is_confirmed": "HuiOne Groupへの米当局措置、暗号資産・犯罪収益洗浄リスク。",
       "what_is_not_confirmed": "資金の最終受益者と全経路。",
@@ -256,7 +256,7 @@
       "affected_victim_nationalities": [],
       "fraud_victim_markets": ["アメリカ合衆国", "その他"],
       "financial_mechanisms": ["暗号資産", "金融サービス企業", "ドル建て経路"],
-      "map_display_note": "企業所在地ではなくプノンペン金融ノードとして表示する。",
+      "map_display_note": "企業所在地ではなく、プノンペン周辺の金融接続として表示する。",
       "sources": [
         {
           "title": "U.S. and U.K. Take Largest Action Ever Targeting Cybercriminal Networks in Southeast Asia",
@@ -290,7 +290,7 @@
       "affected_victim_nationalities": [],
       "fraud_victim_markets": [],
       "financial_mechanisms": ["制裁", "資産凍結", "取引禁止"],
-      "map_display_note": "法執行線として表示する。",
+      "map_display_note": "制裁・法執行の向きを示す線として表示する。",
       "sources": [
         {
           "title": "U.S. and U.K. Take Largest Action Ever Targeting Cybercriminal Networks in Southeast Asia",
@@ -346,7 +346,7 @@
       "destination_region": "メコン圏の詐欺コンパウンド/国境都市",
       "destination_coordinates_approx": [16.2, 102.4],
       "connection_type": "upstream_supply",
-      "summary_ja": "中国本土を被害市場や送還先だけでなく、内卷、偽求人、逃避口承、越境志願が重なる労働力供給側として読む接続。個別省別統計ではなく、上流圧の分析線として扱う。",
+      "summary_ja": "中国本土を被害市場や送還先だけでなく、内卷、偽求人、逃避口承、越境志願が重なる労働力供給側として見る接続。個別の省別統計ではなく、上流側の圧力を示す分析線として扱う。",
       "evidence_level": "inferred",
       "what_is_confirmed": "中国語圏被害者・労働者、摘発後の送還、中国側の反詐欺政策連動は複数資料で確認される。",
       "what_is_not_confirmed": "省別の人数、個別ブローカー網、防城港など特定出口から各コンパウンドへの直接移送経路。",
@@ -355,7 +355,7 @@
       "affected_victim_nationalities": ["中国"],
       "fraud_victim_markets": ["中国本土", "世界各国"],
       "financial_mechanisms": ["偽求人", "債務拘束", "地下銀行"],
-      "map_display_note": "起点は中国内陸の供給圧を束ねた概念点。具体的な渡航点や施設位置は示さない。",
+      "map_display_note": "起点は中国内陸の供給圧を束ねた概算点。具体的な渡航点や施設位置は示さない。",
       "sources": [
         {
           "title": "OHCHR: UN report details grave abuses against those trafficked into scam centres",
@@ -377,7 +377,7 @@
       "destination_region": "カンボジア・ラオス・タイ国境のカジノ/SEZ圏",
       "destination_coordinates_approx": [13.65, 102.57],
       "connection_type": "casino_sez_network",
-      "summary_ja": "2014年前後の澳門VIPジャンケット規制強化を、東南アジア側カジノ/SEZ・オンライン賭博・詐欺拠点化の前史として束ねる概念接続。",
+      "summary_ja": "2014年前後の澳門VIPジャンケット規制強化を、東南アジア側のカジノ/SEZ・オンライン賭博・詐欺拠点化へつながる前史として束ねる接続。",
       "evidence_level": "reported",
       "what_is_confirmed": "澳門側の規制強化と、カンボジア・ラオス側でのカジノ/SEZ拡大は個別には確認される。",
       "what_is_not_confirmed": "特定ジャンケット業者ごとの南下経路と、各詐欺拠点への直接関与。",
@@ -395,7 +395,7 @@
       "id": "flow_huione_usdt_offshore",
       "name_ja": "Huione / USDT / オフショア管轄への資金経路",
       "name_en": "Huione / USDT / offshore jurisdiction laundering rails",
-      "origin_region": "プノンペン・カンボジア金融/暗号資産ノード",
+      "origin_region": "プノンペン・カンボジア金融/暗号資産接続",
       "origin_coordinates_approx": [11.56, 104.92],
       "transit_regions": ["香港", "ドバイ", "Cyprus", "Seychelles"],
       "destination_country": "",
@@ -409,7 +409,7 @@
         { "id": "singapore", "name_ja": "シンガポール", "name_en": "Singapore", "coordinates": [1.29, 103.85], "badge": "SG" }
       ],
       "connection_type": "financial_trace",
-      "summary_ja": "Huione、USDT/TRC20、Telegram OTC、シェル法人管轄を、東南アジア詐欺収益が国際金融システムへ接続される金融レイヤーとして表示する。",
+      "summary_ja": "Huione、USDT/TRC20、Telegram OTC、シェル法人管轄を、東南アジアの詐欺収益が国際金融システムへ流れ込む経路として表示する。",
       "evidence_level": "documented",
       "what_is_confirmed": "Huione Groupが米当局により主要な資金洗浄懸念として扱われ、東南アジア詐欺ネットワークとDPRKサイバー収益洗浄への関与が指摘された。",
       "what_is_not_confirmed": "全てのUSDT/TRC20取引、OTCデスク、オフショア法人の個別最終受益者。",
@@ -418,7 +418,7 @@
       "affected_victim_nationalities": [],
       "fraud_victim_markets": ["アメリカ合衆国", "世界各国"],
       "financial_mechanisms": ["USDT", "TRC20", "Telegram OTC", "シェル法人", "オフショア管轄"],
-      "map_display_note": "典型的な金融レールを束ねた概念線。個別ウォレットや法人住所は示さない。",
+      "map_display_note": "典型的な金融レールを束ねた線。個別ウォレットや法人住所は示さない。",
       "sources": [
         {
           "title": "U.S. and U.K. Take Largest Action Ever Targeting Cybercriminal Networks in Southeast Asia",
@@ -448,7 +448,7 @@
       "affected_victim_nationalities": [],
       "fraud_victim_markets": [],
       "financial_mechanisms": ["越境電力", "通信", "燃料", "衛星通信"],
-      "map_display_note": "インフラ依存の概念線。個別設備や遮断地点は示さない。",
+      "map_display_note": "インフラ依存を示す線。個別設備や遮断地点は示さない。",
       "sources": [
         {
           "title": "Thailand cuts power supplies to Myanmar border towns in effort to curb scam rings",
@@ -469,7 +469,7 @@
       "destination_region": "カンボジアの詐欺コンパウンド",
       "destination_coordinates_approx": [13.65, 102.57],
       "connection_type": "victim_recruitment",
-      "summary_ja": "南アジア諸国からの出稼ぎ希望者が、偽求人や仲介者を通じてカンボジアの詐欺コンパウンドへ送られたとされる流れ。複数国籍の被害者報告を束ねた概念線。",
+      "summary_ja": "南アジア諸国からの出稼ぎ希望者が、偽求人や仲介者を通じてカンボジアの詐欺コンパウンドへ送られたとされる流れ。複数国籍の被害者報告を束ねて示す。",
       "evidence_level": "reported",
       "what_is_confirmed": "ネパール、パキスタン、インド、バングラデシュ、スリランカ等の国籍者が詐欺拠点被害者として報告されていること。",
       "what_is_not_confirmed": "各国からの人数、ブローカー網、移送経路の完全な内訳。",
@@ -502,7 +502,7 @@
       "name_en": "China upstream supply and exit nodes",
       "coordinates": [27.8, 112.9],
       "role_types": ["victim_recruitment", "upstream_supply", "enforcement"],
-      "summary_ja": "中国本土の供給省、防城港、昆明、瑞麗、磨憨などを束ねる上流ノード。省別・口岸別の精密流量は追加調査対象。",
+      "summary_ja": "中国本土の供給省、防城港、昆明、瑞麗、磨憨などを束ねる上流側の地域。省別・口岸別の精密流量は追加調査対象。",
       "related_flows": ["flow_china_supply_to_mekong"],
       "evidence_level": "inferred",
       "sources": []
@@ -557,7 +557,7 @@
       "name_en": "United Kingdom",
       "coordinates": [54.0, -2.0],
       "role_types": ["enforcement"],
-      "summary_ja": "英国は米国と連携した制裁・資産凍結の法執行ノードとして扱う。",
+      "summary_ja": "英国は米国と連携した制裁・資産凍結の法執行側として扱う。",
       "related_flows": ["flow_kh_prince_sanctions", "flow_mm_kna_sanctions"],
       "evidence_level": "documented",
       "sources": []
@@ -568,7 +568,7 @@
       "name_en": "European Union",
       "coordinates": [50.0, 10.0],
       "role_types": ["enforcement"],
-      "summary_ja": "EUはミャンマー関連制裁などの法執行ノードとして表示する。",
+      "summary_ja": "EUはミャンマー関連制裁などの法執行側として表示する。",
       "related_flows": ["flow_mm_kna_sanctions"],
       "evidence_level": "documented",
       "sources": []
@@ -579,7 +579,7 @@
       "name_en": "Singapore",
       "coordinates": [1.29, 103.85],
       "role_types": ["financial_hub"],
-      "summary_ja": "国際金融センターとして犯罪収益洗浄・資産差押え・AML強化のノード。",
+      "summary_ja": "国際金融センターとして、犯罪収益洗浄、資産差押え、AML強化が関わる地域。",
       "related_flows": [],
       "evidence_level": "documented",
       "sources": []
@@ -601,7 +601,7 @@
       "name_en": "Global markets",
       "coordinates": [20.0, -150.0],
       "role_types": ["fraud_victim_market"],
-      "summary_ja": "個別国に分解しきれない被害市場を束ねるための概念ノード。",
+      "summary_ja": "個別国に分解しきれない被害市場を束ねるための概算点。",
       "related_flows": ["flow_kh_sihanouk_global"],
       "evidence_level": "reported",
       "sources": []

@@ -36,6 +36,19 @@ const NATURAL_EARTH_COUNTRIES = naturalEarthCountries;
 const NATURAL_EARTH_CORRIDOR_LINES = naturalEarthCorridorLines;
 const NATURAL_EARTH_MARITIME_BOUNDARIES = naturalEarthMaritimeBoundaries;
 
+const MAP_DESIGN_ASSET_BASE = "/assets/map-design";
+const VISUAL_ASSETS = {
+  ambientOverlay: `${MAP_DESIGN_ASSET_BASE}/map-ambient-overlay.png`,
+  borderRisk: `${MAP_DESIGN_ASSET_BASE}/symbol-border-risk.png`,
+  casinoSez: `${MAP_DESIGN_ASSET_BASE}/symbol-casino-sez.png`,
+  enforcement: `${MAP_DESIGN_ASSET_BASE}/symbol-enforcement.png`,
+  finance: `${MAP_DESIGN_ASSET_BASE}/symbol-finance.png`,
+  humanFlow: `${MAP_DESIGN_ASSET_BASE}/symbol-human-flow.png`,
+  infrastructure: `${MAP_DESIGN_ASSET_BASE}/symbol-infrastructure.png`,
+  maritime: `${MAP_DESIGN_ASSET_BASE}/symbol-maritime.png`,
+  reportedCompound: `${MAP_DESIGN_ASSET_BASE}/symbol-reported-compound.png`,
+};
+
 const CONTEXT_COUNTRY_COLOR = "#64706b";
 const SOUTH_ASIA_CONTEXT_COUNTRY_IDS = ["india", "pakistan", "bangladesh", "nepal", "sri-lanka"];
 const CONTEXT_COUNTRIES = [
@@ -93,14 +106,14 @@ const LAYER_CONFIG = {
     fill: "#c56e93",
   },
   financial_node: {
-    label: "金融/法人ノード",
+    label: "金融/法人接続",
     shortLabel: "金融",
     icon: "F",
     color: "#8a7440",
     fill: "#c5ad66",
   },
   policy_enforcement: {
-    label: "政策/執行ノード",
+    label: "政策/執行対応",
     shortLabel: "政策",
     icon: "E",
     color: "#486c58",
@@ -113,7 +126,7 @@ const LAYER_CONFIG = {
     color: "#2f7476",
   },
   china_upstream: {
-    label: "中国側出口・押し出しノード",
+    label: "中国側出口・押し出し地点",
     shortLabel: "中国",
     icon: "中",
     color: "#14191b",
@@ -148,7 +161,7 @@ const LAYER_CONFIG = {
     fill: "#f0bf7c",
   },
   entity_detail: {
-    label: "固有名・施設・クラン補助点",
+    label: "固有名・施設・クラン関連点",
     shortLabel: "固有",
     icon: "N",
     color: "#5c678f",
@@ -237,7 +250,7 @@ const MAP_MODES = [
   {
     id: "connections",
     label: "接続",
-    description: "起点ー終点の概念線を中心に読む",
+    description: "起点と終点の関係を示す線を中心に読む",
   },
   {
     id: "comparison",
@@ -261,66 +274,92 @@ const FLOW_TYPE_CONFIG = {
     label: "求人・移動",
     color: "#2f7476",
     fill: "#d9efec",
+    description:
+      "偽求人、仲介者、空港・国境通過を通じて、人が詐欺拠点側へ連れて行かれたと報告される方向を示します。",
   },
   casino_sez_connection: {
     label: "カジノ/SEZ接続",
     color: "#5c678f",
     fill: "#e3e7f4",
+    description:
+      "カジノ、SEZ、不動産、ホテル、オンライン賭博の運営基盤が、複数の国境都市圏でつながる関係を示します。",
   },
   network_shift: {
     label: "拠点/ネットワーク移動",
     color: "#7a5a8e",
     fill: "#eee6f3",
+    description:
+      "摘発、紛争、国境管理の強化を受け、拠点や運営ノウハウが別地域へ移ったとされる傾向を示します。",
   },
   trafficking: {
     label: "人身移送",
     color: "#2f7476",
     fill: "#d9efec",
+    description:
+      "被害者が欺かれ、旅券没収や債務拘束を伴って拠点へ移送された報告を、人の流れとして示します。",
   },
   displacement: {
     label: "移転/再配置",
     color: "#7a5a8e",
     fill: "#eee6f3",
+    description:
+      "施設そのものの引っ越しではなく、摘発圧力後に運営・人員・資本が再配置される傾向を示します。",
   },
   finance: {
     label: "金融接続",
     color: "#8a7440",
     fill: "#f1e8c8",
+    description:
+      "詐欺収益、口座、法人、資産、送金経路が別の金融圏へ接続する関係を示します。",
   },
   enforcement: {
-    label: "執行接続",
+    label: "制裁/摘発接続",
     color: "#486c58",
     fill: "#dcebdd",
+    description:
+      "制裁、共同摘発、送還、警察協力などの法執行がどの地域・国へ作用したかを示します。人や資金が移動する意味ではありません。",
   },
   upstream_supply: {
     label: "上流供給",
     color: "#14191b",
     fill: "#e3e5e2",
+    description:
+      "国内の雇用不安、偽求人、越境志願、送還先など、詐欺労働へ接続する上流側の圧力を示します。",
   },
   victim_supply: {
     label: "労働力起点",
     color: "#7a5a8e",
     fill: "#eee6f3",
+    description:
+      "被害者の国籍・出身地域を束ね、どこから人が誘引されやすいかを概略で示します。",
   },
   physical_infrastructure: {
     label: "物理インフラ",
     color: "#2b6f9a",
     fill: "#d8eaf4",
+    description:
+      "鉄道、水系、道路、港湾など、合法物流と違法な移動が重なりうる物理的な通路を示します。",
   },
   financial_trace: {
     label: "金融/暗号資産",
     color: "#8a7440",
     fill: "#f1e8c8",
+    description:
+      "暗号資産、地下銀行、OTC、シェル法人など、収益を動かす典型的な金融レールを示します。",
   },
   infrastructure_dependency: {
     label: "補給依存",
     color: "#b36a2e",
     fill: "#f3e1cc",
+    description:
+      "電力、通信、燃料、衛星通信など、国境拠点を稼働させる外部補給への依存を示します。",
   },
   governance_method: {
     label: "制度/方法論",
     color: "#486c58",
     fill: "#dcebdd",
+    description:
+      "制度変化、分析枠組み、統治の空白など、個別事件の背後にある読み方を示します。",
   },
 };
 
@@ -330,79 +369,156 @@ const GLOBAL_FLOW_CONFIG = {
     icon: "人",
     color: "#8f4a68",
     fill: "#f4dbe6",
+    description:
+      "偽の高収入求人や仲介を通じて、国外の人が詐欺拠点へ誘引される関係です。",
   },
   trafficking_route: {
     label: "人の移動",
     icon: "人",
     color: "#2f7476",
     fill: "#d9efec",
+    description:
+      "被害者が国境や空港を経由して移送される報告を、国・地域単位で束ねた線です。",
   },
   fraud_targeting: {
     label: "被害市場",
     icon: "標",
     color: "#a43c48",
     fill: "#f1d7da",
+    description:
+      "東南アジア側の拠点から、国外の個人・市場へオンライン詐欺が向けられる関係です。",
   },
   money_laundering: {
     label: "資金流",
     icon: "$",
     color: "#8a7440",
     fill: "#f1e8c8",
+    description:
+      "詐欺収益が金融サービス、地下銀行、国際金融システムへ流れ込む関係です。",
   },
   crypto_flow: {
     label: "暗号資産",
     icon: "₿",
     color: "#5c678f",
     fill: "#e3e7f4",
+    description:
+      "暗号資産、偽投資サイト、OTC、ウォレットなどを通じた資金移動の関係です。",
   },
   casino_sez_network: {
     label: "カジノ/SEZ",
     icon: "網",
     color: "#7a5a8e",
     fill: "#eee6f3",
+    description:
+      "カジノ、SEZ、ホテル、不動産開発が、詐欺拠点やオンライン賭博の器になる関係です。",
   },
   enforcement_sanctions: {
-    label: "制裁/執行",
+    label: "制裁/摘発",
     icon: "E",
     color: "#486c58",
     fill: "#dcebdd",
+    description:
+      "制裁、資産凍結、取引禁止、共同捜査など、国や当局による法執行の作用方向です。",
   },
   repatriation: {
     label: "救出/送還",
     icon: "帰",
     color: "#2b6f9a",
     fill: "#d8eaf4",
+    description:
+      "救出された被害者が国境や第三国を経由して母国へ戻る対応を示します。",
   },
   network_relocation: {
     label: "拠点移転",
     icon: "拠",
     color: "#b36a2e",
     fill: "#f3e1cc",
+    description:
+      "摘発や紛争で詐欺ネットワークが別の国・国境圏へ分散する傾向を示します。",
   },
   upstream_supply: {
     label: "上流供給",
     icon: "人",
     color: "#14191b",
     fill: "#e3e5e2",
+    description:
+      "被害者・労働者・運営人材の供給圧を、出身地域や出口地点から読むための線です。",
   },
   physical_infrastructure: {
     label: "物理インフラ",
     icon: "I",
     color: "#2b6f9a",
     fill: "#d8eaf4",
+    description:
+      "鉄道、道路、水系など、合法移動と犯罪的移動が同じ通路に重なる可能性を示します。",
   },
   infrastructure_dependency: {
     label: "補給依存",
     icon: "補",
     color: "#b36a2e",
     fill: "#f3e1cc",
+    description:
+      "電力、通信、燃料、衛星通信など、拠点の稼働条件を支える外部補給の関係です。",
   },
   financial_trace: {
     label: "金融/暗号資産",
     icon: "$",
     color: "#8a7440",
     fill: "#f1e8c8",
+    description:
+      "暗号資産、地下銀行、オフショア法人、金融管轄を通じる資金経路の束です。",
   },
+};
+
+const LAYER_VISUALS = {
+  border_risk: VISUAL_ASSETS.borderRisk,
+  reported_compound: VISUAL_ASSETS.reportedCompound,
+  casino_sez: VISUAL_ASSETS.casinoSez,
+  maritime_connection: VISUAL_ASSETS.maritime,
+  casino_online_gambling: VISUAL_ASSETS.casinoSez,
+  financial_node: VISUAL_ASSETS.finance,
+  policy_enforcement: VISUAL_ASSETS.enforcement,
+  trafficking_route: VISUAL_ASSETS.humanFlow,
+  china_upstream: VISUAL_ASSETS.humanFlow,
+  victim_supply: VISUAL_ASSETS.humanFlow,
+  physical_infrastructure: VISUAL_ASSETS.infrastructure,
+  financial_trace: VISUAL_ASSETS.finance,
+  infrastructure_dependency: VISUAL_ASSETS.infrastructure,
+  entity_detail: VISUAL_ASSETS.reportedCompound,
+  governance_method: VISUAL_ASSETS.enforcement,
+  timeline_events: VISUAL_ASSETS.enforcement,
+};
+
+const GLOBAL_FLOW_VISUALS = {
+  victim_recruitment: VISUAL_ASSETS.humanFlow,
+  trafficking_route: VISUAL_ASSETS.humanFlow,
+  fraud_targeting: VISUAL_ASSETS.reportedCompound,
+  money_laundering: VISUAL_ASSETS.finance,
+  crypto_flow: VISUAL_ASSETS.finance,
+  casino_sez_network: VISUAL_ASSETS.casinoSez,
+  enforcement_sanctions: VISUAL_ASSETS.enforcement,
+  repatriation: VISUAL_ASSETS.humanFlow,
+  network_relocation: VISUAL_ASSETS.casinoSez,
+  upstream_supply: VISUAL_ASSETS.humanFlow,
+  physical_infrastructure: VISUAL_ASSETS.infrastructure,
+  infrastructure_dependency: VISUAL_ASSETS.infrastructure,
+  financial_trace: VISUAL_ASSETS.finance,
+};
+
+const MOTION_VISUALS = {
+  people: VISUAL_ASSETS.humanFlow,
+  money: VISUAL_ASSETS.finance,
+  substance: VISUAL_ASSETS.reportedCompound,
+  network: VISUAL_ASSETS.casinoSez,
+  enforcement: VISUAL_ASSETS.enforcement,
+  infrastructure: VISUAL_ASSETS.infrastructure,
+};
+
+const STORY_VISUALS = {
+  structure: VISUAL_ASSETS.humanFlow,
+  movement: VISUAL_ASSETS.infrastructure,
+  finance: VISUAL_ASSETS.casinoSez,
+  enforcement: VISUAL_ASSETS.enforcement,
 };
 
 const MOTION_MODES = [
@@ -421,6 +537,7 @@ const MOTION_MODES = [
 const MOTION_KIND_CONFIG = {
   people: {
     label: "人",
+    description: "求人誘引、強制移送、救出・送還など、人の移動や滞留を示すアイコンです。",
     className: "people",
     glyph: `
       <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -432,6 +549,7 @@ const MOTION_KIND_CONFIG = {
   },
   money: {
     label: "資金",
+    description: "詐欺収益、暗号資産、口座、地下銀行などの資金経路を示すアイコンです。",
     className: "money",
     glyph: `
       <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -443,6 +561,7 @@ const MOTION_KIND_CONFIG = {
   },
   substance: {
     label: "薬物",
+    description: "薬物・密輸など、他の越境犯罪と重なる経路を示すための補助アイコンです。",
     className: "substance",
     glyph: `
       <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -453,6 +572,7 @@ const MOTION_KIND_CONFIG = {
   },
   network: {
     label: "拠点",
+    description: "カジノ、SEZ、詐欺拠点、運営ネットワークの移転・接続を示すアイコンです。",
     className: "network",
     glyph: `
       <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -464,7 +584,9 @@ const MOTION_KIND_CONFIG = {
     `,
   },
   enforcement: {
-    label: "執行",
+    label: "制裁/摘発",
+    description:
+      "制裁、摘発、送還、捜査協力などの法執行が作用する向きを示します。『失効』ではなく『執行』の意味でした。",
     className: "enforcement",
     glyph: `
       <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -475,6 +597,7 @@ const MOTION_KIND_CONFIG = {
   },
   infrastructure: {
     label: "補給",
+    description: "電力、通信、燃料、鉄道、水系など、拠点を支えるインフラや補給依存を示します。",
     className: "infrastructure",
     glyph: `
       <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -483,6 +606,15 @@ const MOTION_KIND_CONFIG = {
     `,
   },
 };
+
+const MOTION_LEGEND_ORDER = [
+  "people",
+  "money",
+  "substance",
+  "network",
+  "enforcement",
+  "infrastructure",
+];
 
 const FLOW_TYPE_MOTION_KIND = {
   recruitment_route: "people",
@@ -634,19 +766,19 @@ const BORDER_KIND_LABELS = {
 
 const LAYER_INSIGHT_COPY = {
   border_risk:
-    "国境管理の断片化、越境移動、非国家主体や地元権力構造の影響を重ねて読むための表示です。",
+    "国境管理が届きにくい場所、越境移動、武装勢力や地元権力の影響が重なる地域を示します。",
   reported_compound:
-    "公開資料でオンライン詐欺拠点や強制的犯罪労働との関連が報告された地域を、施設単位ではなく都市圏で集約しています。",
+    "オンライン詐欺拠点や強制的な犯罪労働との関連が公開資料で報告された地域です。個別施設ではなく都市圏で示します。",
   casino_sez:
-    "カジノ、SEZ、不動産/商業開発、オンライン賭博由来の犯罪基盤が重なる可能性を示す補助レイヤーです。",
+    "カジノ、SEZ、ホテル・不動産開発、オンライン賭博が、詐欺拠点や資金洗浄の受け皿になったと報告される地域です。施設を断定せず、都市圏単位で重なりを示します。",
   maritime_connection:
-    "海上移動、空港、送還、政策対応など、大陸部コアと海洋部を結ぶ接続圏を示します。",
+    "海上移動、空港、送還、政策対応など、大陸部の拠点と島嶼部をつなぐ範囲を示します。",
   casino_online_gambling:
-    "POGOやオンライン賭博、地下化した詐欺運営との関連が報告された地域を、広域ノードとして表示します。",
+    "POGOやオンライン賭博の施設・制度が、詐欺運営や人身取引と結び付いたと報告された地域です。",
   financial_node:
-    "資金洗浄、法人利用、資産押収、金融規制対応が重なる都市圏を、拠点ではなく金融接続として示します。",
+    "資金洗浄、法人利用、資産押収、金融規制対応が集中する都市圏です。詐欺作業場ではなく、資金の通り道として示します。",
   policy_enforcement:
-    "法改正、共同摘発、送還、空港監視など、政策・執行面の対応が集中する地域を示します。",
+    "法改正、共同摘発、送還、空港監視など、政策対応や法執行が集中する地域を示します。",
 };
 
 const CONFIDENCE_META = {
@@ -737,7 +869,7 @@ const STORY_STEPS = [
   },
   {
     id: "finance",
-    label: "箱",
+    label: "器",
     kicker: "カジノ/SEZの転用",
     title: "カジノ、不動産、SEZが詐欺の器に転用される",
     summary: "合法風の建物やライセンスが、監禁・強制労働・暗号資産詐欺の作業場として利用された事例を、カンボジア側の世界接続で読む。",
@@ -938,6 +1070,7 @@ function getFlowLineOptions(flow, selected, mapMode) {
     dashArray: confidenceDash[flow.confidence] ?? "8 10",
     lineCap: "round",
     opacity: selected ? 0.95 : mapMode === "comparison" ? 0.56 : 0.78,
+    smoothFactor: 0,
     weight: selected ? 5 : mapMode === "comparison" ? 3 : 4,
     className: `flow-line ${selected ? "selected" : ""} flow-line-${flow.type}`,
   };
@@ -1373,6 +1506,7 @@ function getGlobalFlowLineOptions(flow, selected) {
     dashArray: confidenceDash[flow.evidence_level] ?? "9 10",
     lineCap: "round",
     opacity: selected ? 0.96 : 0.62,
+    smoothFactor: 0,
     weight: selected ? 5 : 3,
     className: `global-flow-line ${selected ? "selected" : ""} global-flow-${flow.connection_type}`,
   };
@@ -1386,6 +1520,7 @@ function getGlobalFlowFanLineOptions(flow) {
     dashArray: "3 12",
     lineCap: "round",
     opacity: 0.38,
+    smoothFactor: 0,
     weight: 2.2,
     className: "global-flow-fan-line",
   };
@@ -1406,6 +1541,7 @@ function getAnalysisCorridorOptions(corridor, selected) {
     lineCap: "round",
     lineJoin: "round",
     opacity: selected ? 0.94 : 0.64,
+    smoothFactor: 0,
     weight: selected ? 5 : 3.2,
     className: `analysis-corridor-line ${selected ? "selected" : ""} analysis-${corridor.layer_id}`,
   };
@@ -1425,9 +1561,38 @@ function getSelectedCorridorTraceOptions(border, variant = "core") {
     lineCap: "round",
     lineJoin: "round",
     opacity: isHalo ? (maritime ? 0.2 : 0.18) : isFallback ? 0.68 : 0.94,
+    smoothFactor: 0,
     weight: isHalo ? (maritime ? 10 : 9) : isFallback ? (maritime ? 6 : 5.5) : maritime ? 3.2 : 3.4,
     className: `selected-corridor-line ${maritime ? "maritime" : "land"} ${variant}`,
   };
+}
+
+function escapeHtmlAttribute(value) {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;");
+}
+
+function createVisualAssetMarkup(src, label, className = "map-visual-symbol") {
+  if (!src) return "";
+
+  return `<img class="${className}" src="${src}" alt="" aria-hidden="true" title="${escapeHtmlAttribute(
+    label,
+  )}" draggable="false" />`;
+}
+
+function createRouteEndpointMarkup(role, label) {
+  const safeLabel = escapeHtmlAttribute(label);
+
+  return `
+    <span
+      aria-hidden="true"
+      class="route-endpoint-symbol ${role === "origin" ? "origin" : "destination"}"
+      title="${safeLabel}"
+    ></span>
+  `;
 }
 
 function getRegionThemeIds(region, activeLayers) {
@@ -1458,6 +1623,10 @@ function createRegionClusterIcon(themeIds, selectedLayerId, selectedRegion, comp
     .map((layerId) => {
       const config = LAYER_CONFIG[layerId];
       const active = layerId === selectedLayerId ? "active" : "";
+      const visual = LAYER_VISUALS[layerId];
+      const visualMarkup =
+        createVisualAssetMarkup(visual, config.label, "map-token-visual") ??
+        (LAYER_MARKER_GLYPHS[layerId] ?? config.icon);
 
       return `
         <span
@@ -1466,7 +1635,7 @@ function createRegionClusterIcon(themeIds, selectedLayerId, selectedRegion, comp
           style="--marker-color: ${config.color}; --marker-fill: ${config.fill ?? config.color};"
           title="${config.label}"
         >
-          ${LAYER_MARKER_GLYPHS[layerId] ?? config.icon}
+          ${visualMarkup || LAYER_MARKER_GLYPHS[layerId] || config.icon}
         </span>
       `;
     })
@@ -1492,6 +1661,7 @@ function createRegionClusterIcon(themeIds, selectedLayerId, selectedRegion, comp
 
 function createEventIcon() {
   const config = LAYER_CONFIG.timeline_events;
+  const visual = LAYER_VISUALS.timeline_events;
 
   return L.divIcon({
     className: "",
@@ -1501,11 +1671,14 @@ function createEventIcon() {
         style="--marker-color: ${config.color}; --marker-fill: ${config.fill};"
       >
         <span>
-          <svg aria-hidden="true" viewBox="0 0 24 24">
-            <path d="M12 4v5l3 2" />
-            <path d="M5 12a7 7 0 1 0 2-5" />
-            <path d="M4 4v5h5" />
-          </svg>
+          ${
+            createVisualAssetMarkup(visual, config.label, "map-token-visual") ||
+            `<svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M12 4v5l3 2" />
+              <path d="M5 12a7 7 0 1 0 2-5" />
+              <path d="M4 4v5h5" />
+            </svg>`
+          }
         </span>
       </div>
     `,
@@ -1517,11 +1690,15 @@ function createEventIcon() {
 
 function createFlowNodeIcon(role, selected = false) {
   const roleClass = role === "origin" ? "origin" : "destination";
-  const label = role === "origin" ? "起" : "終";
+  const label = role === "origin" ? "起点" : "終点";
 
   return L.divIcon({
     className: "",
-    html: `<div class="flow-node ${roleClass} ${selected ? "selected" : ""}">${label}</div>`,
+    html: `
+      <div class="flow-node ${roleClass} ${selected ? "selected" : ""}" aria-label="${label}" title="${label}">
+        ${createRouteEndpointMarkup(role, label)}
+      </div>
+    `,
     iconAnchor: [14, 14],
     iconSize: [28, 28],
     popupAnchor: [0, -12],
@@ -1548,6 +1725,7 @@ function createFlowArrowIcon(flow, selected = false) {
 
 function createMovingFlowPulseIcon(color, fill, motionKind = "network", selected = false) {
   const kind = MOTION_KIND_CONFIG[motionKind] ?? MOTION_KIND_CONFIG.network;
+  const visual = MOTION_VISUALS[motionKind];
 
   return L.divIcon({
     className: "",
@@ -1557,7 +1735,9 @@ function createMovingFlowPulseIcon(color, fill, motionKind = "network", selected
         style="--pulse-color: ${color}; --pulse-fill: ${fill ?? "#ffffff"};"
         title="${kind.label}"
       >
-        <span>${kind.glyph}</span>
+        <span>${
+          createVisualAssetMarkup(visual, kind.label, "map-pulse-visual") || kind.glyph
+        }</span>
       </div>
     `,
     iconAnchor: [14, 14],
@@ -1567,7 +1747,7 @@ function createMovingFlowPulseIcon(color, fill, motionKind = "network", selected
 
 function createDirectionalEndpointIcon(role, color, fill, selected = false) {
   const roleClass = role === "origin" ? "origin" : "destination";
-  const label = role === "origin" ? "起" : "終";
+  const label = role === "origin" ? "起点" : "終点";
 
   return L.divIcon({
     className: "",
@@ -1575,8 +1755,10 @@ function createDirectionalEndpointIcon(role, color, fill, selected = false) {
       <div
         class="direction-endpoint ${roleClass} ${selected ? "selected" : ""}"
         style="--endpoint-color: ${color}; --endpoint-fill: ${fill ?? "#ffffff"};"
+        aria-label="${label}"
+        title="${label}"
       >
-        ${label}
+        ${createRouteEndpointMarkup(role, label)}
       </div>
     `,
     iconAnchor: [14, 14],
@@ -1587,6 +1769,7 @@ function createDirectionalEndpointIcon(role, color, fill, selected = false) {
 
 function createGlobalFlowIcon(flow, selected = false) {
   const config = GLOBAL_FLOW_CONFIG[flow.connection_type] ?? GLOBAL_FLOW_CONFIG.fraud_targeting;
+  const visual = GLOBAL_FLOW_VISUALS[flow.connection_type];
 
   return L.divIcon({
     className: "",
@@ -1595,7 +1778,7 @@ function createGlobalFlowIcon(flow, selected = false) {
         class="global-flow-node ${selected ? "selected" : ""}"
         style="--global-flow-color: ${config.color}; --global-flow-fill: ${config.fill};"
       >
-        ${config.icon}
+        ${createVisualAssetMarkup(visual, config.label, "map-node-visual") || config.icon}
       </div>
     `,
     iconAnchor: [14, 14],
@@ -1643,6 +1826,7 @@ function createDestinationPointIcon(destination, color, highlighted = false) {
 function createAnalysisNodeIcon(node, selected = false) {
   const config = LAYER_CONFIG[node.layer_id] ?? LAYER_CONFIG.governance_method;
   const label = config.icon || node.name_ja.slice(0, 1);
+  const visual = LAYER_VISUALS[node.layer_id];
 
   return L.divIcon({
     className: "",
@@ -1651,7 +1835,7 @@ function createAnalysisNodeIcon(node, selected = false) {
         class="analysis-node ${node.layer_id} ${selected ? "selected" : ""}"
         style="--analysis-color: ${config.color}; --analysis-fill: ${config.fill ?? config.color};"
       >
-        ${label}
+        ${createVisualAssetMarkup(visual, config.label, "map-node-visual") || label}
       </div>
     `,
     iconAnchor: [13, 13],
@@ -1668,7 +1852,8 @@ function createAnalysisEndpointIcon(corridor, role, selected = false) {
 function createBorderCorridorIcon(border, selected = false) {
   const maritime = MARITIME_CORRIDOR_IDS.has(border.id);
   const label = BORDER_SHORT_LABELS[border.id] ?? border.name_ja;
-  const kindLabel = BORDER_KIND_LABELS[border.id] ?? (maritime ? "海" : "陸");
+  const kindLabel = BORDER_KIND_LABELS[border.id] ?? (maritime ? "海上回廊" : "陸上回廊");
+  const visual = maritime ? VISUAL_ASSETS.maritime : VISUAL_ASSETS.borderRisk;
 
   return L.divIcon({
     className: "",
@@ -1677,7 +1862,9 @@ function createBorderCorridorIcon(border, selected = false) {
         class="border-corridor-label ${selected ? "selected" : ""} ${maritime ? "maritime" : "land"}"
         style="--corridor-color: ${border.color};"
       >
-        <span>${kindLabel}</span>${label}
+        <span class="border-corridor-symbol" title="${kindLabel}">
+          ${createVisualAssetMarkup(visual, kindLabel, "map-corridor-visual")}
+        </span>${label}
       </div>
     `,
     iconAnchor: [64, 14],
@@ -1978,6 +2165,12 @@ function EmptyList({ label = "該当項目なし" }) {
   return <div className="empty-list">{label}</div>;
 }
 
+function VisualAsset({ className = "ui-visual-symbol", label, src }) {
+  if (!src) return null;
+
+  return <img aria-hidden="true" className={className} draggable="false" src={src} title={label} />;
+}
+
 function SearchFilterPanel({
   onClear,
   onReviewFilterChange,
@@ -2069,14 +2262,21 @@ function StoryPanel({ activeStepId, onSelectStep }) {
       <div className="story-step-row" role="group" aria-label="ストーリー順">
         {STORY_STEPS.map((step, index) => (
           <button
+            aria-label={`${index + 1}. ${step.kicker}`}
             aria-pressed={activeStep.id === step.id}
             className={activeStep.id === step.id ? "active" : ""}
             key={step.id}
             onClick={() => onSelectStep(step)}
+            title={`${index + 1}. ${step.kicker}`}
             type="button"
           >
-            <span>{index + 1}</span>
-            {step.label}
+            <span className="story-step-number">{index + 1}</span>
+            <VisualAsset
+              className="story-step-visual"
+              label={step.label}
+              src={STORY_VISUALS[step.id]}
+            />
+            <span className="story-step-label">{step.label}</span>
           </button>
         ))}
       </div>
@@ -2137,8 +2337,20 @@ function TagRow({ items = [] }) {
   );
 }
 
+function TypeExplanation({ description, label = "表示の意味" }) {
+  if (!description) return null;
+
+  return (
+    <p className="type-explanation">
+      <strong>{label}</strong>
+      <span>{description}</span>
+    </p>
+  );
+}
+
 function LayerToggle({ layerId, checked, onChange }) {
   const config = LAYER_CONFIG[layerId];
+  const visual = LAYER_VISUALS[layerId];
 
   return (
     <label className="layer-toggle">
@@ -2151,7 +2363,7 @@ function LayerToggle({ layerId, checked, onChange }) {
         className="layer-icon-swatch"
         style={{ backgroundColor: config.fill ?? config.color, borderColor: config.color }}
       >
-        {config.icon}
+        {visual ? <VisualAsset className="layer-icon-visual" label={config.label} src={visual} /> : config.icon}
       </span>
       <span>{config.label}</span>
     </label>
@@ -2177,6 +2389,11 @@ function ThemePopup({ layerId, region, onSelect }) {
         </div>
         <p>{LAYER_INSIGHT_COPY[layerId]}</p>
         <p>{region.summary}</p>
+        {region.case_study?.incident && (
+          <p className="popup-case-example">
+            <strong>実例:</strong> {region.case_study.incident}
+          </p>
+        )}
         <button className="text-command" onClick={() => onSelect(region)} type="button">
           調査パネルで見る
         </button>
@@ -2290,6 +2507,7 @@ function GlobalFlowPopup({ flow, onSelectFlow }) {
           <EvidenceBadge value={flow.evidence_level} />
         </div>
         <p>{flow.summary_ja}</p>
+        <TypeExplanation description={typeMeta.description} label="この線の意味" />
         <button className="text-command" onClick={() => onSelectFlow(flow)} type="button">
           世界接続パネルで見る
         </button>
@@ -2375,6 +2593,7 @@ function SelectedInvestigationPanel({
   flow,
   frameworkMap,
   globalFlow,
+  region,
   regionMap,
 }) {
   if (analysisNode) {
@@ -2445,6 +2664,7 @@ function SelectedInvestigationPanel({
 
   if (flow) {
     const typeMeta = FLOW_TYPE_CONFIG[flow.type] ?? FLOW_TYPE_CONFIG.recruitment_route;
+    const destinationRegion = getFlowDestination(flow, regionMap);
 
     return (
       <article className="selected-insight-card">
@@ -2460,6 +2680,7 @@ function SelectedInvestigationPanel({
           <ConfidenceBadge value={flow.confidence} />
         </div>
         <p>{flow.summary_ja}</p>
+        <TypeExplanation description={typeMeta.description} label="この線の意味" />
         <dl className="metadata-grid">
           <div>
             <dt>起点</dt>
@@ -2469,6 +2690,12 @@ function SelectedInvestigationPanel({
             <dt>終点</dt>
             <dd>{getFlowEndpointName(flow, regionMap)}</dd>
           </div>
+          {destinationRegion && (
+            <div>
+              <dt>終点地域の背景</dt>
+              <dd>{destinationRegion.border_context}</dd>
+            </div>
+          )}
           <div>
             <dt>表示粒度</dt>
             <dd>{flow.display_note}</dd>
@@ -2501,6 +2728,7 @@ function SelectedInvestigationPanel({
           <EvidenceBadge value={globalFlow.evidence_level} />
         </div>
         <p>{globalFlow.summary_ja}</p>
+        <TypeExplanation description={typeMeta.description} label="この線の意味" />
         <dl className="metadata-grid">
           <div>
             <dt>起点</dt>
@@ -2603,9 +2831,69 @@ function SelectedInvestigationPanel({
     );
   }
 
+  if (region) {
+    const regionRelatedEvents = getRegionEvents(region.id);
+    const layerLabels = region.layer_tags
+      .map((layerId) => LAYER_CONFIG[layerId]?.label ?? layerId)
+      .filter(Boolean);
+
+    return (
+      <article className="selected-insight-card">
+        <p className="card-kicker">地域</p>
+        <h2>{region.name_ja}</h2>
+        <div className="popup-meta-row">
+          <span
+            className="popup-layer-pill"
+            style={{ "--pill-color": "#2f7476", "--pill-fill": "#d9efec" }}
+          >
+            {region.countries.join(" / ")}
+          </span>
+          <ConfidenceBadge value={region.confidence} />
+        </div>
+        <p>{region.summary}</p>
+        <dl className="metadata-grid">
+          <div>
+            <dt>関係する文脈</dt>
+            <dd>{region.border_context}</dd>
+          </div>
+          <div>
+            <dt>リスク要因</dt>
+            <dd>{region.risk_factors.join(" / ")}</dd>
+          </div>
+          <div>
+            <dt>表示粒度</dt>
+            <dd>{region.display_precision_note}</dd>
+          </div>
+          <div>
+            <dt>最終更新日</dt>
+            <dd>{formatDate(region.last_updated)}</dd>
+          </div>
+        </dl>
+        <TagRow items={layerLabels} />
+        <RegionCaseStudy caseStudy={region.case_study} />
+        <LectureFrameworkTagList
+          frameworkMap={frameworkMap}
+          items={region.lecture_framework_tags}
+        />
+        {regionRelatedEvents.length > 0 && (
+          <div className="mini-events">
+            <span className="section-label">関連イベント</span>
+            {regionRelatedEvents.map((event) => (
+              <p key={`${event.date}-${event.title_ja}`}>
+                <time dateTime={event.date}>{formatDate(event.date)}</time>
+                {event.title_ja}
+              </p>
+            ))}
+          </div>
+        )}
+        <SourceLinks sources={region.sources} />
+      </article>
+    );
+  }
+
   return (
     <div className="empty-selection">
-      国、国境線、または世界接続線を選択すると、ここに資料がまとまって表示されます。
+      地域、国、国境線、または世界接続線を選択すると、ここに資料がまとまって表示されます。
     </div>
   );
 }
@@ -2689,6 +2977,7 @@ function GlobalFlowList({ flows, selectedGlobalFlowId, onSelectFlow }) {
               </span>
             </button>
             <p>{flow.summary_ja}</p>
+            <TypeExplanation description={typeMeta.description} label="線の読み方" />
             <p className="display-note">{flow.map_display_note}</p>
           </article>
         );
@@ -2955,6 +3244,7 @@ function FlowPopup({ flow, regionMap, onSelectFlow }) {
           <ConfidenceBadge value={flow.confidence} />
         </div>
         <p>{flow.summary_ja}</p>
+        <TypeExplanation description={typeMeta.description} label="この線の意味" />
         <p className="display-note">{flow.display_note}</p>
         <button className="text-command" onClick={() => onSelectFlow(flow)} type="button">
           接続パネルで見る
@@ -2990,6 +3280,7 @@ function FlowList({ flows: flowItems, selectedFlowId, regionMap, onSelectFlow })
               </span>
             </button>
             <p>{flow.summary_ja}</p>
+            <TypeExplanation description={typeMeta.description} label="線の読み方" />
             <p className="display-note">{flow.display_note}</p>
             <SourceLinks sources={flow.sources} />
           </article>
@@ -3001,10 +3292,15 @@ function FlowList({ flows: flowItems, selectedFlowId, regionMap, onSelectFlow })
 
 function MotionKindIcon({ kind }) {
   const config = MOTION_KIND_CONFIG[kind] ?? MOTION_KIND_CONFIG.network;
+  const visual = MOTION_VISUALS[kind];
 
   return (
     <span className={`motion-kind-icon ${config.className}`} title={config.label}>
-      <span dangerouslySetInnerHTML={{ __html: config.glyph }} />
+      {visual ? (
+        <VisualAsset className="motion-kind-visual" label={config.label} src={visual} />
+      ) : (
+        <span dangerouslySetInnerHTML={{ __html: config.glyph }} />
+      )}
     </span>
   );
 }
@@ -3020,6 +3316,9 @@ function MotionControlPanel({
 
   return (
     <div className="motion-panel">
+      <p className="motion-panel-note">
+        動く点は、物理的な移動だけでなく、資金、制裁、送還、補給などの「作用の向き」も表します。
+      </p>
       <div className="motion-mode-control" role="group" aria-label="移動表示">
         {MOTION_MODES.map((mode) => (
           <button
@@ -3036,14 +3335,19 @@ function MotionControlPanel({
       </div>
 
       <div className="motion-legend" aria-label="移動体の種類">
-        {["people", "money", "substance", "network", "enforcement", "infrastructure"].map(
-          (kind) => (
-            <span key={kind}>
-              <MotionKindIcon kind={kind} />
-              {MOTION_KIND_CONFIG[kind].label}
+        {MOTION_LEGEND_ORDER.map((kind) => {
+          const config = MOTION_KIND_CONFIG[kind];
+
+          return (
+            <span className="motion-legend-item" key={kind} title={config.description}>
+              <span className="motion-legend-heading">
+                <MotionKindIcon kind={kind} />
+                <span>{config.label}</span>
+              </span>
+              <small>{config.description}</small>
             </span>
-          ),
-        )}
+          );
+        })}
       </div>
 
       {selectedMode && selectedLabel && (
@@ -3352,14 +3656,14 @@ function App() {
     () =>
       [
         ...ANALYSIS_NODES.map((node) =>
-          createVerificationItem("分析ノード", node, "analysisNode"),
+          createVerificationItem("分析地点", node, "analysisNode"),
         ),
         ...ANALYSIS_CORRIDORS.map((corridor) =>
           createVerificationItem("分析回廊", corridor, "analysisCorridor"),
         ),
         ...GLOBAL_FLOWS.map((flow) => createVerificationItem("世界接続", flow, "global")),
         ...ENDPOINT_COUNTRIES.map((endpoint) =>
-          createVerificationItem("末端ノード", endpoint, null),
+          createVerificationItem("接続先", endpoint, null),
         ),
         ...flows.map((flow) => createVerificationItem("接続", flow, "flow")),
         ...events.map((event) =>
@@ -3620,7 +3924,11 @@ function App() {
 
   return (
     <main className={`app-shell motion-mode-${motionMode}`}>
-      <section className="map-stage" aria-label="東南アジア国境地帯マップ">
+      <section
+        className="map-stage"
+        aria-label="東南アジア国境地帯マップ"
+        style={{ "--map-ambient-overlay": `url(${VISUAL_ASSETS.ambientOverlay})` }}
+      >
         <div className="map-titlebar">
           <div>
             <p className="eyebrow">Investigative prototype</p>
@@ -4227,8 +4535,8 @@ function App() {
           <p className="eyebrow">Borderland structure</p>
           <h2>国境、SEZ、詐欺拠点報告、人の移動を重ねる</h2>
           <p>
-            電信詐欺を単独の犯罪としてではなく、統治の弱い境界地帯、カジノ/SEZ経済、
-            人身取引、資金洗浄が結びつく構造として読むためのプロトタイプです。
+            電信詐欺を単独の犯罪としてではなく、統治の弱い国境地帯、カジノ/SEZ経済、
+            人身取引、資金洗浄がどう結び付くかを地図で追うためのプロトタイプです。
           </p>
         </div>
 
@@ -4303,6 +4611,7 @@ function App() {
             flow={selectedFlow}
             frameworkMap={frameworkMap}
             globalFlow={selectedGlobalFlow}
+            region={selectedRegion}
             regionMap={regionMap}
           />
         </div>
@@ -4337,7 +4646,7 @@ function App() {
             onSelectFlow={handleSelectGlobalFlow}
             selectedGlobalFlowId={selectedGlobalFlowId}
           />
-          <h2 className="subsection-title">末端ノード</h2>
+          <h2 className="subsection-title">接続先</h2>
           <EndpointList endpoints={filteredEndpointCountries} />
         </div>
 

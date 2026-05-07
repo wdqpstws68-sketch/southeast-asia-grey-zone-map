@@ -2,3 +2,8 @@ node_modules/
 dist/
 .playwright-cli/
 .DS_Store
+
+# 提出用ドキュメント・作業ファイル（公開しない）
+*.docx
+preview*.md
+build_doc*.cjs

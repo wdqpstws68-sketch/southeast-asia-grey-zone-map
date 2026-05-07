@@ -9,8 +9,8 @@
         27.8,
         112.9
       ],
-      "summary_ja": "福建・広東・湖南・四川・河南・東北三省などからの若年労働者の押し出しを、精密な出身地ではなく広域の供給圧として束ねるノード。",
-      "display_note": "省別統計ではなく、講義メモ上のアップストリーム仮説を可視化する概念点。",
+      "summary_ja": "福建・広東・湖南・四川・河南・東北三省などから若年労働者が押し出される状況を、精密な出身地ではなく広域の供給圧として束ねる地点。",
+      "display_note": "省別統計ではなく、講義メモ上のアップストリーム仮説を可視化する概算点。",
       "source_status": "needs_verification",
       "tags": [
         "内卷",
@@ -23,9 +23,9 @@
       ],
       "lecture_framework_tags": [
         {
-          "framework_id": "geertz_agricultural_involution",
-          "lens": "内向き精緻化",
-          "note": "内陸供給省からの労働押し出しは、内卷＝同じ枠の内部での精緻化として読める。ギアツの語彙を中国の内卷に隣接させる。"
+          "framework_id": "six_q_why",
+          "lens": "为什么",
+          "note": "内陸供給省からの労働押し出しの構造的成因を読む。"
         }
       ]
     },
@@ -38,12 +38,12 @@
         21.69,
         108.35
       ],
-      "summary_ja": "広西沿岸の非合法越境・逃避口承と結びつけて読む出口ノード。華南沿岸からカンボジア、ベトナム、メコン圏へ伸びる人流の起点候補として置く。",
+      "summary_ja": "広西沿岸の非合法越境・逃避口承と結びつけて見る出口地点。華南沿岸からカンボジア、ベトナム、メコン圏へ伸びる人流の起点候補として置く。",
       "display_note": "個別渡航点ではなく、中国側出口の黒点として表示。",
       "source_status": "cc_knowledge",
       "tags": [
         "広西",
-        "出口ノード",
+        "出口地点",
         "口承",
         "中国-ASEAN西回廊"
       ],
@@ -53,9 +53,9 @@
       ],
       "lecture_framework_tags": [
         {
-          "framework_id": "lin_yifu_structural_conditions",
-          "lens": "地縁",
-          "note": "広西沿岸の海港・国境結節として、中国-ASEAN西回廊の出口資源を担う。林毅夫の地縁条件で読む。"
+          "framework_id": "six_q_why",
+          "lens": "为什么",
+          "note": "広西沿岸の海港・国境結節として、なぜ中国-ASEAN西回廊の出口になるかを読む。"
         }
       ]
     },
@@ -90,7 +90,7 @@
         25.04,
         102.72
       ],
-      "summary_ja": "雲南省都。中国本土からメコン圏へ向かう鉄道・道路・航空の放射中心として、合法流動と違法流動が同じ地理的動脈に乗る構図を読む。",
+      "summary_ja": "雲南省都。中国本土からメコン圏へ向かう鉄道・道路・航空の放射中心であり、合法の移動と違法な移動が同じ地理的動脈に乗る構図を示す。",
       "display_note": "都市中心の概算点。個別事業者や施設を示さない。",
       "source_status": "cc_knowledge",
       "tags": [
@@ -113,8 +113,8 @@
         22.79,
         100.98
       ],
-      "summary_ja": "雲南南部の結節点。ミャンマー・ラオス・ベトナムに近い地理を、中国側からメコン国境地帯へ押し出す手前の内陸ハブとして読む。",
-      "display_note": "講義メモ由来の概念ノード。",
+      "summary_ja": "雲南南部の結節点。ミャンマー、ラオス、ベトナムに近い地理を、中国側からメコン国境地帯へ押し出す手前の内陸ハブとして扱う。",
+      "display_note": "講義メモ由来の概算点。",
       "source_status": "cc_knowledge",
       "tags": [
         "雲南",
@@ -135,7 +135,7 @@
         97.86
       ],
       "summary_ja": "雲南と北シャン州を結ぶ中緬最大級の通商口岸。北シャン州・コーカン側の賭博/詐欺帯を中国本土側と接続する点として細分化する。",
-      "display_note": "国境ペアを一点に集約。通商・人流の概念点で、個別ルートではない。",
+      "display_note": "国境ペアを一点に集約。通商・人流を示す概算点で、個別ルートではない。",
       "source_status": "needs_verification",
       "tags": [
         "中緬口岸",
@@ -156,7 +156,7 @@
         21.18,
         101.68
       ],
-      "summary_ja": "中老鉄道の国境終端。昆明から北部ラオス、ボーテンSEZ、GTSEZ方面へ伸びる合法巨大流動の入口として読む。",
+      "summary_ja": "中老鉄道の国境終端。昆明から北部ラオス、ボーテンSEZ、GTSEZ方面へ伸びる大規模な合法移動の入口として扱う。",
       "display_note": "Mohan/Boten の国境ペアを一点表示。",
       "source_status": "needs_verification",
       "tags": [
@@ -179,7 +179,7 @@
         22.51,
         103.96
       ],
-      "summary_ja": "雲南とベトナム北部をつなぐ河谷越境点。中国側出口ノード群の東端として置く。",
+      "summary_ja": "雲南とベトナム北部をつなぐ河谷越境点。中国側出口地点群の東端として置く。",
       "display_note": "国境ペアを一点に集約。",
       "source_status": "needs_verification",
       "tags": [
@@ -201,7 +201,7 @@
         98.75
       ],
       "summary_ja": "白家・明家・魏家・劉家、MNDAA、UWSA、TNLA、AAなどの固有名を背後に持つ、跨境少数民族・武装勢力・クラン経済の層。",
-      "display_note": "個別拠点ではなく、統治真空の社会的基盤を示す広域点。",
+      "display_note": "個別拠点ではなく、統治の空白を支える社会的基盤を示す広域点。",
       "source_status": "needs_verification",
       "tags": [
         "果敢四大家族",
@@ -222,8 +222,8 @@
         22.2,
         113.55
       ],
-      "summary_ja": "2010年代半ば以降のVIPジャンケット規制強化を、シアヌークビル、ポイペト、ボーケオ方面への南下圧力として読むための前史ノード。",
-      "display_note": "制度変化の起点を示す概念点。",
+      "summary_ja": "2010年代半ば以降のVIPジャンケット規制強化を、シアヌークビル、ポイペト、ボーケオ方面への南下圧力として見るための前史地点。",
+      "display_note": "制度変化の起点を示す概算点。",
       "source_status": "needs_verification",
       "tags": [
         "澳門",
@@ -244,7 +244,7 @@
         22.32,
         114.17
       ],
-      "summary_ja": "銀行・法人・オフショア接続のインターフェイスとして、メコン発の資金経路を世界金融側に接続するノード。",
+      "summary_ja": "銀行、法人、オフショア接続の入口として、メコン発の資金経路を世界金融側につなぐ地点。",
       "display_note": "個別銀行や法人を示さない金融接続点。",
       "source_status": "needs_verification",
       "tags": [
@@ -267,7 +267,7 @@
         98.57
       ],
       "summary_ja": "電力、通信、燃料、食料、建設資材がミャワディ/Shwe Kokko/KK Park 側の稼働を支えるというインフラ依存層を読むための点。",
-      "display_note": "供給線の概念点であり、個別変電所や通信設備を示さない。",
+      "display_note": "供給線を示す概算点であり、個別変電所や通信設備は示さない。",
       "source_status": "public_documented",
       "tags": [
         "越境電力",
@@ -289,8 +289,8 @@
         21.18,
         101.68
       ],
-      "summary_ja": "中老鉄道のラオス入口に位置する中国系SEZ。GTSEZとは別の合法SEZ/越境都市化のサブノードとして置く。",
-      "display_note": "SEZ全体の概念点。施設単位ではない。",
+      "summary_ja": "中老鉄道のラオス入口に位置する中国系SEZ。GTSEZとは別の合法SEZ/越境都市化の補助地点として置く。",
+      "display_note": "SEZ全体の概算点。施設単位ではない。",
       "source_status": "needs_verification",
       "tags": [
         "Boten",
@@ -303,9 +303,9 @@
       ],
       "lecture_framework_tags": [
         {
-          "framework_id": "lin_yifu_structural_conditions",
-          "lens": "制度",
-          "note": "ラオス側の特区制度と、中国側の鉄道・通信インフラ投資が組み合わさる。林毅夫の制度配置軸で読む。"
+          "framework_id": "six_q_why",
+          "lens": "为什么",
+          "note": "ラオス側の特区制度と中国側の鉄道・通信インフラ投資の組合せを成因として読む。"
         }
       ]
     },
@@ -318,8 +318,8 @@
         11.13,
         103.1
       ],
-      "summary_ja": "シアヌークビルとは別系統の中国系大型開発、空港・港湾・カジノ複合体候補として、カンボジア沿岸レイヤーを細分化する点。",
-      "display_note": "大型開発圏の概念点。",
+      "summary_ja": "シアヌークビルとは別系統の中国系大型開発、空港・港湾・カジノ複合体候補として、カンボジア沿岸部を細分化する地点。",
+      "display_note": "大型開発圏の概算点。",
       "source_status": "needs_verification",
       "tags": [
         "カンボジア沿岸",
@@ -332,9 +332,9 @@
       ],
       "lecture_framework_tags": [
         {
-          "framework_id": "lin_yifu_structural_conditions",
-          "lens": "資源・制度",
-          "note": "海岸沿いの国家的開発特区。海港資源と特区制度の組合せで生成。"
+          "framework_id": "six_q_why",
+          "lens": "为什么",
+          "note": "海岸沿いの国家的開発特区がなぜそこに置かれたかを読む。"
         }
       ]
     },
@@ -347,7 +347,7 @@
         16.3,
         121.3
       ],
-      "summary_ja": "CEZA、Clark、Subic、Bamban、Entertainment City など、フィリピンのPOGO/オフショア賭博地理を細分化するための束ねノード。",
+      "summary_ja": "CEZA、Clark、Subic、Bamban、Entertainment Cityなど、フィリピンのPOGO/オフショア賭博地理を細分化するための束ね地点。",
       "display_note": "施設ではなく制度・都市圏の束。",
       "source_status": "needs_verification",
       "tags": [
@@ -361,9 +361,9 @@
       ],
       "lecture_framework_tags": [
         {
-          "framework_id": "lin_yifu_structural_conditions",
-          "lens": "制度",
-          "note": "POGOライセンス制度＝特区的例外として読み替え可能。林毅夫の制度配置の応用例。"
+          "framework_id": "six_q_why",
+          "lens": "为什么",
+          "note": "POGOライセンス制度を背景に、なぜここに集中したかを読む。"
         }
       ]
     }
@@ -397,8 +397,8 @@
         ]
       ],
       "directionality": "one_way",
-      "summary_ja": "合法観光・物流の巨大流動と、詐欺労働者や地下経済が同じ物理動脈に重なる可能性を可視化する線。",
-      "display_note": "鉄道の正確な線形ではなく、昆明-磨憨/磨丁-ビエンチャンの概念回廊。",
+      "summary_ja": "合法の観光・物流の大きな流れと、詐欺労働者や地下経済の移動が同じ交通動脈に重なりうることを示す線。",
+      "display_note": "鉄道の正確な線形ではなく、昆明-磨憨/磨丁-ビエンチャンを結ぶおおまかな回廊。",
       "source_status": "public_documented",
       "tags": [
         "鉄道",
@@ -445,7 +445,7 @@
         ]
       ],
       "directionality": "network",
-      "summary_ja": "GTSEZだけを点で見るのではなく、瀾滄江-メコン水系そのものを治安協力、物流、密輸、国境経済の線として読む。",
+      "summary_ja": "GTSEZだけを点で見るのではなく、瀾滄江-メコン水系そのものを治安協力、物流、密輸、国境経済の線として扱う。",
       "display_note": "水系の概略線。航路や密輸経路ではない。",
       "source_status": "public_documented",
       "tags": [
@@ -490,7 +490,7 @@
       ],
       "directionality": "one_way",
       "summary_ja": "中国本土を単なる被害市場や送還先ではなく、労働力供給・越境志願・逃避の上流として表示する。",
-      "display_note": "具体的な移送経路ではなく、二重押し出し構造の概念線。",
+      "display_note": "具体的な移送経路ではなく、二重の押し出し構造を示す線。",
       "source_status": "needs_verification",
       "tags": [
         "内卷",
@@ -526,8 +526,8 @@
         ]
       ],
       "directionality": "one_way",
-      "summary_ja": "北シャン州・コーカンでの摘発/戦闘/引き渡し圧力が、メコン圏やカンボジア方面への再配置を生む構図を読む。",
-      "display_note": "個別組織の移動を断定しない圧力線。",
+      "summary_ja": "北シャン州・コーカンでの摘発、戦闘、引き渡し圧力が、メコン圏やカンボジア方面への再配置を生む構図を示す。",
+      "display_note": "個別組織の移動を断定せず、圧力の向きを示す線。",
       "source_status": "needs_verification",
       "tags": [
         "Operation 1027",
@@ -563,8 +563,8 @@
         ]
       ],
       "directionality": "one_way",
-      "summary_ja": "2014年前後の澳門VIPジャンケット規制強化を、シアヌークビル、ポイペト、ボーケオ方面のカジノ/オンライン賭博化と接続する前史線。",
-      "display_note": "制度変化と資本/運営ノウハウの移動を示す概念線。",
+      "summary_ja": "2014年前後の澳門VIPジャンケット規制強化を、シアヌークビル、ポイペト、ボーケオ方面のカジノ/オンライン賭博化につなげて見る前史線。",
+      "display_note": "制度変化と資本/運営ノウハウの移動を示す線。",
       "source_status": "needs_verification",
       "tags": [
         "澳門",
@@ -647,8 +647,8 @@
         ]
       ],
       "directionality": "network",
-      "summary_ja": "2025年のタイ側電力・通信・燃料遮断を、発電機・燃料・衛星通信などの代替手段へ置き換わるインフラ依存層として読む。",
-      "display_note": "Starlink等の利用は地点ではなく代替通信の概念として表示。",
+      "summary_ja": "2025年のタイ側電力・通信・燃料遮断を、発電機、燃料、衛星通信などの代替手段へ置き換わるインフラ依存として示す。",
+      "display_note": "Starlink等の利用は地点ではなく、代替通信という文脈で表示。",
       "source_status": "public_documented",
       "tags": [
         "越境電力",
@@ -689,7 +689,7 @@
       ],
       "directionality": "network",
       "summary_ja": "2011年10月の湄公河事件を、2018年以降の詐欺・制裁史より前に置く法執行協力の起点として表示する。",
-      "display_note": "事件現場や巡邏航路の精密表示ではなく、制度起源の概念線。",
+      "display_note": "事件現場や巡邏航路の精密表示ではなく、制度起源を示す線。",
       "source_status": "public_documented",
       "tags": [
         "湄公河事件",
@@ -720,7 +720,7 @@
     {
       "id": "four_fixed_layers",
       "title_ja": "4本の固定層",
-      "summary_ja": "国境物理線、SEZ/合法・違法併置、人の流れOD、統治の薄さスコアを固定し、文化・メディア・倫理はトグル式オーバーレイに分ける。",
+      "summary_ja": "国境物理線、SEZ/合法・違法併置、人の流れOD、統治の薄さスコアを固定し、文化・メディア・倫理は切り替え表示に分ける。",
       "source_status": "user_synthesis",
       "tags": [
         "凡例",
@@ -773,61 +773,62 @@
       ]
     },
     {
-      "id": "lin_yifu_structural_conditions",
-      "title_ja": "林毅夫『新構造経済学』: 地縁・資源・制度の三条件",
-      "summary_ja": "林毅夫の新構造経済学は、ある地域の発展経路がその地域の比較優位（要素賦存）と、それを支える制度配置によって規定されると読む。本作品ではこの読みを国境SEZ／詐欺園区の立地論に応用し、各拠点を『地縁（中緬泰結節・中越国境・メコン下流などの地理的位置）』『資源（海港・電力・通信・労働供給）』『制度（SEZ法・特区指定・例外的統治）』の三条件で分解する。なぜそこで生まれたのかを構造的に説明する軸として用いる。",
-      "citation": "林毅夫『新構造経済学：経済発展と政策の枠組みを再考する』(2012)",
-      "course_reference": "3/16講義で言及",
+      "id": "six_q_what",
+      "title_ja": "六問法①: 是什么（What）— 何を地図化しているか",
+      "summary_ja": "本作品が答えようとしている第一の問い。電信詐欺・国境グレーゾーン・経済特区・人身取引・地下金融が重なり合う『東南アジア国境地帯のグレーゾーン』とは何か。本作品はこの問いに対し、断片的に報道される事案を一つの地図上に集約し、地域全体の構造として可視化することで答えようとする。地図化そのものが、対象を定義し直す試みである。",
+      "citation": "六問分析フレームワーク（六問法）— 東南アジア研究入門講義",
+      "course_reference": "授業で提示された分析フレームワーク",
       "source_status": "cited_lecture",
       "tags": [
-        "立地論",
-        "比較優位",
-        "制度配置",
-        "地縁・資源・制度"
+        "是什么",
+        "What",
+        "定義",
+        "地図化"
       ],
-      "sources": [
-        {
-          "title": "Lin, Justin Yifu. New Structural Economics: A Framework for Rethinking Development and Policy",
-          "publisher": "World Bank Publications",
-          "date": "2012",
-          "note": "原著。本作品では SEZ／国境ノードの立地条件分析の理論軸として参照"
-        }
+      "applied_to": [
+        "mekong_region",
+        "myawaddy_maesot",
+        "sihanoukville",
+        "golden_triangle_sez"
+      ]
+    },
+    {
+      "id": "six_q_why",
+      "title_ja": "六問法②: 为什么（Why）— なぜそこで生まれたのか",
+      "summary_ja": "本作品が答えようとしている第二の問い。なぜ特定の国境地帯にこれほどの詐欺園区が集中し、なぜ摘発しても再生するのか。本作品は四本の固定層（国境物理線・経済特区・人の流れOD・統治の薄さ）を地図上に重ねることで、各拠点の生成条件を構造的に読み解こうとする。OHCHR・UNODC・INTERPOLなどの公開資料を出典として、メカニズムと成因に迫る。",
+      "citation": "六問分析フレームワーク（六問法）— 東南アジア研究入門講義",
+      "course_reference": "授業で提示された分析フレームワーク",
+      "source_status": "cited_lecture",
+      "tags": [
+        "为什么",
+        "Why",
+        "メカニズム",
+        "成因"
       ],
       "applied_to": [
         "myawaddy_maesot",
         "sihanoukville",
         "fangchenggang",
-        "mekong_region",
         "boten_sez",
-        "golden_triangle_sez"
+        "dara_sakor"
       ]
     },
     {
-      "id": "geertz_agricultural_involution",
-      "title_ja": "ギアツ『農業のインボリューション』: 内向きの精緻化",
-      "summary_ja": "ギアツがジャワの稲作に見出した『インボリューション（内巻化）』は、外への拡張が閉ざされた状況で、同じ枠組みの内部に労働を投入し続け、技術的精緻化と社会的過密化が進む過程を指す。本作品では、国境詐欺園区における労働過程──供給される労働者を増やしても一人あたり収益が増えず、ノルマと暴力と監視の細分化が深化する──をこの内向き精緻化として読む。中国側の『内卷』概念と隣接させて、詐欺労働の社会過程を説明する軸に置く。",
-      "citation": "Clifford Geertz『農業のインボリューション』(1963)",
-      "course_reference": "3/16講義で言及",
+      "id": "six_q_what_next_should",
+      "title_ja": "六問法③: 会怎么・应该怎么（What Next / Should）— 今後と提言",
+      "summary_ja": "本作品が答えようとしている第三の問い。米英による大規模制裁、各国の摘発、国内法執行が進むなかで、被害者労働者・送出国・受入国・国際機関はどう動くべきか。本作品の地図は、現在進行形の事案・制裁・送還を時系列で重ね、今後一ヶ月で扱う事例と国を絞り込み、データの精度を高めながら、地図から読み取れるパターンを文章として言語化する作業を進めるための足場として位置づけられる。",
+      "citation": "六問分析フレームワーク（六問法）— 東南アジア研究入門講義",
+      "course_reference": "授業で提示された分析フレームワーク",
       "source_status": "cited_lecture",
       "tags": [
-        "インボリューション",
-        "内向き精緻化",
-        "労働過程",
-        "内卷"
-      ],
-      "sources": [
-        {
-          "title": "Geertz, Clifford. Agricultural Involution: The Processes of Ecological Change in Indonesia",
-          "publisher": "University of California Press",
-          "date": "1963",
-          "note": "原著。本作品では詐欺労働の内向き精緻化を読むための社会過程モデルとして参照"
-        }
+        "会怎么",
+        "应该怎么",
+        "What Next",
+        "Should",
+        "提言"
       ],
       "applied_to": [
-        "china_supply_provinces",
-        "agency_structure_filter",
-        "myawaddy_maesot",
-        "shihanoukville"
+        "mekong_region"
       ]
     }
   ]
