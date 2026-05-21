@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import L from "leaflet";
 import {
   Circle,
@@ -23,6 +23,7 @@ import regionalHighlightAreas from "./data/regionalHighlightAreas.json";
 import naturalEarthCountries from "./data/naturalEarthCountries.json";
 import naturalEarthCorridorLines from "./data/naturalEarthCorridorLines.json";
 import naturalEarthMaritimeBoundaries from "./data/naturalEarthMaritimeBoundaries.json";
+import authorNotes from "./data/authorNotes.json";
 
 const GEOPOLITICAL_COUNTRIES = geopolitical.countries;
 const GEOPOLITICAL_BORDERS = geopolitical.borders;
@@ -921,6 +922,71 @@ const STORY_STEPS = [
 
 const ALL_YEARS_LABEL = "すべて";
 const INITIAL_MAP_ZOOM = 3.75;
+
+const VALID_MAP_MODES = new Set(["distribution", "connections", "comparison", "geography", "global"]);
+const VALID_MOTION_MODES = new Set(["always", "selected", "off"]);
+const VALID_REVIEW_FILTERS = new Set(["all", "verified", "reported", "needs_review"]);
+
+const NOTE_KIND_META = {
+  entry: { label: "起点", color: "#a35a2a" },
+  observation: { label: "観察", color: "#2f7476" },
+  question: { label: "問い", color: "#7a5a8e" },
+  reflection: { label: "省察", color: "#486c58" },
+  contradiction: { label: "矛盾", color: "#a43c48" },
+};
+
+function buildNotesIndex(notes) {
+  const map = new Map();
+  for (const note of notes) {
+    if (!note?.attached_to?.type || !note?.attached_to?.id) continue;
+    const key = `${note.attached_to.type}:${note.attached_to.id}`;
+    if (!map.has(key)) map.set(key, []);
+    map.get(key).push(note);
+  }
+  return map;
+}
+
+function readUrlState() {
+  if (typeof window === "undefined") return {};
+  const params = new URLSearchParams(window.location.search);
+  const get = (key) => {
+    const v = params.get(key);
+    return v != null && v.length > 0 ? v : undefined;
+  };
+  const mode = get("mode");
+  const motion = get("motion");
+  const review = get("review");
+  return {
+    mode: mode && VALID_MAP_MODES.has(mode) ? mode : undefined,
+    region: get("region"),
+    flow: get("flow"),
+    country: get("country"),
+    border: get("border"),
+    global: get("global"),
+    analysis: get("analysis"),
+    year: get("year"),
+    q: get("q") ?? "",
+    review: review && VALID_REVIEW_FILTERS.has(review) ? review : undefined,
+    motion: motion && VALID_MOTION_MODES.has(motion) ? motion : undefined,
+    story: get("story"),
+    compare: get("compare"),
+  };
+}
+
+function writeUrlState(values) {
+  if (typeof window === "undefined") return;
+  const params = new URLSearchParams();
+  for (const [key, value] of Object.entries(values)) {
+    if (value == null) continue;
+    if (typeof value === "string" && value.length === 0) continue;
+    params.set(key, String(value));
+  }
+  const search = params.toString();
+  const next = `${window.location.pathname}${search ? "?" + search : ""}${window.location.hash}`;
+  if (next !== window.location.pathname + window.location.search + window.location.hash) {
+    window.history.replaceState(null, "", next);
+  }
+}
 const MARKER_EXPANSION_ZOOM = 5;
 const EVENT_MARKER_OFFSETS = [
   [0, 0],
@@ -1041,15 +1107,70 @@ function getFlowDestination(flow, regionMap) {
   return regionMap.get(flow.destination_id);
 }
 
+function getDeterministicJitter(seed, scale) {
+  let hash = 0;
+  if (seed) {
+    for (let i = 0; i < seed.length; i++) hash = (hash * 31 + seed.charCodeAt(i)) | 0;
+  }
+  const angle = ((hash >>> 0) % 360) * (Math.PI / 180);
+  return [Math.sin(angle) * scale, Math.cos(angle) * scale];
+}
+
+function getCurvedRegionalPath(origin, destination, seed) {
+  const latDelta = destination[0] - origin[0];
+  const lngDelta = destination[1] - origin[1];
+  const distance = Math.sqrt(latDelta * latDelta + lngDelta * lngDelta);
+  if (distance < 0.4) return [origin, destination];
+
+  let hash = 0;
+  if (seed) {
+    for (let i = 0; i < seed.length; i++) hash = (hash * 31 + seed.charCodeAt(i)) | 0;
+  }
+  const sign = (hash & 1) === 0 ? 1 : -1;
+  const strength = 0.1 + ((hash >>> 1) % 7) * 0.014;
+  const perpLat = -lngDelta;
+  const perpLng = latDelta;
+  const norm = Math.sqrt(perpLat * perpLat + perpLng * perpLng) || 1;
+  const offsetLat = (perpLat / norm) * distance * strength * sign;
+  const offsetLng = (perpLng / norm) * distance * strength * sign;
+  const controlLat = (origin[0] + destination[0]) / 2 + offsetLat;
+  const controlLng = (origin[1] + destination[1]) / 2 + offsetLng;
+
+  const steps = 24;
+  return Array.from({ length: steps }, (_, i) => {
+    const t = i / (steps - 1);
+    const u = 1 - t;
+    return [
+      u * u * origin[0] + 2 * u * t * controlLat + t * t * destination[0],
+      u * u * origin[1] + 2 * u * t * controlLng + t * t * destination[1],
+    ];
+  });
+}
+
 function getFlowPath(flow, regionMap) {
   const destination = getFlowDestination(flow, regionMap);
   if (!destination) return [];
 
-  return [
-    flow.origin.coordinates,
-    ...(flow.via ?? []).map((point) => point.coordinates),
-    destination.coordinates,
+  const originJitter = getDeterministicJitter(`${flow.id}:o`, 0.18);
+  const destJitter = getDeterministicJitter(`${flow.id}:d`, 0.18);
+  const originPoint = [
+    flow.origin.coordinates[0] + originJitter[0],
+    flow.origin.coordinates[1] + originJitter[1],
   ];
+  const destPoint = [
+    destination.coordinates[0] + destJitter[0],
+    destination.coordinates[1] + destJitter[1],
+  ];
+
+  if (flow.via?.length) {
+    return [
+      originPoint,
+      ...flow.via.map((point) => point.coordinates),
+      destPoint,
+    ];
+  }
+
+  return getCurvedRegionalPath(originPoint, destPoint, flow.id);
 }
 
 function getFlowEndpointName(flow, regionMap) {
@@ -1611,7 +1732,7 @@ function getPreferredRegionTheme(region, activeLayers, preferredLayerId) {
   return themeIds[0] ?? region.layer_tags.find((layerId) => REGION_THEME_LAYERS.includes(layerId));
 }
 
-function createRegionClusterIcon(themeIds, selectedLayerId, selectedRegion, compact) {
+function createRegionClusterIcon(themeIds, selectedLayerId, selectedRegion, compact, pulseKind) {
   const shouldCompact = compact && !selectedRegion;
   const primaryLayerId =
     selectedLayerId && themeIds.includes(selectedLayerId) ? selectedLayerId : themeIds[0];
@@ -1645,8 +1766,15 @@ function createRegionClusterIcon(themeIds, selectedLayerId, selectedRegion, comp
   const width = shouldCompact ? (hiddenThemeCount > 0 ? 58 : 34) : Math.max(42, themeIds.length * 31 + 10);
   const height = shouldCompact ? 30 : 36;
 
+  const pulseClassName =
+    pulseKind === "compound"
+      ? "compound-pulse"
+      : pulseKind === "enforcement"
+      ? "enforcement-pulse"
+      : "";
+
   return L.divIcon({
-    className: "",
+    className: pulseClassName,
     html: `
       <div class="theme-cluster ${shouldCompact ? "compact" : ""} ${selectedRegion ? "selected" : ""}">
         ${tokens}
@@ -2062,7 +2190,7 @@ function MovingFlowPulse({
   return null;
 }
 
-function SourceLinks({ sources = [] }) {
+const SourceLinks = React.memo(function SourceLinks({ sources = [] }) {
   if (!sources.length) {
     return (
       <p className="source-missing">
@@ -2081,8 +2209,17 @@ function SourceLinks({ sources = [] }) {
             {typeof source === "string" ? (
               <span>{source}</span>
             ) : source.url ? (
-              <a href={source.url} target="_blank" rel="noreferrer">
-                {source.title}
+              <a className="source-link" href={source.url} target="_blank" rel="noreferrer">
+                <span
+                  className="source-link-title"
+                  lang={typeof source.title === "string" && /^[\x00-\x7F\s,.:;\-—'"()&]+$/.test(source.title) ? "en" : "ja"}
+                >
+                  {source.title}
+                </span>
+                {source.publisher ? (
+                  <span className="source-link-publisher">{source.publisher}</span>
+                ) : null}
+                <span aria-hidden="true" className="source-link-icon">↗</span>
               </a>
             ) : (
               <span>{source.title}</span>
@@ -2092,9 +2229,9 @@ function SourceLinks({ sources = [] }) {
       })}
     </ul>
   );
-}
+});
 
-function ReferenceLinks({ sources = [] }) {
+const ReferenceLinks = React.memo(function ReferenceLinks({ sources = [] }) {
   if (!sources.length) return null;
 
   return (
@@ -2107,8 +2244,17 @@ function ReferenceLinks({ sources = [] }) {
             {typeof source === "string" ? (
               <span>{source}</span>
             ) : source.url ? (
-              <a href={source.url} target="_blank" rel="noreferrer">
-                {source.title}
+              <a className="source-link" href={source.url} target="_blank" rel="noreferrer">
+                <span
+                  className="source-link-title"
+                  lang={typeof source.title === "string" && /^[\x00-\x7F\s,.:;\-—'"()&]+$/.test(source.title) ? "en" : "ja"}
+                >
+                  {source.title}
+                </span>
+                {source.publisher ? (
+                  <span className="source-link-publisher">{source.publisher}</span>
+                ) : null}
+                <span aria-hidden="true" className="source-link-icon">↗</span>
               </a>
             ) : (
               <span>{source.title}</span>
@@ -2118,9 +2264,9 @@ function ReferenceLinks({ sources = [] }) {
       })}
     </ul>
   );
-}
+});
 
-function ConfidenceBadge({ value }) {
+const ConfidenceBadge = React.memo(function ConfidenceBadge({ value }) {
   const meta = CONFIDENCE_META[value] ?? CONFIDENCE_META.reported;
 
   return (
@@ -2128,9 +2274,9 @@ function ConfidenceBadge({ value }) {
       {meta.label}
     </span>
   );
-}
+});
 
-function EvidenceBadge({ value }) {
+const EvidenceBadge = React.memo(function EvidenceBadge({ value }) {
   const meta = EVIDENCE_META[value] ?? EVIDENCE_META.reported;
 
   return (
@@ -2138,9 +2284,9 @@ function EvidenceBadge({ value }) {
       {meta.label}
     </span>
   );
-}
+});
 
-function SourceStatusBadge({ value }) {
+const SourceStatusBadge = React.memo(function SourceStatusBadge({ value }) {
   const meta = SOURCE_STATUS_META[value] ?? SOURCE_STATUS_META.needs_verification;
 
   return (
@@ -2148,9 +2294,9 @@ function SourceStatusBadge({ value }) {
       {meta.label}
     </span>
   );
-}
+});
 
-function SourceHealthBadge({ record }) {
+const SourceHealthBadge = React.memo(function SourceHealthBadge({ record }) {
   const issue = getVerificationIssue(record);
   if (!issue) return null;
 
@@ -2159,7 +2305,7 @@ function SourceHealthBadge({ record }) {
   ) : (
     <EvidenceBadge value={issue.value} />
   );
-}
+});
 
 function EmptyList({ label = "該当項目なし" }) {
   return <div className="empty-list">{label}</div>;
@@ -2171,7 +2317,7 @@ function VisualAsset({ className = "ui-visual-symbol", label, src }) {
   return <img aria-hidden="true" className={className} draggable="false" src={src} title={label} />;
 }
 
-function SearchFilterPanel({
+const SearchFilterPanel = React.memo(function SearchFilterPanel({
   onClear,
   onReviewFilterChange,
   onSearchChange,
@@ -2221,9 +2367,9 @@ function SearchFilterPanel({
       </div>
     </div>
   );
-}
+});
 
-function VerificationQueue({ items, onSelectItem }) {
+const VerificationQueue = React.memo(function VerificationQueue({ items, onSelectItem }) {
   if (!items.length) {
     return <EmptyList label="検証キューなし" />;
   }
@@ -2249,9 +2395,9 @@ function VerificationQueue({ items, onSelectItem }) {
       })}
     </div>
   );
-}
+});
 
-function StoryPanel({ activeStepId, onSelectStep }) {
+const StoryPanel = React.memo(function StoryPanel({ activeStepId, onSelectStep }) {
   const activeStep = STORY_STEPS.find((step) => step.id === activeStepId) ?? STORY_STEPS[0];
   const activeIndex = STORY_STEPS.findIndex((step) => step.id === activeStep.id);
   const previousStep = STORY_STEPS[(activeIndex + STORY_STEPS.length - 1) % STORY_STEPS.length];
@@ -2297,7 +2443,7 @@ function StoryPanel({ activeStepId, onSelectStep }) {
       </article>
     </div>
   );
-}
+});
 
 function RegionCaseStudy({ caseStudy }) {
   if (!caseStudy) return null;
@@ -2325,7 +2471,7 @@ function RegionCaseStudy({ caseStudy }) {
   );
 }
 
-function TagRow({ items = [] }) {
+const TagRow = React.memo(function TagRow({ items = [] }) {
   if (!items.length) return null;
 
   return (
@@ -2335,7 +2481,7 @@ function TagRow({ items = [] }) {
       ))}
     </div>
   );
-}
+});
 
 function TypeExplanation({ description, label = "表示の意味" }) {
   if (!description) return null;
@@ -2348,7 +2494,7 @@ function TypeExplanation({ description, label = "表示の意味" }) {
   );
 }
 
-function LayerToggle({ layerId, checked, onChange }) {
+const LayerToggle = React.memo(function LayerToggle({ layerId, checked, onChange }) {
   const config = LAYER_CONFIG[layerId];
   const visual = LAYER_VISUALS[layerId];
 
@@ -2368,7 +2514,7 @@ function LayerToggle({ layerId, checked, onChange }) {
       <span>{config.label}</span>
     </label>
   );
-}
+});
 
 function ThemePopup({ layerId, region, onSelect }) {
   const layer = LAYER_CONFIG[layerId];
@@ -2898,7 +3044,279 @@ function SelectedInvestigationPanel({
   );
 }
 
-function CountryList({ countries, selectedCountryId, onSelectCountry }) {
+const MAP_LEGEND_GROUPS = [
+  {
+    title: "地域マーカー",
+    layers: [
+      "border_risk",
+      "reported_compound",
+      "casino_sez",
+      "casino_online_gambling",
+      "maritime_connection",
+      "financial_node",
+      "policy_enforcement",
+    ],
+  },
+  {
+    title: "接続線",
+    layers: [
+      "trafficking_route",
+      "china_upstream",
+      "victim_supply",
+      "physical_infrastructure",
+      "financial_trace",
+      "infrastructure_dependency",
+    ],
+  },
+  {
+    title: "その他",
+    layers: ["entity_detail", "governance_method", "timeline_events"],
+  },
+];
+
+const MapLegend = React.memo(function MapLegend({ activeLayers }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className={`map-legend${open ? " is-open" : ""}`} aria-label="凡例">
+      <button
+        aria-expanded={open}
+        className="map-legend-toggle"
+        onClick={() => setOpen((current) => !current)}
+        type="button"
+      >
+        <span className="map-legend-toggle-dot" aria-hidden="true" />
+        <span>{open ? "凡例を閉じる" : "凡例 / LEGEND"}</span>
+      </button>
+      {open && (
+        <div className="map-legend-body" role="group">
+          {MAP_LEGEND_GROUPS.map((group) => {
+            const items = group.layers
+              .map((id) => ({ id, conf: LAYER_CONFIG[id] }))
+              .filter((entry) => entry.conf && activeLayers?.[entry.id] !== false);
+            if (!items.length) return null;
+            return (
+              <section key={group.title} className="map-legend-group">
+                <h4>{group.title}</h4>
+                <ul>
+                  {items.map(({ id, conf }) => (
+                    <li key={id}>
+                      <span
+                        className="map-legend-swatch"
+                        style={{
+                          background: conf.fill ?? conf.color,
+                          borderColor: conf.color,
+                        }}
+                        aria-hidden="true"
+                      >
+                        {conf.icon}
+                      </span>
+                      <span className="map-legend-label">{conf.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })}
+          <p className="map-legend-foot">
+            アイコンは資料・出典の組み合わせを示す。施設位置は表示しない。
+          </p>
+        </div>
+      )}
+    </div>
+  );
+});
+
+const AuthorNotesPanel = React.memo(function AuthorNotesPanel({ notes, entityLabel }) {
+  if (!notes?.length) return null;
+  return (
+    <div className="author-notes-panel" aria-label="作者の注釈">
+      <p className="author-notes-kicker">
+        <span>調べながら、見方がどう変わったか</span>
+        {entityLabel ? <span className="author-notes-anchor">{entityLabel}</span> : null}
+      </p>
+      <ul className="author-notes-list">
+        {notes.map((note) => {
+          const meta = NOTE_KIND_META[note.kind] ?? NOTE_KIND_META.observation;
+          return (
+            <li
+              className={`author-note author-note-${note.kind ?? "observation"}`}
+              key={note.id}
+              style={{ "--note-accent": meta.color }}
+            >
+              <p className="author-note-meta">
+                <span className="author-note-kind">{meta.label}</span>
+                {note.created ? <time dateTime={note.created}>{note.created}</time> : null}
+              </p>
+              <h3>{note.title}</h3>
+              <p className="author-note-body">{note.body}</p>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
+});
+
+const CompareCaseStudyPanel = React.memo(function CompareCaseStudyPanel({
+  open,
+  ids,
+  regions: regionList,
+  notesIndex,
+  onChange,
+  onClose,
+}) {
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, onClose]);
+
+  if (!open) return null;
+
+  const [leftId, rightId] = ids ?? [];
+  const regionMap = new Map(regionList.map((region) => [region.id, region]));
+  const left = regionMap.get(leftId);
+  const right = regionMap.get(rightId);
+
+  const handleSelect = (slot, nextId) => {
+    const next = [...(ids ?? [null, null])];
+    next[slot] = nextId;
+    onChange(next);
+  };
+
+  const renderColumn = (region, slot) => {
+    return (
+      <div className="compare-column">
+        <select
+          aria-label={slot === 0 ? "左の地域" : "右の地域"}
+          className="compare-select"
+          onChange={(event) => handleSelect(slot, event.target.value)}
+          value={region?.id ?? ""}
+        >
+          <option value="">— 選択 —</option>
+          {regionList.map((r) => (
+            <option key={r.id} value={r.id}>
+              {r.name_ja}
+            </option>
+          ))}
+        </select>
+
+        {region ? (
+          <article className="compare-card">
+            <header className="compare-card-header">
+              <h3>{region.name_ja}</h3>
+              <p className="compare-card-countries">
+                {region.countries?.join(" / ")}
+              </p>
+              <div className="compare-card-meta">
+                <ConfidenceBadge value={region.confidence} />
+              </div>
+            </header>
+
+            {region.border_context && (
+              <section className="compare-card-section">
+                <h4>国境の文脈</h4>
+                <p>{region.border_context}</p>
+              </section>
+            )}
+
+            {region.risk_factors?.length > 0 && (
+              <section className="compare-card-section">
+                <h4>リスク要因</h4>
+                <ul className="compare-tag-list">
+                  {region.risk_factors.map((factor) => (
+                    <li key={factor}>{factor}</li>
+                  ))}
+                </ul>
+              </section>
+            )}
+
+            {region.case_study && (
+              <section className="compare-card-section">
+                <h4>事例：{region.case_study.title}</h4>
+                <div className="compare-narrative">
+                  {region.case_study.inflow && (
+                    <p>
+                      <span className="compare-aspect-pill compare-aspect-inflow">流入</span>
+                      <span>{region.case_study.inflow}</span>
+                    </p>
+                  )}
+                  {region.case_study.incident && (
+                    <p>
+                      <span className="compare-aspect-pill compare-aspect-incident">発生</span>
+                      <span>{region.case_study.incident}</span>
+                    </p>
+                  )}
+                  {region.case_study.harm && (
+                    <p>
+                      <span className="compare-aspect-pill compare-aspect-harm">被害</span>
+                      <span>{region.case_study.harm}</span>
+                    </p>
+                  )}
+                </div>
+              </section>
+            )}
+
+            {(() => {
+              const notes = notesIndex?.get(`region:${region.id}`) ?? [];
+              if (!notes.length) return null;
+              return (
+                <section className="compare-card-section compare-card-notes">
+                  <h4>作者の注釈</h4>
+                  <AuthorNotesPanel notes={notes} />
+                </section>
+              );
+            })()}
+
+            <section className="compare-card-section">
+              <h4>主要出典</h4>
+              <SourceLinks sources={region.sources} />
+            </section>
+          </article>
+        ) : (
+          <div className="compare-card compare-card-empty">
+            ドロップダウンから地域を選択してください。
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  return (
+    <div className="compare-overlay" role="dialog" aria-modal="true" aria-label="比較ビュー">
+      <div className="compare-backdrop" onClick={onClose} aria-hidden="true" />
+      <div className="compare-modal">
+        <header className="compare-header">
+          <div>
+            <p className="eyebrow">Case study comparison</p>
+            <h2>2地域の生成機制を並べて読む</h2>
+            <p className="compare-subtitle">
+              三章「为什么」の主張——「同じ詐欺園区に見えても、生成条件は同じではない」を、
+              二つの代表的な地域を並べて確認する。
+            </p>
+          </div>
+          <button
+            aria-label="比較ビューを閉じる"
+            className="compare-close"
+            onClick={onClose}
+            type="button"
+          >
+            ×
+          </button>
+        </header>
+        <div className="compare-grid">
+          {renderColumn(left, 0)}
+          {renderColumn(right, 1)}
+        </div>
+      </div>
+    </div>
+  );
+});
+
+const CountryList = React.memo(function CountryList({ countries, selectedCountryId, onSelectCountry }) {
   if (!countries.length) {
     return <EmptyList />;
   }
@@ -2921,9 +3339,9 @@ function CountryList({ countries, selectedCountryId, onSelectCountry }) {
       ))}
     </div>
   );
-}
+});
 
-function BorderList({ borders, selectedBorderId, onSelectBorder }) {
+const BorderList = React.memo(function BorderList({ borders, selectedBorderId, onSelectBorder }) {
   if (!borders.length) {
     return <EmptyList />;
   }
@@ -2946,9 +3364,9 @@ function BorderList({ borders, selectedBorderId, onSelectBorder }) {
       ))}
     </div>
   );
-}
+});
 
-function GlobalFlowList({ flows, selectedGlobalFlowId, onSelectFlow }) {
+const GlobalFlowList = React.memo(function GlobalFlowList({ flows, selectedGlobalFlowId, onSelectFlow }) {
   if (!flows.length) {
     return <EmptyList />;
   }
@@ -2984,9 +3402,9 @@ function GlobalFlowList({ flows, selectedGlobalFlowId, onSelectFlow }) {
       })}
     </div>
   );
-}
+});
 
-function EndpointList({ endpoints }) {
+const EndpointList = React.memo(function EndpointList({ endpoints }) {
   if (!endpoints.length) {
     return <EmptyList />;
   }
@@ -3006,9 +3424,9 @@ function EndpointList({ endpoints }) {
       ))}
     </div>
   );
-}
+});
 
-function AnalysisOverlayList({
+const AnalysisOverlayList = React.memo(function AnalysisOverlayList({
   corridors,
   nodes,
   onSelectCorridor,
@@ -3063,9 +3481,9 @@ function AnalysisOverlayList({
       })}
     </div>
   );
-}
+});
 
-function LectureFrameworkTagList({ items, frameworkMap }) {
+const LectureFrameworkTagList = React.memo(function LectureFrameworkTagList({ items, frameworkMap }) {
   if (!Array.isArray(items) || items.length === 0) return null;
   return (
     <div className="lecture-framework-tags">
@@ -3087,9 +3505,9 @@ function LectureFrameworkTagList({ items, frameworkMap }) {
       </ul>
     </div>
   );
-}
+});
 
-function FrameworkList({ frameworks, regionMap, analysisNodeMap }) {
+const FrameworkList = React.memo(function FrameworkList({ frameworks, regionMap, analysisNodeMap }) {
   if (!frameworks.length) {
     return <EmptyList />;
   }
@@ -3136,9 +3554,9 @@ function FrameworkList({ frameworks, regionMap, analysisNodeMap }) {
       ))}
     </div>
   );
-}
+});
 
-function RegionCard({ region, selected, onSelect, frameworkMap }) {
+const RegionCard = React.memo(function RegionCard({ region, selected, onSelect, frameworkMap }) {
   const relatedEvents = getRegionEvents(region.id);
 
   return (
@@ -3196,9 +3614,9 @@ function RegionCard({ region, selected, onSelect, frameworkMap }) {
       <SourceLinks sources={region.sources} />
     </article>
   );
-}
+});
 
-function EventList({ filteredEvents, regionMap, onSelect }) {
+const EventList = React.memo(function EventList({ filteredEvents, regionMap, onSelect }) {
   if (!filteredEvents.length) {
     return <EmptyList />;
   }
@@ -3222,7 +3640,7 @@ function EventList({ filteredEvents, regionMap, onSelect }) {
       })}
     </div>
   );
-}
+});
 
 function FlowPopup({ flow, regionMap, onSelectFlow }) {
   const typeMeta = FLOW_TYPE_CONFIG[flow.type] ?? FLOW_TYPE_CONFIG.recruitment_route;
@@ -3254,7 +3672,7 @@ function FlowPopup({ flow, regionMap, onSelectFlow }) {
   );
 }
 
-function FlowList({ flows: flowItems, selectedFlowId, regionMap, onSelectFlow }) {
+const FlowList = React.memo(function FlowList({ flows: flowItems, selectedFlowId, regionMap, onSelectFlow }) {
   if (!flowItems.length) {
     return <EmptyList />;
   }
@@ -3288,9 +3706,9 @@ function FlowList({ flows: flowItems, selectedFlowId, regionMap, onSelectFlow })
       })}
     </div>
   );
-}
+});
 
-function MotionKindIcon({ kind }) {
+const MotionKindIcon = React.memo(function MotionKindIcon({ kind }) {
   const config = MOTION_KIND_CONFIG[kind] ?? MOTION_KIND_CONFIG.network;
   const visual = MOTION_VISUALS[kind];
 
@@ -3303,9 +3721,9 @@ function MotionKindIcon({ kind }) {
       )}
     </span>
   );
-}
+});
 
-function MotionControlPanel({
+const MotionControlPanel = React.memo(function MotionControlPanel({
   active,
   motionMode,
   onMotionModeChange,
@@ -3357,10 +3775,11 @@ function MotionControlPanel({
       )}
     </div>
   );
-}
+});
 
 function App() {
-  const [mapMode, setMapMode] = useState("comparison");
+  const initialUrl = useMemo(() => readUrlState(), []);
+  const [mapMode, setMapMode] = useState(initialUrl.mode ?? "comparison");
   const [mapZoom, setMapZoom] = useState(INITIAL_MAP_ZOOM);
   const [activeLayers, setActiveLayers] = useState({
     border_risk: true,
@@ -3380,21 +3799,43 @@ function App() {
     governance_method: true,
     timeline_events: true,
   });
-  const [selectedRegionId, setSelectedRegionId] = useState(undefined);
+  const [selectedRegionId, setSelectedRegionId] = useState(initialUrl.region);
   const [selectedLayerId, setSelectedLayerId] = useState("reported_compound");
-  const [selectedFlowId, setSelectedFlowId] = useState(undefined);
-  const [selectedCountryId, setSelectedCountryId] = useState(undefined);
-  const [selectedBorderId, setSelectedBorderId] = useState(undefined);
-  const [selectedGlobalFlowId, setSelectedGlobalFlowId] = useState(undefined);
-  const [selectedAnalysisId, setSelectedAnalysisId] = useState(undefined);
+  const [selectedFlowId, setSelectedFlowId] = useState(initialUrl.flow);
+  const [selectedCountryId, setSelectedCountryId] = useState(initialUrl.country);
+  const [selectedBorderId, setSelectedBorderId] = useState(initialUrl.border);
+  const [selectedGlobalFlowId, setSelectedGlobalFlowId] = useState(initialUrl.global);
+  const [selectedAnalysisId, setSelectedAnalysisId] = useState(initialUrl.analysis);
   const [selectedRegionalHighlightId, setSelectedRegionalHighlightId] = useState(undefined);
   const [selectedRegionalHighlightPosition, setSelectedRegionalHighlightPosition] = useState(null);
-  const [yearFilter, setYearFilter] = useState(ALL_YEARS_LABEL);
-  const [motionMode, setMotionMode] = useState("always");
+  const [yearFilter, setYearFilter] = useState(initialUrl.year ?? ALL_YEARS_LABEL);
+  const [motionMode, setMotionMode] = useState(initialUrl.motion ?? "always");
   const [activeMotionKeys, setActiveMotionKeys] = useState(() => new Set());
-  const [searchQuery, setSearchQuery] = useState("");
-  const [reviewFilter, setReviewFilter] = useState("all");
-  const [activeStoryStepId, setActiveStoryStepId] = useState(STORY_STEPS[0].id);
+  const [searchQuery, setSearchQuery] = useState(initialUrl.q ?? "");
+  const [reviewFilter, setReviewFilter] = useState(initialUrl.review ?? "all");
+  const [activeStoryStepId, setActiveStoryStepId] = useState(initialUrl.story ?? STORY_STEPS[0].id);
+  const [compareIds, setCompareIds] = useState(() => {
+    const raw = initialUrl.compare;
+    if (!raw) return null;
+    const parts = raw.split(",").map((s) => s.trim()).filter(Boolean);
+    if (parts.length !== 2) return null;
+    return parts;
+  });
+  const [compareOpen, setCompareOpen] = useState(Boolean(initialUrl.compare));
+  const mapStageRef = useRef(null);
+  const setMapHover = useCallback((point) => {
+    const node = mapStageRef.current;
+    if (!node) return;
+    if (point) {
+      if (node.dataset.hovering !== "true") node.dataset.hovering = "true";
+      node.style.setProperty("--vignette-x", `${point.x}px`);
+      node.style.setProperty("--vignette-y", `${point.y}px`);
+    } else {
+      if (node.dataset.hovering !== "false") node.dataset.hovering = "false";
+      node.style.setProperty("--vignette-x", "50%");
+      node.style.setProperty("--vignette-y", "50%");
+    }
+  }, []);
 
   const regionMap = useMemo(
     () => new Map(regions.map((region) => [region.id, region])),
@@ -3457,7 +3898,10 @@ function App() {
     [countryMap],
   );
   const selectedRegion = regionMap.get(selectedRegionId);
-  const selectedFlow = flows.find((flow) => flow.id === selectedFlowId);
+  const selectedFlow = useMemo(
+    () => (selectedFlowId ? flows.find((flow) => flow.id === selectedFlowId) : undefined),
+    [selectedFlowId],
+  );
   const selectedCountry = countryMap.get(selectedCountryId);
   const selectedCountryFeature = selectedCountryId
     ? naturalEarthFeatureMap.get(selectedCountryId)
@@ -3466,17 +3910,31 @@ function App() {
   const selectedCorridorFeatureCollection = selectedBorderId
     ? corridorFeatureCollectionMap.get(selectedBorderId)
     : undefined;
-  const selectedGlobalFlow = GLOBAL_FLOWS.find((flow) => flow.id === selectedGlobalFlowId);
+  const selectedGlobalFlow = useMemo(
+    () =>
+      selectedGlobalFlowId
+        ? GLOBAL_FLOWS.find((flow) => flow.id === selectedGlobalFlowId)
+        : undefined,
+    [selectedGlobalFlowId],
+  );
   const selectedGlobalRelatedCountryIds = useMemo(
     () => getRelatedCountryIdsForGlobalFlow(selectedGlobalFlow),
     [selectedGlobalFlow],
   );
-  const selectedAnalysisNode = selectedAnalysisId?.startsWith("node:")
-    ? ANALYSIS_NODES.find((node) => `node:${node.id}` === selectedAnalysisId)
-    : undefined;
-  const selectedAnalysisCorridor = selectedAnalysisId?.startsWith("corridor:")
-    ? ANALYSIS_CORRIDORS.find((corridor) => `corridor:${corridor.id}` === selectedAnalysisId)
-    : undefined;
+  const selectedAnalysisNode = useMemo(
+    () =>
+      selectedAnalysisId?.startsWith("node:")
+        ? ANALYSIS_NODES.find((node) => `node:${node.id}` === selectedAnalysisId)
+        : undefined,
+    [selectedAnalysisId],
+  );
+  const selectedAnalysisCorridor = useMemo(
+    () =>
+      selectedAnalysisId?.startsWith("corridor:")
+        ? ANALYSIS_CORRIDORS.find((corridor) => `corridor:${corridor.id}` === selectedAnalysisId)
+        : undefined,
+    [selectedAnalysisId],
+  );
   const showDistribution = mapMode === "distribution" || mapMode === "comparison";
   const showConnections = mapMode === "connections" || mapMode === "comparison";
   const showGeography = mapMode === "geography" || mapMode === "global";
@@ -3630,6 +4088,46 @@ function App() {
     () => filteredAnalysisCorridors.filter((corridor) => activeLayers[corridor.layer_id]),
     [activeLayers, filteredAnalysisCorridors],
   );
+  const notesIndex = useMemo(() => buildNotesIndex(authorNotes), []);
+  const { selectedNotes, selectedNotesLabel } = useMemo(() => {
+    const tryKeys = [
+      selectedRegionId ? ["region", selectedRegionId, selectedRegion?.name_ja] : null,
+      selectedFlowId ? ["flow", selectedFlowId, selectedFlow?.title_ja] : null,
+      selectedGlobalFlowId ? ["globalFlow", selectedGlobalFlowId, selectedGlobalFlow?.name_ja] : null,
+      selectedCountryId ? ["country", selectedCountryId, selectedCountry?.name_ja] : null,
+      selectedBorderId ? ["border", selectedBorderId, selectedBorder?.name_ja] : null,
+      selectedAnalysisNode ? ["analysisNode", selectedAnalysisNode.id, selectedAnalysisNode.name_ja] : null,
+      selectedAnalysisCorridor ? ["analysisCorridor", selectedAnalysisCorridor.id, selectedAnalysisCorridor.title_ja] : null,
+    ].filter(Boolean);
+    for (const [type, id, label] of tryKeys) {
+      const items = notesIndex.get(`${type}:${id}`);
+      if (items?.length) return { selectedNotes: items, selectedNotesLabel: label };
+    }
+    return { selectedNotes: [], selectedNotesLabel: null };
+  }, [
+    notesIndex,
+    selectedAnalysisCorridor,
+    selectedAnalysisNode,
+    selectedBorder,
+    selectedBorderId,
+    selectedCountry,
+    selectedCountryId,
+    selectedFlow,
+    selectedFlowId,
+    selectedGlobalFlow,
+    selectedGlobalFlowId,
+    selectedRegion,
+    selectedRegionId,
+  ]);
+  const landingNotes = useMemo(() => notesIndex.get("region:mekong_region") ?? [], [notesIndex]);
+  const hasAnySelection = Boolean(
+    selectedRegionId ||
+      selectedFlowId ||
+      selectedCountryId ||
+      selectedBorderId ||
+      selectedGlobalFlowId ||
+      selectedAnalysisId,
+  );
   const totalFilterableCount =
     regions.length +
     flows.length +
@@ -3700,20 +4198,28 @@ function App() {
     : false;
   const selectedGlobalDestinationPoints = selectedGlobalFlow?.destination_points ?? [];
 
-  const handleLayerToggle = (layerId, checked) => {
+  const clearSelectedRegionalHighlight = useCallback(() => {
+    setSelectedRegionalHighlightId(undefined);
+    setSelectedRegionalHighlightPosition(null);
+  }, []);
+
+  const handleLayerToggle = useCallback((layerId, checked) => {
     setActiveLayers((current) => ({ ...current, [layerId]: checked }));
-  };
+  }, []);
 
-  const handleMotionModeChange = (nextMode) => {
+  const handleMotionModeChange = useCallback((nextMode) => {
     setMotionMode(nextMode);
-  };
+  }, []);
 
-  const handleMapModeChange = (nextMode) => {
-    clearSelectedRegionalHighlight();
-    setMapMode(nextMode);
-  };
+  const handleMapModeChange = useCallback(
+    (nextMode) => {
+      clearSelectedRegionalHighlight();
+      setMapMode(nextMode);
+    },
+    [clearSelectedRegionalHighlight],
+  );
 
-  const handleToggleSelectedMotion = () => {
+  const handleToggleSelectedMotion = useCallback(() => {
     if (!selectedMotionTarget) return;
 
     setActiveMotionKeys((current) => {
@@ -3723,158 +4229,264 @@ function App() {
 
       return new Set([selectedMotionTarget.key]);
     });
-  };
+  }, [selectedMotionTarget]);
 
-  const clearSelectedRegionalHighlight = () => {
-    setSelectedRegionalHighlightId(undefined);
-    setSelectedRegionalHighlightPosition(null);
-  };
+  const handleSelectRegionalHighlight = useCallback(
+    (feature, latlng) => {
+      const region = regionMap.get(feature.properties.region_id);
 
-  const handleSelectRegionalHighlight = (feature, latlng) => {
-    const region = regionMap.get(feature.properties.region_id);
+      setSelectedRegionalHighlightId(getRegionalHighlightId(feature));
+      setSelectedRegionalHighlightPosition(
+        latlng ? [latlng.lat, latlng.lng] : region?.coordinates ?? null,
+      );
+      if (region) {
+        setSelectedRegionId(region.id);
+        setSelectedLayerId(getPreferredRegionTheme(region, activeLayers, selectedLayerId));
+      }
+      setSelectedFlowId(undefined);
+      setSelectedCountryId(undefined);
+      setSelectedBorderId(undefined);
+      setSelectedGlobalFlowId(undefined);
+      setSelectedAnalysisId(undefined);
+    },
+    [activeLayers, regionMap, selectedLayerId],
+  );
 
-    setSelectedRegionalHighlightId(getRegionalHighlightId(feature));
-    setSelectedRegionalHighlightPosition(
-      latlng ? [latlng.lat, latlng.lng] : region?.coordinates ?? null,
-    );
-    if (region) {
+  const handleSelectRegion = useCallback(
+    (region, layerId) => {
+      if (mapMode === "global" || mapMode === "geography") {
+        setMapMode("distribution");
+      }
+      clearSelectedRegionalHighlight();
       setSelectedRegionId(region.id);
-      setSelectedLayerId(getPreferredRegionTheme(region, activeLayers, selectedLayerId));
-    }
-    setSelectedFlowId(undefined);
-    setSelectedCountryId(undefined);
-    setSelectedBorderId(undefined);
-    setSelectedGlobalFlowId(undefined);
-    setSelectedAnalysisId(undefined);
-  };
+      setSelectedLayerId(getPreferredRegionTheme(region, activeLayers, layerId ?? selectedLayerId));
+      setSelectedFlowId(undefined);
+      setSelectedCountryId(undefined);
+      setSelectedBorderId(undefined);
+      setSelectedGlobalFlowId(undefined);
+      setSelectedAnalysisId(undefined);
+    },
+    [activeLayers, clearSelectedRegionalHighlight, mapMode, selectedLayerId],
+  );
 
-  const handleSelectRegion = (region, layerId) => {
-    if (mapMode === "global" || mapMode === "geography") {
-      setMapMode("distribution");
-    }
-    clearSelectedRegionalHighlight();
-    setSelectedRegionId(region.id);
-    setSelectedLayerId(getPreferredRegionTheme(region, activeLayers, layerId ?? selectedLayerId));
-    setSelectedFlowId(undefined);
-    setSelectedCountryId(undefined);
-    setSelectedBorderId(undefined);
-    setSelectedGlobalFlowId(undefined);
-    setSelectedAnalysisId(undefined);
-  };
+  const handleSelectFlow = useCallback(
+    (flow) => {
+      const destination = getFlowDestination(flow, regionMap);
+      if (mapMode === "global" || mapMode === "geography") {
+        setMapMode("connections");
+      }
+      clearSelectedRegionalHighlight();
+      setSelectedFlowId(flow.id);
+      setSelectedCountryId(undefined);
+      setSelectedBorderId(undefined);
+      setSelectedGlobalFlowId(undefined);
+      setSelectedAnalysisId(undefined);
+      if (destination) {
+        setSelectedRegionId(destination.id);
+        setSelectedLayerId(getPreferredRegionTheme(destination, activeLayers, selectedLayerId));
+      }
+    },
+    [activeLayers, clearSelectedRegionalHighlight, mapMode, regionMap, selectedLayerId],
+  );
 
-  const handleSelectFlow = (flow) => {
-    const destination = getFlowDestination(flow, regionMap);
-    if (mapMode === "global" || mapMode === "geography") {
-      setMapMode("connections");
-    }
-    clearSelectedRegionalHighlight();
-    setSelectedFlowId(flow.id);
-    setSelectedCountryId(undefined);
-    setSelectedBorderId(undefined);
-    setSelectedGlobalFlowId(undefined);
-    setSelectedAnalysisId(undefined);
-    if (destination) {
-      setSelectedRegionId(destination.id);
-      setSelectedLayerId(getPreferredRegionTheme(destination, activeLayers, selectedLayerId));
-    }
-  };
+  const handleSelectCountry = useCallback(
+    (country) => {
+      setMapMode("geography");
+      clearSelectedRegionalHighlight();
+      setSelectedCountryId(country.id);
+      setSelectedBorderId(undefined);
+      setSelectedGlobalFlowId(undefined);
+      setSelectedRegionId(undefined);
+      setSelectedFlowId(undefined);
+      setSelectedAnalysisId(undefined);
+    },
+    [clearSelectedRegionalHighlight],
+  );
 
-  const handleSelectCountry = (country) => {
-    setMapMode("geography");
-    clearSelectedRegionalHighlight();
-    setSelectedCountryId(country.id);
-    setSelectedBorderId(undefined);
-    setSelectedGlobalFlowId(undefined);
-    setSelectedRegionId(undefined);
-    setSelectedFlowId(undefined);
-    setSelectedAnalysisId(undefined);
-  };
+  const handleSelectBorder = useCallback(
+    (border) => {
+      setMapMode("geography");
+      clearSelectedRegionalHighlight();
+      setSelectedBorderId(border.id);
+      setSelectedCountryId(undefined);
+      setSelectedGlobalFlowId(undefined);
+      setSelectedRegionId(undefined);
+      setSelectedFlowId(undefined);
+      setSelectedAnalysisId(undefined);
+    },
+    [clearSelectedRegionalHighlight],
+  );
 
-  const handleSelectBorder = (border) => {
-    setMapMode("geography");
-    clearSelectedRegionalHighlight();
-    setSelectedBorderId(border.id);
-    setSelectedCountryId(undefined);
-    setSelectedGlobalFlowId(undefined);
-    setSelectedRegionId(undefined);
-    setSelectedFlowId(undefined);
-    setSelectedAnalysisId(undefined);
-  };
+  const handleSelectGlobalFlow = useCallback(
+    (flow) => {
+      setMapMode("global");
+      clearSelectedRegionalHighlight();
+      setSelectedGlobalFlowId(flow.id);
+      setSelectedCountryId(undefined);
+      setSelectedBorderId(undefined);
+      setSelectedRegionId(undefined);
+      setSelectedFlowId(undefined);
+      setSelectedAnalysisId(undefined);
+    },
+    [clearSelectedRegionalHighlight],
+  );
 
-  const handleSelectGlobalFlow = (flow) => {
-    setMapMode("global");
-    clearSelectedRegionalHighlight();
-    setSelectedGlobalFlowId(flow.id);
-    setSelectedCountryId(undefined);
-    setSelectedBorderId(undefined);
-    setSelectedRegionId(undefined);
-    setSelectedFlowId(undefined);
-    setSelectedAnalysisId(undefined);
-  };
+  const handleSelectAnalysisNode = useCallback(
+    (node) => {
+      if (mapMode === "distribution") {
+        setMapMode("comparison");
+      }
+      clearSelectedRegionalHighlight();
+      setSelectedAnalysisId(`node:${node.id}`);
+      setSelectedCountryId(undefined);
+      setSelectedBorderId(undefined);
+      setSelectedGlobalFlowId(undefined);
+      setSelectedRegionId(undefined);
+      setSelectedFlowId(undefined);
+    },
+    [clearSelectedRegionalHighlight, mapMode],
+  );
 
-  const handleSelectAnalysisNode = (node) => {
-    if (mapMode === "distribution") {
-      setMapMode("comparison");
-    }
-    clearSelectedRegionalHighlight();
-    setSelectedAnalysisId(`node:${node.id}`);
-    setSelectedCountryId(undefined);
-    setSelectedBorderId(undefined);
-    setSelectedGlobalFlowId(undefined);
-    setSelectedRegionId(undefined);
-    setSelectedFlowId(undefined);
-  };
+  const handleSelectAnalysisCorridor = useCallback(
+    (corridor) => {
+      if (mapMode === "distribution") {
+        setMapMode("comparison");
+      }
+      clearSelectedRegionalHighlight();
+      setSelectedAnalysisId(`corridor:${corridor.id}`);
+      setSelectedCountryId(undefined);
+      setSelectedBorderId(undefined);
+      setSelectedGlobalFlowId(undefined);
+      setSelectedRegionId(undefined);
+      setSelectedFlowId(undefined);
+    },
+    [clearSelectedRegionalHighlight, mapMode],
+  );
 
-  const handleSelectAnalysisCorridor = (corridor) => {
-    if (mapMode === "distribution") {
-      setMapMode("comparison");
-    }
-    clearSelectedRegionalHighlight();
-    setSelectedAnalysisId(`corridor:${corridor.id}`);
-    setSelectedCountryId(undefined);
-    setSelectedBorderId(undefined);
-    setSelectedGlobalFlowId(undefined);
-    setSelectedRegionId(undefined);
-    setSelectedFlowId(undefined);
-  };
-
-  const handleClearFilters = () => {
+  const handleClearFilters = useCallback(() => {
     setSearchQuery("");
     setReviewFilter("all");
-  };
+  }, []);
 
-  const handleSelectVerificationItem = (item) => {
-    if (item.targetType === "analysisNode") {
-      handleSelectAnalysisNode(item.record);
-      return;
-    }
-    if (item.targetType === "analysisCorridor") {
-      handleSelectAnalysisCorridor(item.record);
-      return;
-    }
-    if (item.targetType === "global") {
-      handleSelectGlobalFlow(item.record);
-      return;
-    }
-    if (item.targetType === "flow") {
-      handleSelectFlow(item.record);
-      return;
-    }
-    if (item.targetType === "region") {
-      const region = regionMap.get(item.targetId);
-      if (region) handleSelectRegion(region);
-      return;
-    }
-    if (item.targetType === "country") {
-      handleSelectCountry(item.record);
-      return;
-    }
-    if (item.targetType === "border") {
-      handleSelectBorder(item.record);
-    }
-  };
+  const handleClearAllSelections = useCallback(() => {
+    clearSelectedRegionalHighlight();
+    setSelectedRegionId(undefined);
+    setSelectedFlowId(undefined);
+    setSelectedCountryId(undefined);
+    setSelectedBorderId(undefined);
+    setSelectedGlobalFlowId(undefined);
+    setSelectedAnalysisId(undefined);
+  }, [clearSelectedRegionalHighlight]);
 
-  const handleSelectStoryStep = (step) => {
+  const handleOpenCompare = useCallback(() => {
+    setCompareIds((current) => {
+      if (current && current.length === 2 && current[0] && current[1]) return current;
+      return ["myawaddy_maesot", "sihanoukville"];
+    });
+    setCompareOpen(true);
+  }, []);
+
+  const handleCloseCompare = useCallback(() => {
+    setCompareOpen(false);
+  }, []);
+
+  const handleCompareChange = useCallback((nextIds) => {
+    setCompareIds(nextIds);
+  }, []);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key !== "Escape") return;
+      const target = event.target;
+      if (
+        target instanceof HTMLElement &&
+        (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable)
+      ) {
+        return;
+      }
+      handleClearAllSelections();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [handleClearAllSelections]);
+
+  useEffect(() => {
+    writeUrlState({
+      mode: mapMode === "comparison" ? undefined : mapMode,
+      region: selectedRegionId,
+      flow: selectedFlowId,
+      country: selectedCountryId,
+      border: selectedBorderId,
+      global: selectedGlobalFlowId,
+      analysis: selectedAnalysisId,
+      year: yearFilter === ALL_YEARS_LABEL ? undefined : yearFilter,
+      q: searchQuery,
+      review: reviewFilter === "all" ? undefined : reviewFilter,
+      motion: motionMode === "always" ? undefined : motionMode,
+      story: activeStoryStepId === STORY_STEPS[0].id ? undefined : activeStoryStepId,
+      compare: compareOpen && compareIds?.length === 2 ? compareIds.join(",") : undefined,
+    });
+  }, [
+    activeStoryStepId,
+    compareIds,
+    compareOpen,
+    mapMode,
+    motionMode,
+    reviewFilter,
+    searchQuery,
+    selectedAnalysisId,
+    selectedBorderId,
+    selectedCountryId,
+    selectedFlowId,
+    selectedGlobalFlowId,
+    selectedRegionId,
+    yearFilter,
+  ]);
+
+  const handleSelectVerificationItem = useCallback(
+    (item) => {
+      if (item.targetType === "analysisNode") {
+        handleSelectAnalysisNode(item.record);
+        return;
+      }
+      if (item.targetType === "analysisCorridor") {
+        handleSelectAnalysisCorridor(item.record);
+        return;
+      }
+      if (item.targetType === "global") {
+        handleSelectGlobalFlow(item.record);
+        return;
+      }
+      if (item.targetType === "flow") {
+        handleSelectFlow(item.record);
+        return;
+      }
+      if (item.targetType === "region") {
+        const region = regionMap.get(item.targetId);
+        if (region) handleSelectRegion(region);
+        return;
+      }
+      if (item.targetType === "country") {
+        handleSelectCountry(item.record);
+        return;
+      }
+      if (item.targetType === "border") {
+        handleSelectBorder(item.record);
+      }
+    },
+    [
+      handleSelectAnalysisCorridor,
+      handleSelectAnalysisNode,
+      handleSelectBorder,
+      handleSelectCountry,
+      handleSelectFlow,
+      handleSelectGlobalFlow,
+      handleSelectRegion,
+      regionMap,
+    ],
+  );
+
+  const handleSelectStoryStep = useCallback((step) => {
     const motionTargetKey =
       step.targetType === "global"
         ? getMotionKey("global", step.targetId)
@@ -3920,15 +4532,31 @@ function App() {
     } else if (step.targetType === "analysisCorridor") {
       setSelectedAnalysisId(`corridor:${step.targetId}`);
     }
-  };
+  }, [activeLayers, clearSelectedRegionalHighlight, regionMap, selectedLayerId]);
 
   return (
     <main className={`app-shell motion-mode-${motionMode}`}>
+      <CompareCaseStudyPanel
+        ids={compareIds}
+        notesIndex={notesIndex}
+        onChange={handleCompareChange}
+        onClose={handleCloseCompare}
+        open={compareOpen}
+        regions={regions}
+      />
       <section
         className="map-stage"
         aria-label="東南アジア国境地帯マップ"
-        style={{ "--map-ambient-overlay": `url(${VISUAL_ASSETS.ambientOverlay})` }}
+        data-hovering="false"
+        ref={mapStageRef}
+        style={{
+          "--map-ambient-overlay": `url(${VISUAL_ASSETS.ambientOverlay})`,
+          "--vignette-x": "50%",
+          "--vignette-y": "50%",
+          position: "relative",
+        }}
       >
+        <div className="map-vignette" aria-hidden="true" />
         <div className="map-titlebar">
           <div>
             <p className="eyebrow">Investigative prototype</p>
@@ -3956,7 +4584,7 @@ function App() {
           zoomSnap={0.25}
           zoomControl={false}
         >
-          <ZoomControl position="bottomleft" />
+          <ZoomControl position="bottomright" />
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | Boundaries: <a href="https://www.naturalearthdata.com/">Natural Earth</a>, <a href="https://www.geoboundaries.org/">geoBoundaries</a>'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -4367,7 +4995,7 @@ function App() {
                     fillOpacity: region.confidence === "documented" ? 0.12 : 0.08,
                     opacity: 0.34,
                     weight: 1,
-                    className: "risk-zone",
+                    className: `risk-zone risk-zone-${region.confidence ?? "reported"}`,
                   }}
                   interactive={false}
                   radius={LAYER_CONFIG.border_risk.radius}
@@ -4432,7 +5060,7 @@ function App() {
                       <Marker
                         eventHandlers={{ click: () => handleSelectFlow(flow) }}
                         icon={createFlowNodeIcon("origin", selected)}
-                        position={flow.origin.coordinates}
+                        position={path[0]}
                         title={flow.origin.name_ja}
                         zIndexOffset={selected ? 800 : 420}
                       >
@@ -4464,6 +5092,25 @@ function App() {
               region.id === selectedRegionId ? selectedLayerId : undefined,
             );
 
+            // Pulse only "documented" reported-compound or any enforcement points
+            // to avoid lighting up everything — directs the eye to confirmed cases.
+            const pulseKind =
+              region.confidence === "documented" && themeIds.includes("reported_compound")
+                ? "compound"
+                : themeIds.includes("policy_enforcement")
+                ? "enforcement"
+                : null;
+
+            const handleHoverEnter = (event) => {
+              const containerPoint = event.target?._map?.latLngToContainerPoint?.(
+                event.target.getLatLng(),
+              );
+              if (containerPoint) {
+                setMapHover({ x: containerPoint.x, y: containerPoint.y });
+              }
+            };
+            const handleHoverLeave = () => setMapHover(null);
+
             return (
               <Marker
                 eventHandlers={{
@@ -4473,12 +5120,15 @@ function App() {
                       ?.getAttribute("data-layer-id");
                     handleSelectRegion(region, clickedLayerId ?? popupLayerId);
                   },
+                  mouseover: handleHoverEnter,
+                  mouseout: handleHoverLeave,
                 }}
                 icon={createRegionClusterIcon(
                   themeIds,
                   popupLayerId,
                   region.id === selectedRegionId,
                   useCompactMarkers,
+                  pulseKind,
                 )}
                 key={`themes-${region.id}-${themeIds.join("-")}-${useCompactMarkers ? "compact" : "expanded"}`}
                 position={region.coordinates}
@@ -4528,6 +5178,7 @@ function App() {
               );
             })}
         </MapContainer>
+        <MapLegend activeLayers={activeLayers} />
       </section>
 
       <aside className="research-panel" aria-label="調査パネル">
@@ -4539,6 +5190,16 @@ function App() {
             人身取引、資金洗浄がどう結び付くかを地図で追うためのプロトタイプです。
           </p>
         </div>
+
+        {!hasAnySelection && landingNotes.length > 0 && (
+          <div className="panel-section panel-section-notes-entry">
+            <h2>作者の起点と省察</h2>
+            <p className="panel-section-hint">
+              地図上の地点・接続線をクリックすると、その対象に紐付いた注釈に切り替わります。
+            </p>
+            <AuthorNotesPanel notes={landingNotes} />
+          </div>
+        )}
 
         <div className="panel-section">
           <h2>表示モード</h2>
@@ -4556,6 +5217,15 @@ function App() {
               </button>
             ))}
           </div>
+          <button
+            className="compare-open-button"
+            onClick={handleOpenCompare}
+            type="button"
+          >
+            <span aria-hidden="true">⇆</span>
+            ケーススタディ比較ビューを開く
+            <span className="compare-open-hint">妙瓦底 ↔ シハヌークビル</span>
+          </button>
         </div>
 
         <div className="panel-section">
@@ -4614,6 +5284,9 @@ function App() {
             region={selectedRegion}
             regionMap={regionMap}
           />
+          {selectedNotes.length > 0 && (
+            <AuthorNotesPanel notes={selectedNotes} entityLabel={selectedNotesLabel} />
+          )}
         </div>
 
         <div className="panel-section">
