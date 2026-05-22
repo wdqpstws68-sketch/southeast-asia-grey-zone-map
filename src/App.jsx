@@ -3813,7 +3813,7 @@ const MotionControlPanel = React.memo(function MotionControlPanel({
   );
 });
 
-function AppInner({ lang, onToggleLang }) {
+function AppInner({ lang, onSelectLang }) {
   const initialUrl = useMemo(() => readUrlState(), []);
   // Language-localized datasets. The component is remounted on language
   // change (key={lang} in <App>), so plain consts recompute correctly.
@@ -4609,6 +4609,24 @@ function AppInner({ lang, onToggleLang }) {
 
   return (
     <main className={`app-shell motion-mode-${motionMode}`}>
+      <div className="lang-switch" role="group" aria-label="Language / 语言 / 言語">
+        <button
+          aria-pressed={lang === "zh"}
+          className={lang === "zh" ? "active" : ""}
+          onClick={() => onSelectLang("zh")}
+          type="button"
+        >
+          中文
+        </button>
+        <button
+          aria-pressed={lang === "ja"}
+          className={lang === "ja" ? "active" : ""}
+          onClick={() => onSelectLang("ja")}
+          type="button"
+        >
+          日本語
+        </button>
+      </div>
       <CompareCaseStudyPanel
         ids={compareIds}
         notesIndex={notesIndex}
@@ -4638,29 +4656,9 @@ function AppInner({ lang, onToggleLang }) {
               <span className="map-title-sub">{tx("追跡")}</span>
             </h1>
           </div>
-          <div className="titlebar-aside">
-            <div className="lang-switch" role="group" aria-label="Language / 语言">
-              <button
-                aria-pressed={lang === "zh"}
-                className={lang === "zh" ? "active" : ""}
-                onClick={lang === "zh" ? undefined : onToggleLang}
-                type="button"
-              >
-                中文
-              </button>
-              <button
-                aria-pressed={lang === "ja"}
-                className={lang === "ja" ? "active" : ""}
-                onClick={lang === "ja" ? undefined : onToggleLang}
-                type="button"
-              >
-                日本語
-              </button>
-            </div>
-            <p className="precision-note">
-              {tx("地域単位で集約。施設位置や精密座標は表示しません。")}
-            </p>
-          </div>
+          <p className="precision-note">
+            {tx("地域単位で集約。施設位置や精密座標は表示しません。")}
+          </p>
         </div>
         <div className="map-status-strip" aria-hidden="true">
           <span></span>
@@ -5498,10 +5496,10 @@ function AppInner({ lang, onToggleLang }) {
 function App() {
   const [lang, setLang] = useState(() => readUrlState().lang ?? DEFAULT_LANG);
   CURRENT_LANG = lang;
-  const handleToggleLang = useCallback(() => {
-    setLang((current) => (current === "zh" ? "ja" : "zh"));
+  const handleSelectLang = useCallback((next) => {
+    if (next === "zh" || next === "ja") setLang(next);
   }, []);
-  return <AppInner key={lang} lang={lang} onToggleLang={handleToggleLang} />;
+  return <AppInner key={lang} lang={lang} onSelectLang={handleSelectLang} />;
 }
 
 export default App;
