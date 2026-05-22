@@ -16,11 +16,11 @@
       }
     ],
     "destination_id": "myawaddy_maesot",
-    "title_ja": "求人詐欺からタイ・ミャンマー国境地域への移動報告",
-    "summary_ja": "タイ側都市圏からミャワディ周辺へ人が移される報告を、都市圏同士の接続として示す。正確な移送経路や施設位置ではない。",
+    "title_ja": "求人詐欺を入口としたタイ側都市圏からミャワディ国境圏への移動報告",
+    "summary_ja": "好条件の事務職などをうたうSNS求人を入口に、バンコク都市圏で集められた人がメーソートを越えてミャワディ側の詐欺コンパウンドへ移される、という報告を都市圏同士の接続として示す。OHCHRの2026年2月報告は、被害者の約4分の3が友人・知人・同僚など信頼する相手を介して勧誘され、勧誘側が急かして検討の余地を与えない手口が多いと指摘する。被害者は越境後にパスポートを取り上げられ、渡航・斡旋費を「借金」として背負わされることが報告されている。これは正確な移送経路や施設位置を示すものではない。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "実際の道路・渡河点ではなく、報告された移動方向を示す線。",
+    "display_note": "実際の道路・渡河点ではなく、報告された移動方向を概念的に示す線。求人勧誘(中国側からの労働力押し出しを含む)と国境統治の非対称が重なり、タイ側後背地がミャンマー側コンパウンドの「入口」として機能してきたことを示す。",
     "sources": [
       {
         "title": "USIP: Southeast Asia Web Scams Reach U.S.",
@@ -29,6 +29,12 @@
       {
         "title": "OHCHR: Online scam operations and trafficking for forced criminality",
         "url": "https://www.bangkok.ohchr.org/reports/online-scam-operations-and-trafficking-forced-criminality-southeast-asia-recommendations"
+      },
+      {
+        "title": "UN report details grave abuses against those trafficked into scam centres",
+        "publisher": "OHCHR",
+        "date": "2026-02-20",
+        "url": "https://www.ohchr.org/en/press-releases/2026/02/un-report-details-grave-abuses-against-those-trafficked-scam-centres"
       }
     ]
   },
@@ -44,10 +50,10 @@
     "via": [],
     "destination_id": "poipet_border",
     "title_ja": "メコン圏のカジノ/SEZネットワーク接続",
-    "summary_ja": "カジノ、SEZ、オンライン賭博、資金洗浄リスクが、複数の国境都市圏にまたがって結び付く様子を示す。",
+    "summary_ja": "カジノ、特区(SEZ)、オンライン賭博、地下金融が複数の国境都市圏にまたがって結び付く様子を示す。UNODCは、カジノと暗号資産(特にUSDT建ての決済)が東・東南アジアにおける資金洗浄・地下銀行・サイバー詐欺の主要な原動力になっていると分析する。摘発で資本・人員・運営ノウハウが一つの拠点から別の国境地域へ移っても、決済インフラと資金ルートは地域全体で共有され続けるため、ネットワークとして見ると容易には縮小しない。これは資本・サービスの流れの傾向を示す概念線であり、特定の組織や送金経路を断定するものではない。",
     "confidence": "reported",
     "directionality": "network",
-    "display_note": "資本、犯罪サービス、運営ノウハウが国境をまたいで移ることを示す線。",
+    "display_note": "資本、犯罪サービス(募集・人身売買・洗浄など)、運営ノウハウが国境をまたいで移ることを示す線。SEZ/カジノ経済と地下金融/USDTという二つの構造が、国境統治の非対称を介して接続する様子を表す。",
     "sources": [
       {
         "title": "UNODC: Transnational Organized Crime and the Convergence of Cyber-Enabled Fraud",
@@ -56,6 +62,12 @@
       {
         "title": "UN Geneva / UNODC: Crushing the scam farms",
         "url": "https://www.ungeneva.org/en/news-media/news/2024/07/95284/crushing-scam-farms-southeast-asias-criminal-service-providers"
+      },
+      {
+        "title": "Casinos and cryptocurrency: major drivers of money laundering, underground banking, and cyberfraud in East and Southeast Asia",
+        "publisher": "UNODC",
+        "date": "2024-01-15",
+        "url": "https://www.unodc.org/roseap/en/2024/casinos-casinos-cryptocurrency-underground-banking/story.html"
       }
     ]
   },
@@ -76,11 +88,11 @@
       }
     ],
     "destination_id": "bavet_chreythum_corridor",
-    "title_ja": "ベトナム側都市圏からカンボジア東部国境地域への移動報告",
-    "summary_ja": "求人詐欺、越境移動、強制的な詐欺労働の報告を、都市圏から国境地域への接続として示す。",
+    "title_ja": "ベトナム側都市圏からカンボジア東部・バベット国境地域への移動報告",
+    "summary_ja": "ホーチミン都市圏で集められた人がモクバイ・バベット国境を越え、バベットのカジノ複合体内に置かれた詐欺拠点で強制的に詐欺労働に就かされる、という報告を都市圏から国境地域への接続として示す。報道では、月給800〜1500米ドル程度の「事務職」「カスタマーサポート」をうたう求人で誘い、越境後に旅券を没収して渡航費を借金化する手口が繰り返し確認されている。2026年1月にはベトナムとカンボジアの警察がバベットで合同摘発を行い、1日で200人超のベトナム国籍者を保護し約100人を本国送還したと報じられた。これは個別被害者の実移動や施設位置ではなく、報告された移動方向を示す概念線である。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "個別被害者の実移動や施設位置ではなく、報告の方向性を示す線。",
+    "display_note": "個別被害者の実移動や施設位置ではなく、報告の方向性を示す線。越境労働移動と、カジノ複合体を母体とする詐欺拠点(SEZ/カジノ経済)が国境回廊で接続する様子を表す。",
     "sources": [
       {
         "title": "Amnesty International: Cambodia casinos and scamming compounds",
@@ -89,6 +101,12 @@
       {
         "title": "OHCHR / UN Geneva: Hundreds of thousands trafficked into online criminality",
         "url": "https://www.ungeneva.org/en/news-media/news/2023/08/84386/hundreds-thousands-trafficked-online-criminality-across-se-asia"
+      },
+      {
+        "title": "In Cambodia, mass scam centre escapes reveal a humanitarian crisis",
+        "publisher": "The New Humanitarian",
+        "date": "2026-02-25",
+        "url": "https://www.thenewhumanitarian.org/news-feature/2026/02/25/cambodia-mass-scam-centre-escapes-reveal-humanitarian-crisis"
       }
     ]
   },
@@ -103,15 +121,21 @@
     },
     "via": [],
     "destination_id": "sihanoukville",
-    "title_ja": "カンボジア国内の沿岸・国境都市圏接続",
-    "summary_ja": "沿岸開発、カジノ、不動産、国境都市圏がオンライン詐欺報告と重なる様子を、カンボジア国内の接続として示す。",
+    "title_ja": "カンボジア国内の沿岸・国境都市圏接続(プノンペン–シハヌークビル–ポイペト)",
+    "summary_ja": "沿岸開発、カジノ、不動産、国境都市圏がオンライン詐欺の報告と重なる様子を、カンボジア国内の接続として示す。プノンペンを行政・投資の中心に、シハヌークビルの大型カジノ・建設街、タイ国境のポイペトのカジノ街が、人員・資本・運営の循環でつながる構図がある。米英は2025年10月、シハヌークビルを拠点に拡大したプリンス・グループと創業者チェン・ジー(Chen Zhi)を、サイバー詐欺・人身取引・資金洗浄を理由に共同制裁の対象とした。これは関連する都市圏同士のつながりを概念的に示す線であり、特定施設の精密な接続ではない。",
     "confidence": "documented",
     "directionality": "network",
-    "display_note": "関連する都市圏同士のつながりを示す線。施設単位の接続ではない。",
+    "display_note": "関連する都市圏同士のつながりを示す線。施設単位の接続ではない。SEZ/カジノ経済、地下金融、被害者保護の格差という構造が、一国内の沿岸・首都・国境を横断して連動する様子を表す。",
     "sources": [
       {
         "title": "Amnesty International: Cambodia casinos and scamming compounds",
         "url": "https://www.amnesty.org/en/latest/news/2026/04/cambodia-casinos-get-state-approval-despite-links-to-human-rights-abuse-at-scamming-compounds/"
+      },
+      {
+        "title": "US, UK sanction Cambodian conglomerate, alleging role in scam networks",
+        "publisher": "Radio Free Asia",
+        "date": "2025-10-14",
+        "url": "https://www.rfa.org/english/cambodia/2025/10/14/sanctions-scam-prince-group/"
       }
     ]
   },
@@ -126,11 +150,11 @@
     },
     "via": [],
     "destination_id": "golden_triangle_sez",
-    "title_ja": "北部ミャンマーからメコン三国境圏へのネットワーク移動",
-    "summary_ja": "摘発や圧力の後に、拠点や運営ネットワークが別の国境地域へ移ったという報告を示す。",
+    "title_ja": "北部ミャンマー(シャン州–雲南境界)からメコン三国境圏へのネットワーク移動",
+    "summary_ja": "中国側の圧力を受けた2023年末以降の摘発で、コーカン・北シャン州など雲南省境界の拠点が打撃を受けると、運営ネットワークがメコン三国境圏(ゴールデン・トライアングルSEZなど)を含む別の国境地域へ移ったという報告を示す。報道や分析は、雲南境界の拠点がシャン州内陸南部やタイ・ミャンマー国境のミャワディ方面へ「南下」し、摘発を逃れて再配置を繰り返してきたと指摘する。雲南境界では「Operation 1027」後にコーカンの主要都市ラオカイが反勢力の支配下に入り、中国向けに多数の容疑者・関係者が移送された。これは拠点移動の傾向を示す概念線であり、具体的な組織・施設の移動を断定するものではない。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "拠点移動の傾向を示す線。具体的な組織・施設の移動を断定しない。",
+    "display_note": "拠点移動の傾向を示す線。具体的な組織・施設の移動を断定しない。摘発圧力が一つの国境地域に集中すると、国境統治の非対称を利用して別の弱い統治地域へネットワークが再配置される「風船効果」を表す。",
     "sources": [
       {
         "title": "USIP: Transnational Crime in Southeast Asia",
@@ -139,6 +163,12 @@
       {
         "title": "UNODC: Casinos, cyber fraud, and trafficking in persons for forced criminality",
         "url": "https://www.unodc.org/roseap/uploads/documents/Publications/2023/TiP_for_FC_Policy_Report.pdf"
+      },
+      {
+        "title": "Myanmar scam operations move south along Thai border",
+        "publisher": "Voice of America",
+        "date": "2025-08-20",
+        "url": "https://www.voanews.com/a/myanmar-scam-operations-move-south-along-thai-border/7959295.html"
       }
     ]
   },
@@ -160,10 +190,10 @@
     ],
     "destination_id": "myawaddy_maesot",
     "title_ja": "フィリピン南西部・サバ経由のミャンマー移送",
-    "summary_ja": "公式送還事例では、タウィタウィからマレーシアへ船で移動し、メーソートを経由してミャンマー側へ搬送される流れが報告された。",
+    "summary_ja": "フィリピン入国管理局(BI)が公表した送還事例では、フィリピン南西部タウィタウィからマレーシア(サバ方面)へ船で移動し、タイのメーソートを経由してミャンマー側の詐欺拠点へ搬送される、という被害者証言を含む流れが報告された。海上回廊と陸路の国境ゲートを継ぎ目に使うことで、正規の出入国記録を残さずに複数国をまたぐ移送が可能になる点が、この事例の特徴として読み取れる。これは被害者証言を含む公式送還事例に基づく概念線であり、確定航路や個別渡航点を示すものではない。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "被害者証言を含む公式送還事例に基づく線。確定航路や個別渡航点ではない。",
+    "display_note": "被害者証言を含む公式送還事例に基づく線。確定航路や個別渡航点ではない。海上監視が難しい島嶼回廊と、国境統治の非対称が連結し、長距離の越境移送を成立させる様子を表す。",
     "sources": [
       {
         "title": "BI reports arrival of seven trafficking victims repatriated from scam hubs",
@@ -196,10 +226,10 @@
     ],
     "destination_id": "mekong_region",
     "title_ja": "フィリピン南西部・サバ経由のメコン圏移送",
-    "summary_ja": "別の公式送還事例では、パラワンからコタキナバル、タイ、ミャンマーを経てカンボジアへ迂回移送された被害者が確認された。",
+    "summary_ja": "フィリピン入国管理局(BI)の別の公式送還事例では、パラワンからコタキナバル、タイ、ミャンマーを経てカンボジアへ迂回的に移送された被害者が確認された。最終目的地より遠回りの経路を取るのは、各国の出入国審査や摘発を回避し、被害者の現在地を把握しにくくするためと考えられ、こうした多国迂回は救出・身元確認・本国送還を一段と難しくする。これは複数国をまたぐ報告ルートを束ねた概念線であり、個別被害者の詳細経路や施設位置を示すものではない。",
     "confidence": "reported",
     "directionality": "one_way",
-    "display_note": "複数国をまたぐ報告ルートを束ねた線。個別被害者の詳細経路や施設位置は示さない。",
+    "display_note": "複数国をまたぐ報告ルートを束ねた線。個別被害者の詳細経路や施設位置は示さない。迂回移送が被害者保護の格差(現在地不明・管轄の分散)を増幅させる様子を表す。",
     "sources": [
       {
         "title": "BI: 4 Filipinos repatriated from Cambodia after falling victim to job scam syndicate",
@@ -220,11 +250,11 @@
     },
     "via": [],
     "destination_id": "mekong_region",
-    "title_ja": "マレーシアからメコン圏への就労詐欺送出",
-    "summary_ja": "マレーシア外務省が2025年にカンボジアでの被害者救出を確認しており、メコン圏向けの送出・被害流入が継続している。",
+    "title_ja": "マレーシアからメコン圏(カンボジア)への就労詐欺送出",
+    "summary_ja": "マレーシア外務省は2025年2月、カンボジアの就労詐欺シンジケートから自国民が救出されたことを公表しており、クアラルンプール・KLIA圏を入口とするメコン圏向けの送出と、その後の救出・本国送還が継続していることが確認できる。マレーシアは募集・出国の起点であると同時に、通報受理と外交的な救出交渉の窓口でもあり、被害の「送出側」と「対応側」の機能が一つの都市圏に重なる。これは国別の救出・送還情報を接続として示す概念線であり、特定施設への移送を示すものではない。",
     "confidence": "documented",
     "directionality": "one_way",
-    "display_note": "国別の救出・送還情報を接続として示す。特定施設への移送は示さない。",
+    "display_note": "国別の救出・送還情報を接続として示す線。特定施設への移送は示さない。送出国側の領事対応が、被害者保護の格差を部分的に埋める経路として働く様子を表す。",
     "sources": [
       {
         "title": "Malaysians Rescued From Job Scam Syndicate In Cambodia",
@@ -246,10 +276,10 @@
     "via": [],
     "destination_id": "myawaddy_maesot",
     "title_ja": "マレーシアからミャンマー側詐欺拠点への送出",
-    "summary_ja": "2025年にマレーシア政府が複数回の本国送還を公表しており、ミャンマー側拠点との人員接続が確認できる。",
+    "summary_ja": "マレーシア外務省は2025年3月に25人、同年12月に31人の自国民がミャンマーの就労詐欺シンジケートから救出・本国送還されたことを公表しており、クアラルンプール・KLIA圏とミャワディ周辺のミャンマー側拠点との人員接続が継続的に確認できる。送還者は通常、解放後にタイ・ミャンマー国境(メーソート–ミャワディ)に集められてから帰国手続きに入るため、この回廊が救出の集約点としても機能している。これは救出・帰還情報に基づく概念線であり、個別移送経路を示すものではない。",
     "confidence": "documented",
     "directionality": "one_way",
-    "display_note": "救出・帰還情報に基づく線。個別移送経路ではない。",
+    "display_note": "救出・帰還情報に基づく線。個別移送経路ではない。送出国の領事対応と国境圏での集約が、被害者保護の格差を部分的に補う経路として働く様子を表す。",
     "sources": [
       {
         "title": "25 Malaysian Victims Of Job Scam Syndicates In Myanmar Arrive At Border",
@@ -277,10 +307,10 @@
     "via": [],
     "destination_id": "jakarta_metro_enforcement_node",
     "title_ja": "ミャワディ摘発後のインドネシア人大量送還",
-    "summary_ja": "多国間摘発後、ミャンマー側から解放された500人超のインドネシア人がジャカルタへ帰還し、選別・取調べが行われた。",
+    "summary_ja": "2025年初頭の中国・ミャンマー・タイによる多国間摘発を受け、ミャンマー側の詐欺拠点から解放された500人超のインドネシア国籍者がジャカルタへ帰還し、政府が被害者と関与者を選別するための聞き取り・取調べを行った、とロイターが報じた。解放された人々のなかには強制された被害者と自発的な就労者が混在しうるため、帰還後に「被害者か容疑者か」を見極める選別が避けられず、これが被害者保護の格差を生む典型的な局面となる。これは送還・執行対応を示す概念線であり、個人や具体的便名を示すものではない。",
     "confidence": "documented",
     "directionality": "one_way",
-    "display_note": "送還・執行対応を示す線。個人や具体的便名は示さない。",
+    "display_note": "送還・執行対応を示す線。個人や具体的便名は示さない。摘発の出口で、被害者認定と刑事・入管手続きが交錯し、保護の格差が顕在化する様子を表す。",
     "sources": [
       {
         "title": "Indonesia to question more than 500 citizens freed from Myanmar scam centres",
@@ -302,10 +332,10 @@
     "via": [],
     "destination_id": "singapore_metro_financial_node",
     "title_ja": "シンガポール・カンボジア共同摘発ライン",
-    "summary_ja": "シンガポール警察は、プノンペンの詐欺拠点からシンガポール被害者を狙った組織に対して共同摘発と国際手配を進めた。",
+    "summary_ja": "シンガポール警察は2025年10月、カンボジアの詐欺コンパウンドを拠点にシンガポールの被害者を狙った組織犯罪グループの構成員として、シンガポール人27人とマレーシア人7人を特定したと発表した。被害国側の捜査機関が、加害拠点の所在国と協力して構成員を割り出し国際手配へ進めた事例であり、詐欺被害が「被害者の国」と「拠点の国」の二国にまたがるとき、両国の捜査連携が事件解決の前提になることを示す。これは共同捜査と被害国側の接続を示す概念線であり、施設位置を示すものではない。",
     "confidence": "documented",
     "directionality": "network",
-    "display_note": "共同捜査と被害国側の接続を示す線。施設位置は示さない。",
+    "display_note": "共同捜査と被害国側の接続を示す線。施設位置は示さない。被害国の法執行が国境を越えて拠点国の捜査に接続し、保護・訴追の格差を埋めようとする様子を表す。",
     "sources": [
       {
         "title": "27 Singaporeans And Seven Malaysians Identified As Members Of Organised Crime Group Operating Out Of Scam Compound In Cambodia",
@@ -327,10 +357,10 @@
     "via": [],
     "destination_id": "singapore_metro_financial_node",
     "title_ja": "カンボジア系詐欺経済からシンガポール金融圏への資金接続",
-    "summary_ja": "海外詐欺・オンライン賭博の収益がシンガポールの口座・資産へ流入し、後に金融当局・警察の処分や押収対象となった。",
+    "summary_ja": "海外詐欺・オンライン賭博の収益が、口座・不動産・法人といった形でシンガポールの金融システムへ流入し、後に金融当局や警察の処分・押収の対象となった。ロイターによれば、シンガポールでは2023年の大型資金洗浄事件を受けて9つの銀行・金融機関に当局が処分を科し、政府はマネーロンダリング事件の立件を容易にする法改正も進めた。詐欺の収益が最終的に整備された国際金融センターへ流れ込む構図は、地下金融(USDT等)と正規金融が出口で接続することを示す。これは資金移動や法人利用を示す概念線であり、個別口座・法人・住所を示すものではない。",
     "confidence": "documented",
     "directionality": "network",
-    "display_note": "資金移動や法人利用を示す線。個別口座・法人・住所は示さない。",
+    "display_note": "資金移動や法人利用を示す線。個別口座・法人・住所は示さない。詐欺収益が地下金融から正規金融センターへ抜ける「資金の出口」を表す。",
     "sources": [
       {
         "title": "Singapore aims to make it easier to prosecute money laundering cases",

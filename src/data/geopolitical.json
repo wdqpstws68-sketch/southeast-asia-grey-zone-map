@@ -10,14 +10,14 @@
       "polygons": [
         [[28.5, 92.1], [27.7, 96.6], [24.2, 99.4], [21.4, 100.3], [18.9, 98.0], [16.4, 98.7], [11.1, 98.9], [9.4, 96.0], [13.3, 92.8], [20.8, 93.2], [25.2, 94.1]]
       ],
-      "summary_ja": "北東部とカレン州国境地帯で、詐欺コンパウンド、カジノ/SEZ、武装勢力支配、越境インフラが重なる中核国。ミャワディ、Shwe Kokko、KK Park、北シャン州/コーカン周辺を主要地域として扱う。",
-      "border_context": "タイ国境、中国雲南省境界、ゴールデン・トライアングルと接続する。",
-      "risk_factors": ["武装勢力支配地域", "治外法権的SEZ", "弱い法執行", "越境電力・通信依存", "中国語圏犯罪ネットワーク"],
+      "summary_ja": "北東部とカレン州国境地帯で、詐欺コンパウンド、カジノ/SEZ、武装勢力支配、越境インフラが重なる中核国。カレン州のミャワディ、Shwe Kokko、KK Park、および北シャン州/コーカン周辺を主要地域として扱う。中央政府の統制が及ばない国境地帯では、国境警備隊(BGF)など地元武装勢力の保護下で詐欺コンパウンドが運営され、被害者の脱出を阻む実質的な「壁」となってきた。報道では、ミャワディ周辺だけで約30万人が詐欺労働に従事し、少なくとも40の大規模コンパウンドが存在するとの推計もある。2026年初頭にはKK Parkで630棟超の建物が解体され多数が中国へ送還された一方、近隣のBGF支配地域に新たな拠点が再出現したとも報じられ、摘発と再配置が繰り返されている。",
+      "border_context": "タイ国境(メーソート–ミャワディ)、中国雲南省境界、ゴールデン・トライアングル三国境と接続する。中央政府の統制が弱い辺境ほど詐欺経済が定着しやすく、国境統治の非対称が拠点立地の前提となっている。",
+      "risk_factors": ["武装勢力支配地域", "治外法権的SEZ", "弱い法執行", "越境電力・通信依存", "中国語圏犯罪ネットワーク", "BGF等地元武装組織による拠点保護", "摘発後の拠点再出現・再配置"],
       "related_borders": ["thai-myanmar", "myanmar-yunnan", "golden-triangle"],
       "related_regions": ["ミャワディ", "Shwe Kokko", "KK Park", "北シャン州", "コーカン"],
       "layers": ["fraud_centers", "casinos", "financial_nodes", "policy_nodes"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "州・都市圏単位で表示し、施設位置や非公式越境点の精密表示は避ける。",
       "sources": [
         {
@@ -31,6 +31,12 @@
           "publisher": "U.S. Department of the Treasury",
           "date": "2025-05-05",
           "url": "https://home.treasury.gov/news/press-releases/sb0129"
+        },
+        {
+          "title": "New Scam Hubs Rise in BGF Areas Near Myawaddy Despite 'Crackdown'",
+          "publisher": "The Irrawaddy",
+          "date": "2026-02-13",
+          "url": "https://www.irrawaddy.com/news/burma/new-scam-hubs-rise-in-bgf-areas-near-myawaddy-despite-crackdown.html"
         }
       ]
     },
@@ -44,14 +50,14 @@
       "polygons": [
         [[20.6, 97.4], [19.2, 101.0], [17.4, 105.5], [14.5, 105.6], [12.0, 102.5], [10.1, 99.2], [6.0, 100.0], [5.6, 101.5], [7.6, 102.8], [12.0, 101.0], [15.2, 100.0], [18.2, 98.5]]
       ],
-      "summary_ja": "タイは救出・送還・通報受け入れの結節点であり、ミャンマー側コンパウンドとタイ側後背地が強く結び付く。メーソート周辺、ゴールデン・トライアングル、カンボジア国境が重点となる。",
-      "border_context": "ミャンマー国境、ラオス/ミャンマー三国境、カンボジア国境と接続。",
-      "risk_factors": ["越境詐欺拠点への近接", "国境都市の人流", "救出後の一時滞留", "金融・通信インフラの利用"],
+      "summary_ja": "タイは救出・送還・通報受け入れの結節点であり、ミャンマー側コンパウンドとタイ側後背地が強く結び付く。メーソートはミャワディの対岸に位置し、求人勧誘の集合地であると同時に、解放された被害者が帰国手続きに入る集約点でもある。2025年6月にはUNODCがメーソートで第5回緊急対応ネットワーク会合を開催するなど、タイ側は地域協力の調整拠点としての役割も担う。電力・通信・物流・金融といった基盤がタイ側からミャンマー側コンパウンドを支える構図も指摘されてきた。メーソート周辺、ゴールデン・トライアングル、カンボジア国境が重点となる。",
+      "border_context": "ミャンマー国境、ラオス/ミャンマー三国境、カンボジア国境と接続。タイ側の都市・基盤インフラが国境を越えて拠点経済に組み込まれ、「後背地」として機能してきた。",
+      "risk_factors": ["越境詐欺拠点への近接", "国境都市の人流", "救出後の一時滞留", "金融・通信インフラの利用", "拠点向け電力・物流の供給地", "地域協力・摘発調整の拠点"],
       "related_borders": ["thai-myanmar", "golden-triangle", "thai-cambodia"],
       "related_regions": ["メーソート", "チェンライ", "タク県", "アランヤプラテート"],
       "layers": ["policy_nodes", "trafficking_routes", "financial_nodes"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "タイ側は通過、救出、捜査協力が集中する地域として表示する。",
       "sources": [
         {
@@ -78,14 +84,14 @@
       "polygons": [
         [[14.7, 102.3], [14.2, 107.6], [11.5, 107.4], [10.4, 104.4], [11.5, 102.6]]
       ],
-      "summary_ja": "タイ・ベトナム国境のカジノ都市、シアヌークビル、プノンペン周辺で、詐欺拠点、強制労働、人身取引、資金洗浄が重なる。Prince Group、Kok An関連、カジノホテル群などが出典付きで扱われる。",
-      "border_context": "タイ国境のポイペト/オスマッチ、ベトナム国境のバベット、沿岸部シアヌークビルが重点。",
-      "risk_factors": ["カジノ複合体", "国境人流", "中国系資本・犯罪ネットワーク", "暗号資産詐欺", "汚職リスク"],
+      "summary_ja": "タイ・ベトナム国境のカジノ都市、シアヌークビル、プノンペン周辺で、詐欺拠点、強制労働、人身取引、資金洗浄が重なる。多くの拠点は旧カジノや大型オフィス複合体を母体とし、高い塀・有刺鉄線・武装した私設警備で囲われた「要塞型」とされる。米英は2025年10月、シアヌークビルを足場に拡大したプリンス・グループと創業者チェン・ジー(Chen Zhi)を制裁対象とし、米司法省は詐欺・資金洗浄等で起訴、過去最大規模とされる約12万7千ビットコインの押収も発表した。2026年4月には米財務省がカンボジア上院議員Kok Anと関連の詐欺センター網を制裁した。米国務省の人身取引報告書は、カンボジア政府が詐欺コンパウンドの運営者・所有者を訴追した実績を持たないと指摘している。",
+      "border_context": "タイ国境のポイペト/オスマッチ、ベトナム国境のバベット、沿岸部シアヌークビルが重点。国境都市のカジノ街と首都の投資・行政機能が、人員・資本の循環でつながる。",
+      "risk_factors": ["カジノ複合体", "国境人流", "中国系資本・犯罪ネットワーク", "暗号資産詐欺", "汚職リスク", "要塞型コンパウンドと私設武装警備", "運営者不訴追(処罰の不在)"],
       "related_borders": ["thai-cambodia", "cambodia-vietnam"],
       "related_regions": ["ポイペト", "オスマッチ", "バベット", "シアヌークビル", "プノンペン"],
       "layers": ["fraud_centers", "casinos", "financial_nodes", "policy_nodes"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "都市圏・国境回廊単位で表示し、カジノ/ホテルの精密施設位置は表示しない。",
       "sources": [
         {
@@ -99,6 +105,18 @@
           "publisher": "U.S. Department of the Treasury",
           "date": "2026-04-23",
           "url": "https://home.treasury.gov/news/press-releases/sb0469"
+        },
+        {
+          "title": "US, UK sanction Cambodian conglomerate, alleging role in scam networks",
+          "publisher": "Radio Free Asia",
+          "date": "2025-10-14",
+          "url": "https://www.rfa.org/english/cambodia/2025/10/14/sanctions-scam-prince-group/"
+        },
+        {
+          "title": "2025 Trafficking in Persons Report: Cambodia",
+          "publisher": "U.S. Department of State",
+          "date": "2025-06-01",
+          "url": "https://www.state.gov/reports/2025-trafficking-in-persons-report/cambodia/"
         }
       ]
     },
@@ -112,14 +130,14 @@
       "polygons": [
         [[22.5, 100.1], [21.8, 102.5], [20.0, 104.8], [18.0, 105.5], [16.0, 106.0], [14.5, 105.5], [15.5, 103.5], [17.5, 101.2], [20.4, 100.4]]
       ],
-      "summary_ja": "北西部ボーケオ州のゴールデン・トライアングルSEZが、カジノ、特区統治、地下金融、詐欺センターの集中地として扱われる。",
-      "border_context": "ラオス・タイ・ミャンマー三国境と接続。",
-      "risk_factors": ["SEZの統治例外", "カジノ中心経済", "地下銀行", "人身取引", "外国資本依存"],
+      "summary_ja": "北西部ボーケオ州のゴールデン・トライアングルSEZ(GTSEZ)が、カジノ、特区統治、地下金融、詐欺センターの集中地として扱われる。同SEZは中国系のKings Romans(王家ローマ)グループが実質的に運営し、建設・公共設備・区画・私設警備までを掌握する一方、ラオス政府の出資は2割にとどまり日常統治への直接介入が難しいとされる。同グループ代表の趙偉(Zhao Wei)は2018年に米財務省から越境犯罪組織の首領として制裁を受けた。2024年8月にはラオス当局がSEZ内の詐欺センターを完全閉鎖するよう命じ、ラオ・中国籍60人を逮捕したと報じられたが、SEZ統治の例外性が拠点経済の温床であり続けている。",
+      "border_context": "ラオス・タイ・ミャンマー三国境と接続。SEZへの統治権限の委譲が、国家の法執行が及びにくい「特区の例外」を生んでいる。",
+      "risk_factors": ["SEZの統治例外", "カジノ中心経済", "地下銀行", "人身取引", "外国資本依存", "特区運営企業による実質統治", "閉鎖命令後の存続"],
       "related_borders": ["golden-triangle"],
       "related_regions": ["ゴールデン・トライアングルSEZ", "ボーケオ州"],
       "layers": ["casinos", "fraud_centers", "financial_nodes"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "SEZ全体を広域表示し、施設単位の表示は避ける。",
       "sources": [
         {
@@ -133,6 +151,12 @@
           "publisher": "Radio Free Asia",
           "date": "2024-08-12",
           "url": "https://www.rfa.org/english/news/laos/orders-scamcentres-shutdown-08122024151243.html"
+        },
+        {
+          "title": "Casinos and cryptocurrency: major drivers of money laundering, underground banking, and cyberfraud in East and Southeast Asia",
+          "publisher": "UNODC",
+          "date": "2024-01-15",
+          "url": "https://www.unodc.org/roseap/en/2024/casinos-casinos-cryptocurrency-underground-banking/story.html"
         }
       ]
     },
@@ -146,14 +170,14 @@
       "polygons": [
         [[23.4, 105.3], [22.5, 108.8], [20.0, 106.8], [17.0, 107.7], [14.0, 109.2], [11.0, 108.8], [8.6, 104.8], [10.5, 104.8], [12.0, 106.5], [16.0, 106.0], [18.5, 105.5], [21.0, 104.0]]
       ],
-      "summary_ja": "カンボジア国境、労働者移動、資金・人流の接続国として扱う。直接拠点情報は限定的なため、国境回廊と被害者保護/送還文脈を中心に表示する。",
-      "border_context": "カンボジア・ベトナム国境、対中国国境と接続。",
-      "risk_factors": ["越境労働移動", "国境市場", "現金・資金移動", "国外詐欺被害者保護"],
+      "summary_ja": "カンボジア国境、労働者移動、資金・人流の接続国として扱う。直接の拠点情報は限定的なため、モクバイ–バベットなどの国境回廊と、被害者保護・本国送還の文脈を中心に表示する。ホーチミン都市圏は好条件の事務職をうたう求人勧誘の起点として読め、越境後にカンボジア側カジノ複合体内の詐欺拠点へ移される事例が報じられている。2026年初頭にはベトナム・カンボジア両警察がバベットで合同摘発を行い、多数のベトナム国籍者の保護・送還が伝えられた。",
+      "border_context": "カンボジア・ベトナム国境、対中国国境と接続。バベット周辺の国境回廊が、労働移動と詐欺拠点への移送の双方の経路となっている。",
+      "risk_factors": ["越境労働移動", "国境市場", "現金・資金移動", "国外詐欺被害者保護", "国境カジノ複合体への移送"],
       "related_borders": ["cambodia-vietnam"],
       "related_regions": ["ホーチミン市", "モックバイ", "バベット周辺"],
       "layers": ["policy_nodes", "financial_nodes", "trafficking_routes"],
       "confidence": "reported",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "国内大都市と国境地域を粗く表示する。",
       "sources": [
         {
@@ -161,6 +185,12 @@
           "publisher": "UNODC",
           "date": "2024-07-15",
           "url": "https://www.unodc.org/unodc/frontpage/2024/July/crushing-scam-farms--southeast-asias-criminal-service-providers.html"
+        },
+        {
+          "title": "In Cambodia, mass scam centre escapes reveal a humanitarian crisis",
+          "publisher": "The New Humanitarian",
+          "date": "2026-02-25",
+          "url": "https://www.thenewhumanitarian.org/news-feature/2026/02/25/cambodia-mass-scam-centre-escapes-reveal-humanitarian-crisis"
         }
       ]
     },
@@ -174,14 +204,14 @@
       "polygons": [
         [[18.7, 120.0], [17.0, 122.8], [14.0, 124.2], [10.5, 126.2], [5.0, 125.2], [4.7, 119.0], [8.0, 117.0], [11.5, 119.0], [14.5, 120.0]]
       ],
-      "summary_ja": "POGO/オンライン賭博、詐欺、人身取引、政策転換の文脈で重要。マニラ首都圏と中央ルソン、南西部海上回廊が主な表示対象。",
-      "border_context": "マレーシア・サバ方面の海上回廊、国内POGO摘発地域と接続。",
-      "risk_factors": ["POGOの地下化", "中国語圏オンライン賭博", "空港・海上移動", "国外送出被害"],
+      "summary_ja": "POGO(フィリピン・オフショア賭博事業者)/オンライン賭博、詐欺、人身取引、政策転換の文脈で重要。マルコス大統領は2024年7月、POGOの全面禁止を表明し、国内のオンライン賭博産業の閉鎖を命じた。これに伴い、合法の建前で運営されてきた事業の一部が地下化し、また被害者が海外の詐欺拠点へ送り出される経路も問題化している。フィリピン入国管理局(BI)は、ミャンマーやカンボジアの詐欺拠点から本国送還された自国民の事例を継続的に公表しており、南西部のパラワン・タウィタウィを起点とする海上回廊が越境移送に使われたとの証言も示されている。マニラ首都圏と中央ルソン、南西部海上回廊が主な表示対象。",
+      "border_context": "マレーシア・サバ方面の海上回廊、国内POGO摘発地域と接続。POGO禁止後の地下化と、海外拠点への送出という二方向のリスクが重なる。",
+      "risk_factors": ["POGOの地下化", "中国語圏オンライン賭博", "空港・海上移動", "国外送出被害", "POGO全面禁止後の非公式化"],
       "related_borders": ["philippines-malaysia"],
       "related_regions": ["メトロマニラ", "中央ルソン", "パラワン", "タウィタウィ"],
       "layers": ["pogo", "fraud_centers", "policy_nodes", "trafficking_routes"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "都市圏・島嶼回廊単位で表示する。",
       "sources": [
         {
@@ -189,6 +219,12 @@
           "publisher": "Reuters",
           "date": "2024-07-22",
           "url": "https://www.reuters.com/world/asia-pacific/philippines-marcos-orders-closure-offshore-gaming-industry-2024-07-22/"
+        },
+        {
+          "title": "BI reports arrival of seven trafficking victims repatriated from scam hubs",
+          "publisher": "Bureau of Immigration Philippines",
+          "date": "2025-11-25",
+          "url": "https://immigration.gov.ph/bi-reports-arrival-of-seven-trafficking-victims-repatriated-from-scam-hubs/"
         }
       ]
     },
@@ -203,14 +239,14 @@
         [[6.8, 100.0], [6.8, 102.0], [1.2, 104.3], [1.0, 101.2], [4.0, 100.0]],
         [[7.2, 109.5], [7.2, 119.5], [3.2, 119.0], [0.8, 115.0], [1.2, 109.6]]
       ],
-      "summary_ja": "金融・送出・送還・法執行のハブ。クアラルンプール/KLIA、サバ、ジョホールなどが人流・資金流・捜査協力の接点となる。",
-      "border_context": "フィリピン南部、シンガポール、インドネシア、タイと接続。",
-      "risk_factors": ["送金・金融ネットワーク", "空港・海上移動", "国外詐欺就労", "AML対応"],
+      "summary_ja": "金融・送出・送還・法執行のハブ。クアラルンプール/KLIA、サバ、ジョホールなどが人流・資金流・捜査協力の接点となる。マレーシアは募集・出国の起点であると同時に、通報受理と外交的な救出交渉の窓口でもあり、被害の「送出側」と「対応側」の機能が同じ都市圏に重なる。外務省は2025年に、カンボジアやミャンマーの就労詐欺シンジケートから自国民が救出・本国送還された事例を複数回公表している。サバはフィリピン南部とつながる海上回廊の結節点でもあり、海路と空路の双方が越境移動に関わる。",
+      "border_context": "フィリピン南部、シンガポール、インドネシア、タイと接続。空港(KLIA)を介した送出と、サバを介した海上接続の双方がリスク経路となる。",
+      "risk_factors": ["送金・金融ネットワーク", "空港・海上移動", "国外詐欺就労", "AML対応", "送出と領事対応の併存"],
       "related_borders": ["philippines-malaysia", "malaysia-singapore-indonesia"],
       "related_regions": ["クアラルンプール", "KLIA", "サバ", "ジョホール"],
       "layers": ["financial_nodes", "policy_nodes", "trafficking_routes"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "主要都市、空港、海上接続を概略表示する。",
       "sources": [
         {
@@ -218,6 +254,12 @@
           "publisher": "UNODC",
           "date": "2025-11-15",
           "url": "https://www.unodc.org/roseap/en/stories/2025/follow-the-money---southeast-asian-countries-fighting-cyber-fraud.html"
+        },
+        {
+          "title": "Malaysians Rescued From Job Scam Syndicate In Cambodia",
+          "publisher": "Ministry of Foreign Affairs Malaysia",
+          "date": "2025-02-26",
+          "url": "https://www.kln.gov.my/web/guest/-/malaysians-rescued-from-job-scam-syndicate-in-cambodia"
         }
       ]
     },
@@ -231,14 +273,14 @@
       "polygons": [
         [[1.47, 103.62], [1.47, 104.08], [1.18, 104.08], [1.18, 103.62]]
       ],
-      "summary_ja": "強制詐欺拠点ではなく、金融、法人、資産管理、共同捜査の接続先として扱う。犯罪収益洗浄、資産差押え、AML強化の文脈が中心。",
-      "border_context": "マレーシア、インドネシアとの金融・港湾・空港接続。",
-      "risk_factors": ["国際金融センター", "法人・資産管理の悪用可能性", "越境現金・資産移動"],
+      "summary_ja": "強制詐欺拠点ではなく、金融、法人、資産管理、共同捜査の接続先として扱う。犯罪収益の洗浄、資産差押え、AML(マネーロンダリング対策)強化の文脈が中心となる。海外詐欺・賭博の収益が口座・不動産・法人の形で流入しうるため、シンガポールは詐欺経済の「資金の出口」として位置づけられる。2023年に発覚した大型資金洗浄事件を受け、金融当局は9つの銀行・金融機関に処分を科し、政府はマネーロンダリング事件の立件を容易にする法改正も進めた。警察はカンボジアの詐欺コンパウンドを拠点に自国民被害者を狙った組織犯罪グループの構成員を特定するなど、被害国側として越境捜査にも関与している。",
+      "border_context": "マレーシア、インドネシアとの金融・港湾・空港接続。詐欺収益が地下金融から正規の国際金融センターへ抜ける「出口」として機能しうる。",
+      "risk_factors": ["国際金融センター", "法人・資産管理の悪用可能性", "越境現金・資産移動", "AML執行強化と被害国側の捜査関与"],
       "related_borders": ["malaysia-singapore-indonesia"],
       "related_regions": ["シンガポール都市圏", "チャンギ国際空港", "Tuas"],
       "layers": ["financial_nodes", "policy_nodes"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "都市国家全体を金融接続の地域として表示する。",
       "sources": [
         {
@@ -246,6 +288,18 @@
           "publisher": "Reuters",
           "date": "2024-07-02",
           "url": "https://www.reuters.com/world/asia-pacific/singapore-aims-make-it-easier-prosecute-money-laundering-2024-07-02/"
+        },
+        {
+          "title": "Singapore monetary authority penalises 9 banks, institutions for 2023 money laundering case",
+          "publisher": "Reuters",
+          "date": "2025-07-04",
+          "url": "https://www.reuters.com/markets/us/singapore-monetary-authority-penalises-9-banks-institutions-2023-money-2025-07-04/"
+        },
+        {
+          "title": "27 Singaporeans And Seven Malaysians Identified As Members Of Organised Crime Group Operating Out Of Scam Compound In Cambodia",
+          "publisher": "Singapore Police Force",
+          "date": "2025-10-29",
+          "url": "https://www.police.gov.sg/Media-Hub/News/2025/10/20251029_27_singaporeans_and_seven_malaysians_identified_as_members_-of_organised_crime"
         }
       ]
     },
@@ -260,14 +314,14 @@
         [[5.8, 95.0], [1.0, 104.5], [-6.0, 105.5], [-8.8, 114.7], [-3.5, 117.0], [4.0, 118.0], [2.0, 110.0], [0.0, 103.0]],
         [[1.8, 109.5], [4.2, 118.2], [-3.0, 118.5], [-4.0, 110.2]]
       ],
-      "summary_ja": "多数の島嶼と広い海上国境を持ち、国外詐欺拠点からの帰還、オンライン賭博、資金流、移民/密輸回廊が重なる。",
-      "border_context": "マレーシア、シンガポール、フィリピン南部海域と接続。",
-      "risk_factors": ["島嶼間監視の難しさ", "国外就労被害", "オンライン賭博", "海上移動"],
+      "summary_ja": "多数の島嶼と広い海上国境を持ち、国外詐欺拠点からの帰還、オンライン賭博、資金流、移民/密輸回廊が重なる。インドネシアは送出規模が大きく、ミャンマー側拠点に多くの自国民が拘束されてきた。2025年初頭の多国間摘発後には、ミャンマーから解放された500人超のインドネシア国籍者がジャカルタへ帰還し、政府が被害者と関与者を選別するための聞き取り・取調べを行った。広大な海域と島嶼間の監視の難しさが、非正規の出入国や被害者の現在地把握を一層困難にしている。",
+      "border_context": "マレーシア、シンガポール、フィリピン南部海域と接続。広い海上国境が監視を難しくし、送出・帰還の双方で経路が分散しやすい。",
+      "risk_factors": ["島嶼間監視の難しさ", "国外就労被害", "オンライン賭博", "海上移動", "大規模送出と帰還後の選別負担"],
       "related_borders": ["malaysia-singapore-indonesia", "philippines-malaysia"],
       "related_regions": ["ジャカルタ", "カリマンタン", "スマトラ", "リアウ諸島"],
       "layers": ["policy_nodes", "financial_nodes", "trafficking_routes"],
       "confidence": "reported",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "島嶼圏を概略ポリゴンとして表示する。",
       "sources": [
         {
@@ -288,9 +342,9 @@
       "polygons": [
         [[-8.1, 124.0], [-8.8, 127.0], [-9.6, 126.8], [-9.4, 123.9]]
       ],
-      "summary_ja": "新興リスクとして、オエクシ特殊区や外国投資、通信/SEZを利用した詐欺拠点化の懸念が報告される。",
-      "border_context": "インドネシア西ティモールに囲まれたオエクシ飛び地を含む。",
-      "risk_factors": ["新設SEZ", "監視能力の制約", "犯罪的FDI", "海洋部への拡散リスク"],
+      "summary_ja": "新興リスクとして、オエクシ特殊区や外国投資、通信/SEZを利用した詐欺拠点化の懸念が報告される。UNODCは2025年9月、組織犯罪が法執行・監視能力の弱い管轄を標的に「犯罪的な外国直接投資(criminal FDI)」を持ち込むリスクがあるとして、東ティモールを名指しで警告した。摘発圧力の強まったメコン地域から、より規制の緩い新たな立地へ拠点が拡散する流れのなかで、新設SEZと監督体制の未整備が脆弱性として指摘されている。現時点では確定した拠点情報ではなく、警戒・予防の文脈で扱う。",
+      "border_context": "インドネシア西ティモールに囲まれたオエクシ飛び地を含む。飛び地という地理と新設SEZの統治例外が、新たな脆弱地点を生みうる。",
+      "risk_factors": ["新設SEZ", "監視能力の制約", "犯罪的FDI", "海洋部への拡散リスク", "規制未整備の新興立地"],
       "related_borders": ["east-timor-indonesia"],
       "related_regions": ["ディリ", "オエクシ特殊区"],
       "layers": ["fraud_centers", "financial_nodes"],
@@ -315,12 +369,12 @@
       "countries": ["thailand", "myanmar"],
       "path": [[20.1, 97.6], [18.6, 97.9], [16.72, 98.57], [14.2, 98.8], [11.8, 99.1]],
       "color": "#a43c48",
-      "summary_ja": "メーソート–ミャワディ周辺を中心に、詐欺コンパウンド、武装勢力、越境インフラ、被害者救出・送還が集中する最重要回廊。",
-      "risk_factors": ["武装勢力保護", "非公式越境", "被害者滞留", "越境電力・通信"],
+      "summary_ja": "メーソート–ミャワディ周辺を中心に、詐欺コンパウンド、武装勢力、越境インフラ、被害者救出・送還が集中する最重要回廊。タイ側メーソートと対岸のミャンマー側ミャワディが、求人勧誘の入口、強制労働の現場、解放後の集約点という複数の機能を同時に担う。報道では、ミャワディ周辺だけで約30万人が詐欺労働に従事し、少なくとも40の大規模コンパウンドが存在するとの推計もある。コンパウンドはBGFなど地元武装勢力の保護下で運営され、被害者の脱出を阻む。2026年初頭にはKK Parkで630棟超が解体され多数が中国へ送還された一方、近隣のBGF支配地域に新たな拠点が再出現したとも報じられ、摘発と再配置が繰り返される。タイ側からの電力・通信・物流がコンパウンドを支える構図も指摘されてきた。",
+      "risk_factors": ["武装勢力保護", "非公式越境", "被害者滞留", "越境電力・通信", "摘発後の拠点再出現", "求人勧誘の入口機能"],
       "related_regions": ["メーソート", "ミャワディ", "Shwe Kokko", "KK Park"],
       "connection_types": ["trafficking_route", "fraud_compound", "repatriation", "enforcement"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "帯状の国境圏として表示し、施設位置や逃走経路は表示しない。",
       "sources": [
         {
@@ -328,6 +382,18 @@
           "publisher": "UNODC",
           "date": "2025-07-01",
           "url": "https://www.unodc.org/roseap/en/2025/07/southeast-asia-combat-trafficking/story.html"
+        },
+        {
+          "title": "UN report details grave abuses against those trafficked into scam centres",
+          "publisher": "OHCHR",
+          "date": "2026-02-20",
+          "url": "https://www.ohchr.org/en/press-releases/2026/02/un-report-details-grave-abuses-against-those-trafficked-scam-centres"
+        },
+        {
+          "title": "New Scam Hubs Rise in BGF Areas Near Myawaddy Despite 'Crackdown'",
+          "publisher": "The Irrawaddy",
+          "date": "2026-02-13",
+          "url": "https://www.irrawaddy.com/news/burma/new-scam-hubs-rise-in-bgf-areas-near-myawaddy-despite-crackdown.html"
         }
       ]
     },
@@ -338,12 +404,12 @@
       "countries": ["myanmar", "china"],
       "path": [[25.6, 97.5], [24.1, 98.5], [23.3, 99.2], [22.1, 100.0]],
       "color": "#5c678f",
-      "summary_ja": "北シャン州・コーカン周辺の中国語圏詐欺/賭博経済と、中国当局の摘発・送還・訴追が交差する境界。",
-      "risk_factors": ["武装勢力", "中国語圏賭博・詐欺", "摘発後の南方移転", "資金・人員供給"],
+      "summary_ja": "北シャン州・コーカン周辺の中国語圏詐欺/賭博経済と、中国当局の摘発・送還・訴追が交差する境界。中国は2023年末以降、雲南省境界の拠点に強い圧力をかけ、地元の少数民族武装勢力による「Operation 1027」を経てコーカンの主要都市ラオカイが反勢力の支配下に入った。中国警察はコーカンの詐欺シンジケートの「首領」とされる地元有力一族の関係者に逮捕状を出し、ミャンマー側からは多数の容疑者・関係者が中国へ移送された。一方で摘発を逃れた運営ネットワークはシャン州内陸南部やタイ・ミャンマー国境方面へ南下したと報じられ、雲南境界は「圧力をかける側」と「拠点が押し出される側」の両面を持つ。",
+      "risk_factors": ["武装勢力", "中国語圏賭博・詐欺", "摘発後の南方移転", "資金・人員供給", "大規模送還と訴追"],
       "related_regions": ["コーカン", "ラショー", "雲南省"],
       "connection_types": ["fraud_targeting", "enforcement", "network_relocation"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "山岳国境を粗い線として表示する。",
       "sources": [
         {
@@ -351,6 +417,12 @@
           "publisher": "USIP",
           "date": "2024-05-01",
           "url": "https://www.usip.org/sites/default/files/2024-05/ssg_transnational-crime-southeast-asia.pdf"
+        },
+        {
+          "title": "Myanmar scam operations move south along Thai border",
+          "publisher": "Voice of America",
+          "date": "2025-08-20",
+          "url": "https://www.voanews.com/a/myanmar-scam-operations-move-south-along-thai-border/7959295.html"
         }
       ]
     },
@@ -361,12 +433,12 @@
       "countries": ["laos", "thailand", "myanmar"],
       "path": [[20.45, 99.55], [20.35, 100.08], [20.22, 100.52]],
       "color": "#8a7440",
-      "summary_ja": "ラオス・タイ・ミャンマーの三国接点。カジノ/SEZ、麻薬・密輸、人身取引、地下金融の歴史的回廊にオンライン詐欺が重なる。",
-      "risk_factors": ["三国境の統治ギャップ", "SEZ", "カジノ", "地下銀行", "密輸ルート"],
+      "summary_ja": "ラオス・タイ・ミャンマーの三国接点。カジノ/SEZ、麻薬・密輸、人身取引、地下金融の歴史的回廊にオンライン詐欺が重なる。ラオス側ボーケオ州のゴールデン・トライアングルSEZは、米財務省が2018年に越境犯罪組織の首領として制裁した趙偉(Zhao Wei)系のKings Romansグループが実質運営し、ラオス政府の出資は2割にとどまるとされる。UNODCは、カジノと暗号資産(USDT建ての決済を含む)がこの地域の資金洗浄・地下銀行・サイバー詐欺の主要な原動力になっていると分析する。三国の主権が交わる地点ほど統一的な法執行が及びにくく、SEZの統治例外と相まって、拠点と資金ルートが集積しやすい構造的なギャップが生じている。",
+      "risk_factors": ["三国境の統治ギャップ", "SEZ", "カジノ", "地下銀行", "密輸ルート", "USDT建て決済の集積"],
       "related_regions": ["ボーケオ州", "チェンライ", "メコン川"],
       "connection_types": ["casino_sez_network", "trafficking_route", "money_laundering"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "SEZ周辺を広域地域として表示する。",
       "sources": [
         {
@@ -374,6 +446,12 @@
           "publisher": "UNODC",
           "date": "2024-01-15",
           "url": "https://www.unodc.org/roseap/en/2024/casinos-casinos-cryptocurrency-underground-banking/story.html"
+        },
+        {
+          "title": "Treasury Sanctions the Zhao Wei Transnational Criminal Organization",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2018-01-30",
+          "url": "https://home.treasury.gov/news/press-releases/sm0272"
         }
       ]
     },
@@ -384,12 +462,12 @@
       "countries": ["thailand", "cambodia"],
       "path": [[14.4, 102.1], [13.65, 102.57], [12.7, 102.8], [11.7, 102.9]],
       "color": "#7e5bb6",
-      "summary_ja": "ポイペト、オスマッチ、北部カンボジア国境帯を含む。カジノ都市、越境人流、摘発、詐欺拠点移転が重なる。",
-      "risk_factors": ["カジノ街", "国境市場", "現金移動", "偽求人", "摘発後の再配置"],
+      "summary_ja": "ポイペト、オスマッチ、北部カンボジア国境帯を含む。カジノ都市、越境人流、摘発、詐欺拠点移転が重なる。2025年2月にはタイ・カンボジア両警察がポイペトの建物を摘発し、タイ・パキスタン・インド・台湾・インドネシアなどの外国籍215人を保護したと発表した。ポイペトのカジノ街には、旧来の賭博施設が詐欺コンパウンドに転用された事例が報告され、米財務省が2026年4月に制裁したカンボジア上院議員Kok Anの事業帝国もポイペトのカジノ・不動産を含むとされる。国境を挟んだ偽求人の勧誘、現金や人員の往来、摘発後の再配置がこの帯状地域に集中する。",
+      "risk_factors": ["カジノ街", "国境市場", "現金移動", "偽求人", "摘発後の再配置", "旧カジノの拠点転用"],
       "related_regions": ["ポイペト", "オスマッチ", "アランヤプラテート"],
       "connection_types": ["casino_sez_network", "trafficking_route", "fraud_compound", "enforcement"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "国境市場・都市圏として表示する。",
       "sources": [
         {
@@ -397,6 +475,12 @@
           "publisher": "Reuters",
           "date": "2025-02-23",
           "url": "https://www.reuters.com/world/asia-pacific/thai-cambodian-police-free-215-foreigners-scam-centre-raid-2025-02-23/"
+        },
+        {
+          "title": "Treasury Sanctions Cambodian Senator Kok An and Scam Center Network Defrauding Americans",
+          "publisher": "U.S. Department of the Treasury",
+          "date": "2026-04-23",
+          "url": "https://home.treasury.gov/news/press-releases/sb0469"
         }
       ]
     },
@@ -407,12 +491,12 @@
       "countries": ["cambodia", "vietnam"],
       "path": [[13.8, 106.0], [12.0, 106.1], [11.18, 105.9], [10.7, 105.4]],
       "color": "#2f7476",
-      "summary_ja": "バベット–チュレイトム周辺を中心に、カジノ、物流、越境移送、ベトナム側労働移動が重なる回廊。",
-      "risk_factors": ["カジノ複合体", "物流回廊", "越境移送", "労働者保護"],
+      "summary_ja": "バベット–チュレイトム周辺を中心に、カジノ、物流、越境移送、ベトナム側労働移動が重なる回廊。ベトナム側モクバイとカンボジア側バベットを結ぶ正規の幹線と並んで、非公式の越境経路が偽求人による移送に使われると報じられる。バベットのカジノ複合体内には詐欺拠点が置かれた事例があり、越境労働移動と強制的な詐欺労働が同じ回廊上で交差する。摘発後には被害者の保護・本国送還がこの国境帯に集約されるため、回廊は「移送の経路」と「救出・送還の経路」の両方として機能する。",
+      "risk_factors": ["カジノ複合体", "物流回廊", "越境移送", "労働者保護", "非公式越境経路の利用"],
       "related_regions": ["バベット", "チュレイトム", "モックバイ"],
       "connection_types": ["casino_sez_network", "trafficking_route", "policy_nodes"],
       "confidence": "reported",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "国境回廊として粗く表示する。",
       "sources": [
         {
@@ -430,12 +514,12 @@
       "countries": ["philippines", "malaysia"],
       "path": [[7.2, 118.2], [6.7, 119.0], [5.98, 116.07]],
       "color": "#2b6f9a",
-      "summary_ja": "パラワン、タウィタウィ、サバを結ぶ海上接続。移民、被害者送出、送還証言、密航・密輸リスクの文脈で扱う。",
-      "risk_factors": ["島嶼間移動", "非正規渡航", "SNS求人", "海上監視の難しさ"],
+      "summary_ja": "パラワン、タウィタウィ、サバを結ぶ海上接続。移民、被害者送出、送還証言、密航・密輸リスクの文脈で扱う。フィリピン入国管理局(BI)が公表した送還事例では、タウィタウィからサバ方面へ船で渡り、その後タイやミャンマー、さらにはカンボジアの詐欺拠点へ移送された被害者の証言が示されている。海上回廊と陸路の国境ゲートを継ぎ目に使うことで、正規の出入国記録を残しにくい移送が可能になり、被害者の現在地把握と救出を難しくする。これは島嶼回廊の概念的な接続であり、特定の船着場や航路を示すものではない。",
+      "risk_factors": ["島嶼間移動", "非正規渡航", "SNS求人", "海上監視の難しさ", "陸海接続による記録回避"],
       "related_regions": ["パラワン", "タウィタウィ", "サバ"],
       "connection_types": ["maritime_connection", "trafficking_route", "repatriation"],
       "confidence": "reported",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "海上回廊として表示し、船着場などは示さない。",
       "sources": [
         {
@@ -453,12 +537,12 @@
       "countries": ["malaysia", "singapore", "indonesia"],
       "path": [[3.1, 101.7], [1.35, 103.82], [-0.5, 104.4], [-6.2, 106.85]],
       "color": "#8a7440",
-      "summary_ja": "金融、貿易、港湾、空港を通じた資金移動、送還、法執行協力が重なる広域地域。",
-      "risk_factors": ["越境金融犯罪", "港湾・空港接続", "法人利用", "多国籍捜査協力"],
+      "summary_ja": "金融、貿易、港湾、空港を通じた資金移動、送還、法執行協力が重なる広域地域。クアラルンプール、ジョホール、シンガポール、ジャカルタといった主要都市が、空路・海路と発達した金融システムでつながり、詐欺収益の洗浄や被害者の送出・送還、多国籍の捜査協力が交差する。詐欺拠点そのものより、収益が地下金融から正規金融へ抜ける「資金の出口」と、各国当局が連携してそれを追う「執行の接点」として重要となる。UNODCは、東南アジア各国が資金の流れを追跡する取り組みを強める必要を指摘している。",
+      "risk_factors": ["越境金融犯罪", "港湾・空港接続", "法人利用", "多国籍捜査協力", "資金の出口機能"],
       "related_regions": ["クアラルンプール", "ジョホール", "シンガポール", "ジャカルタ"],
       "connection_types": ["money_laundering", "financial_node", "enforcement"],
       "confidence": "documented",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "主要都市・港湾間のおおまかな接続線として表示する。",
       "sources": [
         {
@@ -476,12 +560,12 @@
       "countries": ["east-timor", "indonesia"],
       "path": [[-9.2, 124.38], [-9.1, 125.6], [-8.8, 126.3]],
       "color": "#7a5a8e",
-      "summary_ja": "オエクシ特殊区とインドネシア西ティモールにまたがる新興リスク圏。犯罪的FDI、SEZ、通信/詐欺拠点化の警戒対象。",
-      "risk_factors": ["新設SEZ", "監視能力の制約", "外国投資", "海洋部拡散リスク"],
+      "summary_ja": "オエクシ特殊区とインドネシア西ティモールにまたがる新興リスク圏。犯罪的FDI(外国直接投資)、SEZ、通信/詐欺拠点化の警戒対象。UNODCは2025年9月、組織犯罪が法執行・監視能力の弱い管轄を狙って「犯罪的FDI」を持ち込むリスクがあるとして東ティモールを名指しで警告した。摘発圧力が強まったメコン地域から、より規制の緩い新たな立地へ拠点が拡散しうる流れのなかで、インドネシア西ティモールに囲まれたオエクシ飛び地という地理と、新設SEZの監督未整備が脆弱性として注視されている。現時点では確定した拠点情報ではなく、予防・警戒の文脈で扱う。",
+      "risk_factors": ["新設SEZ", "監視能力の制約", "外国投資", "海洋部拡散リスク", "規制未整備の新興立地"],
       "related_regions": ["オエクシ", "ディリ", "西ティモール"],
       "connection_types": ["casino_sez_network", "financial_node", "under_investigation"],
       "confidence": "reported",
-      "last_updated": "2026-04",
+      "last_updated": "2026-05-22",
       "map_display_note": "新興リスクとして広域表示する。",
       "sources": [
         {
