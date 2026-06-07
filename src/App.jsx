@@ -71,6 +71,16 @@ function localizeList(list, lang) {
   if (lang !== "zh" || !Array.isArray(list)) return list;
   return list.map((item) => localizeRecord(item, lang));
 }
+function localizeFeatureCollection(featureCollection, lang) {
+  if (lang !== "zh" || !featureCollection?.features) return featureCollection;
+  return {
+    ...featureCollection,
+    features: featureCollection.features.map((feature) => ({
+      ...feature,
+      properties: localizeRecord(feature.properties, lang),
+    })),
+  };
+}
 
 const MAP_DESIGN_ASSET_BASE = "/assets/map-design";
 const VISUAL_ASSETS = {
@@ -88,16 +98,16 @@ const VISUAL_ASSETS = {
 const CONTEXT_COUNTRY_COLOR = "#64706b";
 const SOUTH_ASIA_CONTEXT_COUNTRY_IDS = ["india", "pakistan", "bangladesh", "nepal", "sri-lanka"];
 const CONTEXT_COUNTRIES = [
-  { id: "china", name_ja: "中国", name_en: "China" },
-  { id: "usa", name_ja: "アメリカ合衆国", name_en: "United States" },
-  { id: "japan", name_ja: "日本", name_en: "Japan" },
-  { id: "uk", name_ja: "イギリス", name_en: "United Kingdom" },
-  { id: "india", name_ja: "インド", name_en: "India" },
-  { id: "pakistan", name_ja: "パキスタン", name_en: "Pakistan" },
-  { id: "bangladesh", name_ja: "バングラデシュ", name_en: "Bangladesh" },
-  { id: "nepal", name_ja: "ネパール", name_en: "Nepal" },
-  { id: "sri-lanka", name_ja: "スリランカ", name_en: "Sri Lanka" },
-  { id: "australia", name_ja: "オーストラリア", name_en: "Australia" },
+  { id: "china", name_ja: "中国", name_zh: "中国", name_en: "China" },
+  { id: "usa", name_ja: "アメリカ合衆国", name_zh: "美国", name_en: "United States" },
+  { id: "japan", name_ja: "日本", name_zh: "日本", name_en: "Japan" },
+  { id: "uk", name_ja: "イギリス", name_zh: "英国", name_en: "United Kingdom" },
+  { id: "india", name_ja: "インド", name_zh: "印度", name_en: "India" },
+  { id: "pakistan", name_ja: "パキスタン", name_zh: "巴基斯坦", name_en: "Pakistan" },
+  { id: "bangladesh", name_ja: "バングラデシュ", name_zh: "孟加拉国", name_en: "Bangladesh" },
+  { id: "nepal", name_ja: "ネパール", name_zh: "尼泊尔", name_en: "Nepal" },
+  { id: "sri-lanka", name_ja: "スリランカ", name_zh: "斯里兰卡", name_en: "Sri Lanka" },
+  { id: "australia", name_ja: "オーストラリア", name_zh: "澳大利亚", name_en: "Australia" },
 ].map((country) => ({
   ...country,
   color: CONTEXT_COUNTRY_COLOR,
@@ -2502,7 +2512,7 @@ const TagRow = React.memo(function TagRow({ items = [] }) {
   return (
     <div className="tag-row">
       {items.map((item) => (
-        <span key={item}>{item}</span>
+        <span key={item}>{tx(item)}</span>
       ))}
     </div>
   );
@@ -2988,7 +2998,7 @@ function SelectedInvestigationPanel({
           </div>
           <div>
             <dt>{tx("関連地域")}</dt>
-            <dd>{border.related_regions.join(" / ")}</dd>
+            <dd>{border.related_regions.map(tx).join(" / ")}</dd>
           </div>
           <div>
             <dt>{tx("表示粒度")}</dt>
@@ -3027,7 +3037,7 @@ function SelectedInvestigationPanel({
           </div>
           <div>
             <dt>{tx("関連地域")}</dt>
-            <dd>{country.related_regions.join(" / ")}</dd>
+            <dd>{country.related_regions.map(tx).join(" / ")}</dd>
           </div>
           <div>
             <dt>{tx("表示粒度")}</dt>
@@ -3043,7 +3053,7 @@ function SelectedInvestigationPanel({
   if (region) {
     const regionRelatedEvents = getRegionEvents(region.id);
     const layerLabels = region.layer_tags
-      .map((layerId) => LAYER_CONFIG[layerId]?.label ?? layerId)
+      .map((layerId) => tx(LAYER_CONFIG[layerId]?.label ?? layerId))
       .filter(Boolean);
 
     return (
@@ -3906,6 +3916,11 @@ function AppInner({ lang, onSelectLang }) {
     () => localizeList(rawAnalysisOverlays.frameworks, lang),
     [lang],
   );
+  const localizedRegionalHighlightAreas = useMemo(
+    () => localizeFeatureCollection(REGIONAL_HIGHLIGHT_AREAS, lang),
+    [lang],
+  );
+  const contextCountries = useMemo(() => localizeList(CONTEXT_COUNTRIES, lang), [lang]);
   LOCALIZED_EVENTS = events;
   const [mapMode, setMapMode] = useState(initialUrl.mode ?? "comparison");
   const [mapZoom, setMapZoom] = useState(INITIAL_MAP_ZOOM);
@@ -3980,6 +3995,10 @@ function AppInner({ lang, onSelectLang }) {
     () => new Map(GEOPOLITICAL_COUNTRIES.map((country) => [country.id, country])),
     [],
   );
+  const contextCountryMap = useMemo(
+    () => new Map(contextCountries.map((country) => [country.id, country])),
+    [contextCountries],
+  );
   const borderMap = useMemo(
     () => new Map(GEOPOLITICAL_BORDERS.map((border) => [border.id, border])),
     [],
@@ -4019,10 +4038,10 @@ function AppInner({ lang, onSelectLang }) {
     () => ({
       ...NATURAL_EARTH_COUNTRIES,
       features: NATURAL_EARTH_COUNTRIES.features.filter((feature) =>
-        countryMap.has(feature.properties.app_id) || CONTEXT_COUNTRY_MAP.has(feature.properties.app_id),
+        countryMap.has(feature.properties.app_id) || contextCountryMap.has(feature.properties.app_id),
       ),
     }),
-    [countryMap],
+    [contextCountryMap, countryMap],
   );
   const selectedRegion = regionMap.get(selectedRegionId);
   const selectedFlow = useMemo(
@@ -4152,27 +4171,27 @@ function AppInner({ lang, onSelectLang }) {
     const visibleRegionIds = new Set(filteredRegions.map((region) => region.id));
 
     return {
-      ...REGIONAL_HIGHLIGHT_AREAS,
-      features: REGIONAL_HIGHLIGHT_AREAS.features.filter((feature) =>
+      ...localizedRegionalHighlightAreas,
+      features: localizedRegionalHighlightAreas.features.filter((feature) =>
         visibleRegionIds.has(feature.properties.region_id),
       ),
     };
-  }, [filteredRegions]);
+  }, [filteredRegions, localizedRegionalHighlightAreas]);
   const selectedRegionalHighlight = useMemo(
     () =>
       selectedRegionalHighlightId
-        ? REGIONAL_HIGHLIGHT_AREAS.features.find(
+        ? localizedRegionalHighlightAreas.features.find(
             (feature) => getRegionalHighlightId(feature) === selectedRegionalHighlightId,
           )
         : undefined,
-    [selectedRegionalHighlightId],
+    [localizedRegionalHighlightAreas, selectedRegionalHighlightId],
   );
   const selectedRegionalHighlightRegion = selectedRegionalHighlight
     ? regionMap.get(selectedRegionalHighlight.properties.region_id)
     : undefined;
   const selectedRegionalHighlightCountry = selectedRegionalHighlight
     ? countryMap.get(selectedRegionalHighlight.properties.country_id) ??
-      CONTEXT_COUNTRY_MAP.get(selectedRegionalHighlight.properties.country_id)
+      contextCountryMap.get(selectedRegionalHighlight.properties.country_id)
     : undefined;
   const selectedRegionalHighlightColor =
     selectedRegionalHighlightCountry?.color ??
@@ -4814,7 +4833,7 @@ function AppInner({ lang, onSelectLang }) {
                 key={`natural-earth-countries-${selectedCountryId ?? "none"}-${selectedGlobalFlowId ?? "none"}-${mapMode}`}
                 onEachFeature={(feature, layer) => {
                   const country = countryMap.get(feature.properties.app_id);
-                  const contextCountry = CONTEXT_COUNTRY_MAP.get(feature.properties.app_id);
+                  const contextCountry = contextCountryMap.get(feature.properties.app_id);
                   if (!country && !contextCountry) return;
 
                   if (country) {
@@ -4844,7 +4863,7 @@ function AppInner({ lang, onSelectLang }) {
               onEachFeature={(feature, layer) => {
                 const properties = feature.properties;
                 layer.options.bubblingMouseEvents = false;
-                layer.bindTooltip(properties.display_name_ja ?? properties.label_ja, {
+                layer.bindTooltip(properties.display_name_ja ?? properties.label_ja ?? properties.boundary_name, {
                   sticky: true,
                 });
                 layer.on({

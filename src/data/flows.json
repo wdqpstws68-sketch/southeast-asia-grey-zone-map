@@ -14,6 +14,7 @@
       {
         "id": "mae_sot_gateway",
         "name_ja": "メーソート国境ゲートウェイ",
+        "name_zh": "美索边境门户",
         "coordinates": [16.72, 98.57]
       }
     ],
@@ -96,6 +97,7 @@
       {
         "id": "moc_bai_bavet_gateway",
         "name_ja": "モクバイ・バベット国境圏",
+        "name_zh": "木牌·巴域边境圈",
         "coordinates": [11.18, 105.9]
       }
     ],
