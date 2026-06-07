@@ -23,7 +23,6 @@ import regionalHighlightAreas from "./data/regionalHighlightAreas.json";
 import naturalEarthCountries from "./data/naturalEarthCountries.json";
 import naturalEarthCorridorLines from "./data/naturalEarthCorridorLines.json";
 import naturalEarthMaritimeBoundaries from "./data/naturalEarthMaritimeBoundaries.json";
-import rawAuthorNotes from "./data/authorNotes.json";
 import uiZh from "./i18n/ui.zh.json";
 
 const REGIONAL_HIGHLIGHT_AREAS = regionalHighlightAreas;
@@ -287,12 +286,12 @@ const MAP_MODES = [
   {
     id: "connections",
     label: "接続",
-    description: "起点と終点の関係を示す線を中心に読む",
+    description: "地域どうしのつながりを線で追う",
   },
   {
     id: "comparison",
     label: "比較",
-    description: "ポイント分布と接続線を重ねて読む",
+    description: "地域マーカーと接続線を重ねて見る",
   },
   {
     id: "geography",
@@ -302,7 +301,7 @@ const MAP_MODES = [
   {
     id: "global",
     label: "世界",
-    description: "東南アジアから世界各地への接続線を読む",
+    description: "東南アジアと世界各地のつながりを線で追う",
   },
 ];
 
@@ -312,91 +311,91 @@ const FLOW_TYPE_CONFIG = {
     color: "#2f7476",
     fill: "#d9efec",
     description:
-      "偽求人、仲介者、空港・国境通過を通じて、人が詐欺拠点側へ連れて行かれたと報告される方向を示します。",
+      "偽求人や仲介、空港・国境通過を経て、人が詐欺拠点へ連れて行かれたと報告される流れです。",
   },
   casino_sez_connection: {
     label: "カジノ/SEZ接続",
     color: "#5c678f",
     fill: "#e3e7f4",
     description:
-      "カジノ、SEZ、不動産、ホテル、オンライン賭博の運営基盤が、複数の国境都市圏でつながる関係を示します。",
+      "カジノ、SEZ、不動産、ホテル、オンライン賭博の運営基盤が、複数の国境都市圏で結び付く関係です。",
   },
   network_shift: {
     label: "拠点/ネットワーク移動",
     color: "#7a5a8e",
     fill: "#eee6f3",
     description:
-      "摘発、紛争、国境管理の強化を受け、拠点や運営ノウハウが別地域へ移ったとされる傾向を示します。",
+      "摘発、紛争、国境管理の強化を受け、拠点や運営ノウハウが別地域へ移ったとされる流れです。",
   },
   trafficking: {
     label: "人身移送",
     color: "#2f7476",
     fill: "#d9efec",
     description:
-      "被害者が欺かれ、旅券没収や債務拘束を伴って拠点へ移送された報告を、人の流れとして示します。",
+      "被害者が欺かれ、旅券没収や債務拘束を伴って拠点へ移送された報告をまとめた流れです。",
   },
   displacement: {
     label: "移転/再配置",
     color: "#7a5a8e",
     fill: "#eee6f3",
     description:
-      "施設そのものの引っ越しではなく、摘発圧力後に運営・人員・資本が再配置される傾向を示します。",
+      "施設そのものの引っ越しではなく、摘発圧力の後に運営・人員・資本が再配置される傾向です。",
   },
   finance: {
     label: "金融接続",
     color: "#8a7440",
     fill: "#f1e8c8",
     description:
-      "詐欺収益、口座、法人、資産、送金経路が別の金融圏へ接続する関係を示します。",
+      "詐欺収益、口座、法人、資産、送金経路が別の金融圏へ流れ込む関係です。",
   },
   enforcement: {
     label: "制裁/摘発接続",
     color: "#486c58",
     fill: "#dcebdd",
     description:
-      "制裁、共同摘発、送還、警察協力などの法執行がどの地域・国へ作用したかを示します。人や資金が移動する意味ではありません。",
+      "制裁、共同摘発、送還、警察協力などの法執行が、どの地域・国に向けられたかを示します。人や資金の移動ではありません。",
   },
   upstream_supply: {
     label: "上流供給",
     color: "#14191b",
     fill: "#e3e5e2",
     description:
-      "国内の雇用不安、偽求人、越境志願、送還先など、詐欺労働へ接続する上流側の圧力を示します。",
+      "国内の雇用不安、偽求人、越境志願、送還先など、詐欺労働につながる上流側の圧力です。",
   },
   victim_supply: {
     label: "労働力起点",
     color: "#7a5a8e",
     fill: "#eee6f3",
     description:
-      "被害者の国籍・出身地域を束ね、どこから人が誘引されやすいかを概略で示します。",
+      "被害者の国籍・出身地域を束ね、どこから人が誘引されやすいかを概略で示す線です。",
   },
   physical_infrastructure: {
     label: "物理インフラ",
     color: "#2b6f9a",
     fill: "#d8eaf4",
     description:
-      "鉄道、水系、道路、港湾など、合法物流と違法な移動が重なりうる物理的な通路を示します。",
+      "鉄道、水系、道路、港湾など、合法物流と違法な移動が重なりうる物理的な通路です。",
   },
   financial_trace: {
     label: "金融/暗号資産",
     color: "#8a7440",
     fill: "#f1e8c8",
     description:
-      "暗号資産、地下銀行、OTC、シェル法人など、収益を動かす典型的な金融レールを示します。",
+      "暗号資産、地下銀行、OTC、シェル法人など、収益を動かす典型的な金融レールです。",
   },
   infrastructure_dependency: {
     label: "補給依存",
     color: "#b36a2e",
     fill: "#f3e1cc",
     description:
-      "電力、通信、燃料、衛星通信など、国境拠点を稼働させる外部補給への依存を示します。",
+      "電力、通信、燃料、衛星通信など、国境拠点を稼働させる外部補給への依存関係です。",
   },
   governance_method: {
     label: "制度/方法論",
     color: "#486c58",
     fill: "#dcebdd",
     description:
-      "制度変化、分析枠組み、統治の空白など、個別事件の背後にある読み方を示します。",
+      "制度変化や統治の空白など、個別事件の背景にある構造を読むための線です。",
   },
 };
 
@@ -407,7 +406,7 @@ const GLOBAL_FLOW_CONFIG = {
     color: "#8f4a68",
     fill: "#f4dbe6",
     description:
-      "偽の高収入求人や仲介を通じて、国外の人が詐欺拠点へ誘引される関係です。",
+      "偽の高収入求人や仲介を通じて、国外の人が詐欺拠点へ誘引される流れです。",
   },
   trafficking_route: {
     label: "人の移動",
@@ -415,7 +414,7 @@ const GLOBAL_FLOW_CONFIG = {
     color: "#2f7476",
     fill: "#d9efec",
     description:
-      "被害者が国境や空港を経由して移送される報告を、国・地域単位で束ねた線です。",
+      "被害者が国境や空港を経由して移送された報告を、国・地域単位で束ねた線です。",
   },
   fraud_targeting: {
     label: "被害市場",
@@ -423,7 +422,7 @@ const GLOBAL_FLOW_CONFIG = {
     color: "#a43c48",
     fill: "#f1d7da",
     description:
-      "東南アジア側の拠点から、国外の個人・市場へオンライン詐欺が向けられる関係です。",
+      "東南アジア側の拠点から、国外の個人・市場へオンライン詐欺が向けられる流れです。",
   },
   money_laundering: {
     label: "資金流",
@@ -431,7 +430,7 @@ const GLOBAL_FLOW_CONFIG = {
     color: "#8a7440",
     fill: "#f1e8c8",
     description:
-      "詐欺収益が金融サービス、地下銀行、国際金融システムへ流れ込む関係です。",
+      "詐欺収益が金融サービス、地下銀行、国際金融システムへ流れ込む流れです。",
   },
   crypto_flow: {
     label: "暗号資産",
@@ -747,11 +746,6 @@ const SOURCE_STATUS_META = {
     detail: "公開資料リンクを添えて表示",
     className: "source-status public",
   },
-  cc_knowledge: {
-    label: "cc-knowledge",
-    detail: "既存ノート/講義知識に基づく項目",
-    className: "source-status knowledge",
-  },
   needs_verification: {
     label: "要出典確認",
     detail: "外部出典での追加確認が必要な候補",
@@ -762,17 +756,28 @@ const SOURCE_STATUS_META = {
     detail: "出典リンクが未登録",
     className: "source-status missing",
   },
-  user_synthesis: {
-    label: "講義メモ統合",
-    detail: "提供された講義メモから統合した分析枠組み",
-    className: "source-status synthesis",
-  },
-  cited_lecture: {
-    label: "課程資料引用",
-    detail: "本授業で扱われた文献／講義で言及された刊行物への直接引用",
-    className: "source-status cited-lecture",
-  },
 };
+
+const HIDDEN_SOURCE_STATUS_BADGES = new Set(["cc_knowledge", "user_synthesis", "cited_lecture"]);
+const HIDDEN_FRAMEWORK_IDS = new Set(["six_q_what", "six_q_why", "six_q_what_next_should"]);
+
+const PANEL_NAV_ITEMS = [
+  { id: "panel-overview", label: "概要" },
+  { id: "panel-mode", label: "表示モード" },
+  { id: "panel-search", label: "検索・絞り込み" },
+  { id: "panel-story", label: "ストーリー" },
+  { id: "panel-motion", label: "移動表示" },
+  { id: "panel-layers", label: "レイヤー" },
+  { id: "panel-selection", label: "選択中" },
+  { id: "panel-verification", label: "検証キュー" },
+  { id: "panel-geography", label: "国・国境" },
+  { id: "panel-global", label: "世界接続" },
+  { id: "panel-analysis", label: "分析オーバーレイ" },
+  { id: "panel-connections", label: "接続" },
+  { id: "panel-timeline", label: "時系列" },
+  { id: "panel-confidence", label: "確認度" },
+  { id: "panel-regions", label: "地域カード" },
+];
 
 const SEA_MAP_BOUNDS = [
   [-10.5, 91],
@@ -962,25 +967,6 @@ const INITIAL_MAP_ZOOM = 3.75;
 const VALID_MAP_MODES = new Set(["distribution", "connections", "comparison", "geography", "global"]);
 const VALID_MOTION_MODES = new Set(["always", "selected", "off"]);
 const VALID_REVIEW_FILTERS = new Set(["all", "verified", "reported", "needs_review"]);
-
-const NOTE_KIND_META = {
-  entry: { label: "起点", color: "#a35a2a" },
-  observation: { label: "観察", color: "#2f7476" },
-  question: { label: "問い", color: "#7a5a8e" },
-  reflection: { label: "省察", color: "#486c58" },
-  contradiction: { label: "矛盾", color: "#a43c48" },
-};
-
-function buildNotesIndex(notes) {
-  const map = new Map();
-  for (const note of notes) {
-    if (!note?.attached_to?.type || !note?.attached_to?.id) continue;
-    const key = `${note.attached_to.type}:${note.attached_to.id}`;
-    if (!map.has(key)) map.set(key, []);
-    map.get(key).push(note);
-  }
-  return map;
-}
 
 function readUrlState() {
   if (typeof window === "undefined") return {};
@@ -2324,7 +2310,9 @@ const EvidenceBadge = React.memo(function EvidenceBadge({ value }) {
 });
 
 const SourceStatusBadge = React.memo(function SourceStatusBadge({ value }) {
-  const meta = SOURCE_STATUS_META[value] ?? SOURCE_STATUS_META.needs_verification;
+  if (!value || HIDDEN_SOURCE_STATUS_BADGES.has(value)) return null;
+  const meta = SOURCE_STATUS_META[value];
+  if (!meta) return null;
 
   return (
     <span className={meta.className} title={tx(meta.detail)}>
@@ -2531,6 +2519,49 @@ function TypeExplanation({ description, label = "表示の意味" }) {
   );
 }
 
+function PanelSection({ children, className = "", id }) {
+  return (
+    <div
+      className={`panel-section${className ? ` ${className}` : ""}`}
+      data-panel-section={id}
+      id={id}
+    >
+      {children}
+    </div>
+  );
+}
+
+const PanelToc = React.memo(function PanelToc({ activeSectionId, onSelect }) {
+  const activeItem =
+    PANEL_NAV_ITEMS.find((item) => item.id === activeSectionId) ?? PANEL_NAV_ITEMS[0];
+
+  return (
+    <nav className="panel-toc" aria-label={tx("パネル目次")}>
+      <div className="panel-toc-header">
+        <span>{tx("目次")}</span>
+        <strong>{tx(activeItem.label)}</strong>
+      </div>
+      <div className="panel-toc-list">
+        {PANEL_NAV_ITEMS.map((item, index) => {
+          const active = item.id === activeItem.id;
+          return (
+            <button
+              aria-current={active ? "true" : undefined}
+              className={active ? "active" : ""}
+              key={item.id}
+              onClick={() => onSelect(item.id)}
+              type="button"
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{tx(item.label)}</strong>
+            </button>
+          );
+        })}
+      </div>
+    </nav>
+  );
+});
+
 const LayerToggle = React.memo(function LayerToggle({ layerId, checked, onChange }) {
   const config = LAYER_CONFIG[layerId];
   const visual = LAYER_VISUALS[layerId];
@@ -2690,7 +2721,7 @@ function GlobalFlowPopup({ flow, onSelectFlow }) {
           <EvidenceBadge value={flow.evidence_level} />
         </div>
         <p>{flow.summary_ja}</p>
-        <TypeExplanation description={typeMeta.description} label="この線の意味" />
+        <TypeExplanation description={typeMeta.description} label="この線が示すこと" />
         <button className="text-command" onClick={() => onSelectFlow(flow)} type="button">
           {tx("世界接続パネルで見る")}
         </button>
@@ -2774,7 +2805,6 @@ function SelectedInvestigationPanel({
   border,
   country,
   flow,
-  frameworkMap,
   globalFlow,
   region,
   regionMap,
@@ -2803,10 +2833,6 @@ function SelectedInvestigationPanel({
           </div>
         </dl>
         <TagRow items={analysisNode.tags} />
-        <LectureFrameworkTagList
-          frameworkMap={frameworkMap}
-          items={analysisNode.lecture_framework_tags}
-        />
         <ReferenceLinks sources={analysisNode.sources} />
       </article>
     );
@@ -2863,7 +2889,7 @@ function SelectedInvestigationPanel({
           <ConfidenceBadge value={flow.confidence} />
         </div>
         <p>{flow.summary_ja}</p>
-        <TypeExplanation description={typeMeta.description} label="この線の意味" />
+        <TypeExplanation description={typeMeta.description} label="この線が示すこと" />
         <dl className="metadata-grid">
           <div>
             <dt>{tx("起点")}</dt>
@@ -2911,7 +2937,7 @@ function SelectedInvestigationPanel({
           <EvidenceBadge value={globalFlow.evidence_level} />
         </div>
         <p>{globalFlow.summary_ja}</p>
-        <TypeExplanation description={typeMeta.description} label="この線の意味" />
+        <TypeExplanation description={typeMeta.description} label="この線が示すこと" />
         <dl className="metadata-grid">
           <div>
             <dt>{tx("起点")}</dt>
@@ -3054,10 +3080,6 @@ function SelectedInvestigationPanel({
         </dl>
         <TagRow items={layerLabels} />
         <RegionCaseStudy caseStudy={region.case_study} />
-        <LectureFrameworkTagList
-          frameworkMap={frameworkMap}
-          items={region.lecture_framework_tags}
-        />
         {regionRelatedEvents.length > 0 && (
           <div className="mini-events">
             <span className="section-label">{tx("関連イベント")}</span>
@@ -3163,42 +3185,10 @@ const MapLegend = React.memo(function MapLegend({ activeLayers }) {
   );
 });
 
-const AuthorNotesPanel = React.memo(function AuthorNotesPanel({ notes, entityLabel }) {
-  if (!notes?.length) return null;
-  return (
-    <div className="author-notes-panel" aria-label={tx("作者の注釈")}>
-      <p className="author-notes-kicker">
-        <span>{tx("調べながら、見方がどう変わったか")}</span>
-        {entityLabel ? <span className="author-notes-anchor">{entityLabel}</span> : null}
-      </p>
-      <ul className="author-notes-list">
-        {notes.map((note) => {
-          const meta = NOTE_KIND_META[note.kind] ?? NOTE_KIND_META.observation;
-          return (
-            <li
-              className={`author-note author-note-${note.kind ?? "observation"}`}
-              key={note.id}
-              style={{ "--note-accent": meta.color }}
-            >
-              <p className="author-note-meta">
-                <span className="author-note-kind">{tx(meta.label)}</span>
-                {note.created ? <time dateTime={note.created}>{note.created}</time> : null}
-              </p>
-              <h3>{note.title}</h3>
-              <p className="author-note-body">{note.body}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-});
-
 const CompareCaseStudyPanel = React.memo(function CompareCaseStudyPanel({
   open,
   ids,
   regions: regionList,
-  notesIndex,
   onChange,
   onClose,
 }) {
@@ -3296,17 +3286,6 @@ const CompareCaseStudyPanel = React.memo(function CompareCaseStudyPanel({
                 </div>
               </section>
             )}
-
-            {(() => {
-              const notes = notesIndex?.get(`region:${region.id}`) ?? [];
-              if (!notes.length) return null;
-              return (
-                <section className="compare-card-section compare-card-notes">
-                  <h4>{tx("作者の注釈")}</h4>
-                  <AuthorNotesPanel notes={notes} />
-                </section>
-              );
-            })()}
 
             <section className="compare-card-section">
               <h4>{tx("主要出典")}</h4>
@@ -3431,7 +3410,7 @@ const GlobalFlowList = React.memo(function GlobalFlowList({ flows, selectedGloba
               </span>
             </button>
             <p>{flow.summary_ja}</p>
-            <TypeExplanation description={typeMeta.description} label="線の読み方" />
+            <TypeExplanation description={typeMeta.description} label="線が示すこと" />
             <p className="display-note">{flow.map_display_note}</p>
           </article>
         );
@@ -3519,30 +3498,6 @@ const AnalysisOverlayList = React.memo(function AnalysisOverlayList({
   );
 });
 
-const LectureFrameworkTagList = React.memo(function LectureFrameworkTagList({ items, frameworkMap }) {
-  if (!Array.isArray(items) || items.length === 0) return null;
-  return (
-    <div className="lecture-framework-tags">
-      <span className="section-label">{tx("課程資料との接続")}</span>
-      <ul>
-        {items.map((tag, idx) => {
-          const fw = frameworkMap?.get?.(tag.framework_id);
-          const title = fw?.title_ja || tag.framework_id;
-          const citation = fw?.citation;
-          return (
-            <li key={`${tag.framework_id}-${idx}`}>
-              <strong>{title}</strong>
-              {tag.lens && <span className="lecture-framework-lens">［{tag.lens}］</span>}
-              {tag.note && <p>{tag.note}</p>}
-              {citation && <p className="lecture-framework-citation">{citation}</p>}
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
-});
-
 const FrameworkList = React.memo(function FrameworkList({ frameworks, regionMap, analysisNodeMap }) {
   if (!frameworks.length) {
     return <EmptyList />;
@@ -3592,7 +3547,7 @@ const FrameworkList = React.memo(function FrameworkList({ frameworks, regionMap,
   );
 });
 
-const RegionCard = React.memo(function RegionCard({ region, selected, onSelect, frameworkMap }) {
+const RegionCard = React.memo(function RegionCard({ region, selected, onSelect }) {
   const relatedEvents = getRegionEvents(region.id);
 
   return (
@@ -3629,11 +3584,6 @@ const RegionCard = React.memo(function RegionCard({ region, selected, onSelect, 
       <p className="region-summary">{region.summary}</p>
 
       <RegionCaseStudy caseStudy={region.case_study} />
-
-      <LectureFrameworkTagList
-        frameworkMap={frameworkMap}
-        items={region.lecture_framework_tags}
-      />
 
       {relatedEvents.length > 0 && (
         <div className="mini-events">
@@ -3678,6 +3628,114 @@ const EventList = React.memo(function EventList({ filteredEvents, regionMap, onS
   );
 });
 
+const TimelineOverlay = React.memo(function TimelineOverlay({
+  events,
+  onClose,
+  onSelectRegion,
+  onYearFilterChange,
+  open,
+  regionMap,
+  yearFilter,
+  yearOptions,
+}) {
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (event) => {
+      if (event.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, onClose]);
+
+  const groupedEvents = useMemo(() => {
+    const groups = new Map();
+    for (const event of events) {
+      const year = event.date.slice(0, 4);
+      if (!groups.has(year)) groups.set(year, []);
+      groups.get(year).push(event);
+    }
+    return [...groups.entries()].sort(([left], [right]) => right.localeCompare(left));
+  }, [events]);
+
+  if (!open) return null;
+
+  const handleSelectEvent = (event) => {
+    const region = regionMap.get(event.location_id);
+    if (region) onSelectRegion(region);
+    onClose();
+  };
+
+  return (
+    <div className="timeline-overlay" role="dialog" aria-modal="true" aria-label={tx("時系列")}>
+      <div className="timeline-backdrop" onClick={onClose} aria-hidden="true" />
+      <section className="timeline-modal">
+        <header className="timeline-header">
+          <div>
+            <p className="eyebrow">Timeline</p>
+            <h2>{tx("取り締まり・報告の時系列")}</h2>
+            <p>{tx("主要イベントを年ごとにまとめて確認")}</p>
+          </div>
+          <button
+            aria-label={tx("タイムラインを閉じる")}
+            className="timeline-close"
+            onClick={onClose}
+            type="button"
+          >
+            ×
+          </button>
+        </header>
+
+        <div className="timeline-control-bar">
+          <div className="segmented-control" role="group" aria-label={tx("年で絞り込み")}>
+            {yearOptions.map((year) => (
+              <button
+                aria-pressed={yearFilter === year}
+                className={yearFilter === year ? "active" : ""}
+                key={year}
+                onClick={() => onYearFilterChange(year)}
+                type="button"
+              >
+                {tx(year)}
+              </button>
+            ))}
+          </div>
+          <span className="timeline-count">
+            {events.length} {tx("件")}
+          </span>
+        </div>
+
+        <div className="timeline-page-list">
+          {groupedEvents.length ? (
+            groupedEvents.map(([year, items]) => (
+              <section className="timeline-year-block" key={year}>
+                <h3>{year}</h3>
+                <div className="timeline-year-events">
+                  {items.map((event) => {
+                    const region = regionMap.get(event.location_id);
+                    return (
+                      <article className="timeline-page-event" key={`${event.date}-${event.location_id}`}>
+                        <button onClick={() => handleSelectEvent(event)} type="button">
+                          <time dateTime={event.date}>{formatDate(event.date)}</time>
+                          <span>{region?.name_ja ?? tx("広域")}</span>
+                          <strong>{event.title_ja}</strong>
+                        </button>
+                        <p>{event.summary_ja}</p>
+                        <SourceLinks sources={event.sources} />
+                      </article>
+                    );
+                  })}
+                </div>
+              </section>
+            ))
+          ) : (
+            <EmptyList />
+          )}
+        </div>
+      </section>
+    </div>
+  );
+});
+
 function FlowPopup({ flow, regionMap, onSelectFlow }) {
   const typeMeta = FLOW_TYPE_CONFIG[flow.type] ?? FLOW_TYPE_CONFIG.recruitment_route;
 
@@ -3698,7 +3756,7 @@ function FlowPopup({ flow, regionMap, onSelectFlow }) {
           <ConfidenceBadge value={flow.confidence} />
         </div>
         <p>{flow.summary_ja}</p>
-        <TypeExplanation description={typeMeta.description} label="この線の意味" />
+        <TypeExplanation description={typeMeta.description} label="この線が示すこと" />
         <p className="display-note">{flow.display_note}</p>
         <button className="text-command" onClick={() => onSelectFlow(flow)} type="button">
           {tx("接続パネルで見る")}
@@ -3734,7 +3792,7 @@ const FlowList = React.memo(function FlowList({ flows: flowItems, selectedFlowId
               </span>
             </button>
             <p>{flow.summary_ja}</p>
-            <TypeExplanation description={typeMeta.description} label="線の読み方" />
+            <TypeExplanation description={typeMeta.description} label="線が示すこと" />
             <p className="display-note">{flow.display_note}</p>
             <SourceLinks sources={flow.sources} />
           </article>
@@ -3820,7 +3878,6 @@ function AppInner({ lang, onSelectLang }) {
   const regions = useMemo(() => localizeList(rawRegions, lang), [lang]);
   const events = useMemo(() => localizeList(rawEvents, lang), [lang]);
   const flows = useMemo(() => localizeList(rawFlows, lang), [lang]);
-  const authorNotes = useMemo(() => localizeList(rawAuthorNotes, lang), [lang]);
   const GEOPOLITICAL_COUNTRIES = useMemo(
     () => localizeList(rawGeopolitical.countries, lang),
     [lang],
@@ -3885,6 +3942,8 @@ function AppInner({ lang, onSelectLang }) {
   const [searchQuery, setSearchQuery] = useState(initialUrl.q ?? "");
   const [reviewFilter, setReviewFilter] = useState(initialUrl.review ?? "all");
   const [activeStoryStepId, setActiveStoryStepId] = useState(initialUrl.story ?? STORY_STEPS[0].id);
+  const [timelineOpen, setTimelineOpen] = useState(false);
+  const [activePanelSectionId, setActivePanelSectionId] = useState(PANEL_NAV_ITEMS[0].id);
   const [compareIds, setCompareIds] = useState(() => {
     const raw = initialUrl.compare;
     if (!raw) return null;
@@ -3894,6 +3953,7 @@ function AppInner({ lang, onSelectLang }) {
   });
   const [compareOpen, setCompareOpen] = useState(Boolean(initialUrl.compare));
   const mapStageRef = useRef(null);
+  const researchPanelRef = useRef(null);
   const setMapHover = useCallback((point) => {
     const node = mapStageRef.current;
     if (!node) return;
@@ -3914,10 +3974,6 @@ function AppInner({ lang, onSelectLang }) {
   );
   const analysisNodeMap = useMemo(
     () => new Map(ANALYSIS_NODES.map((node) => [node.id, node])),
-    [],
-  );
-  const frameworkMap = useMemo(
-    () => new Map(ANALYSIS_FRAMEWORKS.map((fw) => [fw.id, fw])),
     [],
   );
   const countryMap = useMemo(
@@ -4073,8 +4129,11 @@ function AppInner({ lang, onSelectLang }) {
   );
   const filteredFrameworks = useMemo(
     () =>
-      ANALYSIS_FRAMEWORKS.filter((framework) =>
-        recordMatchesFilters(framework, searchQuery, reviewFilter),
+      ANALYSIS_FRAMEWORKS.filter(
+        (framework) =>
+          !HIDDEN_FRAMEWORK_IDS.has(framework.id) &&
+          framework.source_status !== "cited_lecture" &&
+          recordMatchesFilters(framework, searchQuery, reviewFilter),
       ),
     [reviewFilter, searchQuery],
   );
@@ -4158,46 +4217,6 @@ function AppInner({ lang, onSelectLang }) {
   const visibleAnalysisCorridors = useMemo(
     () => filteredAnalysisCorridors.filter((corridor) => activeLayers[corridor.layer_id]),
     [activeLayers, filteredAnalysisCorridors],
-  );
-  const notesIndex = useMemo(() => buildNotesIndex(authorNotes), []);
-  const { selectedNotes, selectedNotesLabel } = useMemo(() => {
-    const tryKeys = [
-      selectedRegionId ? ["region", selectedRegionId, selectedRegion?.name_ja] : null,
-      selectedFlowId ? ["flow", selectedFlowId, selectedFlow?.title_ja] : null,
-      selectedGlobalFlowId ? ["globalFlow", selectedGlobalFlowId, selectedGlobalFlow?.name_ja] : null,
-      selectedCountryId ? ["country", selectedCountryId, selectedCountry?.name_ja] : null,
-      selectedBorderId ? ["border", selectedBorderId, selectedBorder?.name_ja] : null,
-      selectedAnalysisNode ? ["analysisNode", selectedAnalysisNode.id, selectedAnalysisNode.name_ja] : null,
-      selectedAnalysisCorridor ? ["analysisCorridor", selectedAnalysisCorridor.id, selectedAnalysisCorridor.title_ja] : null,
-    ].filter(Boolean);
-    for (const [type, id, label] of tryKeys) {
-      const items = notesIndex.get(`${type}:${id}`);
-      if (items?.length) return { selectedNotes: items, selectedNotesLabel: label };
-    }
-    return { selectedNotes: [], selectedNotesLabel: null };
-  }, [
-    notesIndex,
-    selectedAnalysisCorridor,
-    selectedAnalysisNode,
-    selectedBorder,
-    selectedBorderId,
-    selectedCountry,
-    selectedCountryId,
-    selectedFlow,
-    selectedFlowId,
-    selectedGlobalFlow,
-    selectedGlobalFlowId,
-    selectedRegion,
-    selectedRegionId,
-  ]);
-  const landingNotes = useMemo(() => notesIndex.get("region:mekong_region") ?? [], [notesIndex]);
-  const hasAnySelection = Boolean(
-    selectedRegionId ||
-      selectedFlowId ||
-      selectedCountryId ||
-      selectedBorderId ||
-      selectedGlobalFlowId ||
-      selectedAnalysisId,
   );
   const totalFilterableCount =
     regions.length +
@@ -4465,6 +4484,33 @@ function AppInner({ lang, onSelectLang }) {
     setCompareIds(nextIds);
   }, []);
 
+  const handleSelectPanelSection = useCallback((sectionId) => {
+    const container = researchPanelRef.current;
+    const target = container?.querySelector?.(`#${sectionId}`);
+    if (!container || !target) return;
+    const scrollRoot =
+      container.scrollHeight > container.clientHeight + 4
+        ? container
+        : document.scrollingElement || document.documentElement;
+    const rootTop = scrollRoot === container ? container.getBoundingClientRect().top : 0;
+    const targetTop = target.getBoundingClientRect().top;
+    const tocHeight = container.querySelector(".panel-toc")?.offsetHeight ?? 0;
+
+    scrollRoot.scrollTo({
+      top: Math.max(0, scrollRoot.scrollTop + targetTop - rootTop - tocHeight - 8),
+      behavior: "smooth",
+    });
+    setActivePanelSectionId(sectionId);
+  }, []);
+
+  const handleOpenTimeline = useCallback(() => {
+    setTimelineOpen(true);
+  }, []);
+
+  const handleCloseTimeline = useCallback(() => {
+    setTimelineOpen(false);
+  }, []);
+
   useEffect(() => {
     const onKeyDown = (event) => {
       if (event.key !== "Escape") return;
@@ -4480,6 +4526,62 @@ function AppInner({ lang, onSelectLang }) {
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [handleClearAllSelections]);
+
+  useEffect(() => {
+    const container = researchPanelRef.current;
+    if (!container) return undefined;
+
+    let frame = 0;
+    const updateActiveSection = () => {
+      const root =
+        container.scrollHeight > container.clientHeight + 4
+          ? container
+          : document.scrollingElement || document.documentElement;
+      const rootRect = root === container
+        ? container.getBoundingClientRect()
+        : { top: 0, bottom: window.innerHeight };
+      const tocRect = container.querySelector(".panel-toc")?.getBoundingClientRect();
+      const sections = PANEL_NAV_ITEMS.map((item) => ({
+        ...item,
+        node: container.querySelector(`#${item.id}`),
+      })).filter((item) => item.node);
+      if (!sections.length) return;
+
+      const anchorY = (tocRect?.bottom ?? rootRect.top) + 16;
+      let current = sections[0].id;
+      let closestDistance = Number.POSITIVE_INFINITY;
+
+      for (const section of sections) {
+        const rect = section.node.getBoundingClientRect();
+        if (rect.top <= anchorY && rect.bottom > rootRect.top + 24) {
+          current = section.id;
+        }
+        const distance = Math.abs(rect.top - anchorY);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          if (rect.top > anchorY) current = section.id;
+        }
+      }
+
+      setActivePanelSectionId((previous) => (previous === current ? previous : current));
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(updateActiveSection);
+    };
+
+    updateActiveSection();
+    container.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      container.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
 
   useEffect(() => {
     writeUrlState({
@@ -4629,11 +4731,20 @@ function AppInner({ lang, onSelectLang }) {
       </div>
       <CompareCaseStudyPanel
         ids={compareIds}
-        notesIndex={notesIndex}
         onChange={handleCompareChange}
         onClose={handleCloseCompare}
         open={compareOpen}
         regions={regions}
+      />
+      <TimelineOverlay
+        events={filteredEvents}
+        onClose={handleCloseTimeline}
+        onSelectRegion={handleSelectRegion}
+        onYearFilterChange={setYearFilter}
+        open={timelineOpen}
+        regionMap={regionMap}
+        yearFilter={yearFilter}
+        yearOptions={yearOptions}
       />
       <section
         className="map-stage"
@@ -5272,26 +5383,21 @@ function AppInner({ lang, onSelectLang }) {
         <MapLegend activeLayers={activeLayers} />
       </section>
 
-      <aside className="research-panel" aria-label={tx("調査パネル")}>
-        <div className="panel-section panel-intro">
+      <aside className="research-panel" aria-label={tx("調査パネル")} ref={researchPanelRef}>
+        <PanelSection id="panel-overview" className="panel-intro">
           <p className="eyebrow">Borderland structure</p>
           <h2>{tx("国境、SEZ、詐欺拠点報告、人の移動を重ねる")}</h2>
           <p>
             {tx("電信詐欺を単独の犯罪としてではなく、統治の弱い国境地帯、カジノ/SEZ経済、人身取引、資金洗浄がどう結び付くかを地図で追うためのプロトタイプです。")}
           </p>
-        </div>
+        </PanelSection>
 
-        {!hasAnySelection && landingNotes.length > 0 && (
-          <div className="panel-section panel-section-notes-entry">
-            <h2>{tx("作者の起点と省察")}</h2>
-            <p className="panel-section-hint">
-              {tx("地図上の地点・接続線をクリックすると、その対象に紐付いた注釈に切り替わります。")}
-            </p>
-            <AuthorNotesPanel notes={landingNotes} />
-          </div>
-        )}
+        <PanelToc
+          activeSectionId={activePanelSectionId}
+          onSelect={handleSelectPanelSection}
+        />
 
-        <div className="panel-section">
+        <PanelSection id="panel-mode">
           <h2>{tx("表示モード")}</h2>
           <div className="mode-control" role="group" aria-label={tx("表示モード")}>
             {MAP_MODES.map((mode) => (
@@ -5316,9 +5422,9 @@ function AppInner({ lang, onSelectLang }) {
             {tx("ケーススタディ比較ビューを開く")}
             <span className="compare-open-hint">{tx("妙瓦底 ↔ シハヌークビル")}</span>
           </button>
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-search">
           <h2>{tx("検索・絞り込み")}</h2>
           <SearchFilterPanel
             onClear={handleClearFilters}
@@ -5329,14 +5435,14 @@ function AppInner({ lang, onSelectLang }) {
             searchQuery={searchQuery}
             totalCount={totalFilterableCount}
           />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-story">
           <h2>{tx("ストーリー")}</h2>
           <StoryPanel activeStepId={activeStoryStepId} onSelectStep={handleSelectStoryStep} />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-motion">
           <h2>{tx("移動表示")}</h2>
           <MotionControlPanel
             active={selectedMotionActive}
@@ -5345,9 +5451,9 @@ function AppInner({ lang, onSelectLang }) {
             onToggleSelectedMotion={handleToggleSelectedMotion}
             selectedLabel={selectedMotionTarget?.label}
           />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-layers">
           <h2>{tx("レイヤー")}</h2>
           <div className="layer-grid">
             {Object.keys(activeLayers).map((layerId) => (
@@ -5359,9 +5465,9 @@ function AppInner({ lang, onSelectLang }) {
               />
             ))}
           </div>
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-selection">
           <h2>{tx("選択中")}</h2>
           <SelectedInvestigationPanel
             analysisCorridor={selectedAnalysisCorridor}
@@ -5369,25 +5475,21 @@ function AppInner({ lang, onSelectLang }) {
             border={selectedBorder}
             country={selectedCountry}
             flow={selectedFlow}
-            frameworkMap={frameworkMap}
             globalFlow={selectedGlobalFlow}
             region={selectedRegion}
             regionMap={regionMap}
           />
-          {selectedNotes.length > 0 && (
-            <AuthorNotesPanel notes={selectedNotes} entityLabel={selectedNotesLabel} />
-          )}
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-verification">
           <h2>{tx("検証キュー")}</h2>
           <VerificationQueue
             items={verificationItems}
             onSelectItem={handleSelectVerificationItem}
           />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-geography">
           <h2>{tx("国・国境")}</h2>
           <CountryList
             countries={sortedCountries}
@@ -5400,9 +5502,9 @@ function AppInner({ lang, onSelectLang }) {
             onSelectBorder={handleSelectBorder}
             selectedBorderId={selectedBorderId}
           />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-global">
           <h2>{tx("世界接続")}</h2>
           <GlobalFlowList
             flows={filteredGlobalFlows}
@@ -5411,9 +5513,9 @@ function AppInner({ lang, onSelectLang }) {
           />
           <h2 className="subsection-title">{tx("接続先")}</h2>
           <EndpointList endpoints={filteredEndpointCountries} />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-analysis">
           <h2>{tx("分析オーバーレイ")}</h2>
           <AnalysisOverlayList
             corridors={filteredAnalysisCorridors}
@@ -5428,9 +5530,9 @@ function AppInner({ lang, onSelectLang }) {
             frameworks={filteredFrameworks}
             regionMap={regionMap}
           />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-connections">
           <h2>{tx("接続")}</h2>
           <FlowList
             flows={filteredFlows}
@@ -5438,31 +5540,20 @@ function AppInner({ lang, onSelectLang }) {
             regionMap={regionMap}
             selectedFlowId={selectedFlowId}
           />
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-timeline">
           <h2>{tx("時系列")}</h2>
-          <div className="segmented-control" role="group" aria-label={tx("年で絞り込み")}>
-            {yearOptions.map((year) => (
-              <button
-                aria-pressed={yearFilter === year}
-                className={yearFilter === year ? "active" : ""}
-                key={year}
-                onClick={() => setYearFilter(year)}
-                type="button"
-              >
-                {tx(year)}
-              </button>
-            ))}
-          </div>
-          <EventList
-            filteredEvents={filteredEvents}
-            onSelect={handleSelectRegion}
-            regionMap={regionMap}
-          />
-        </div>
+          <button className="timeline-open-button" onClick={handleOpenTimeline} type="button">
+            <span aria-hidden="true">T</span>
+            {tx("タイムラインを開く")}
+            <small>
+              {filteredEvents.length} {tx("件")}
+            </small>
+          </button>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-confidence">
           <h2>{tx("確認度")}</h2>
           <div className="confidence-legend">
             {Object.entries(CONFIDENCE_META).map(([key, meta]) => (
@@ -5472,14 +5563,13 @@ function AppInner({ lang, onSelectLang }) {
               </p>
             ))}
           </div>
-        </div>
+        </PanelSection>
 
-        <div className="panel-section">
+        <PanelSection id="panel-regions">
           <h2>{tx("地域カード")}</h2>
           <div className="region-list">
             {sortedRegions.map((region) => (
               <RegionCard
-                frameworkMap={frameworkMap}
                 key={region.id}
                 onSelect={handleSelectRegion}
                 region={region}
@@ -5487,7 +5577,7 @@ function AppInner({ lang, onSelectLang }) {
               />
             ))}
           </div>
-        </div>
+        </PanelSection>
       </aside>
     </main>
   );
